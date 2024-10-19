@@ -1,0 +1,34 @@
+services:
+  culturebridge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: culturebridge
+    container_name: culturebridge
+    restart: unless-stopped
+    depends_on:
+      - culturebridge_database
+    env_file:
+      - .env
+    networks:
+      - culturebridge
+    volumes:
+      - .:/app
+      - .env:/app/.env
+  
+  culturebridge_database:
+    image: postgres
+    container_name: culturebridge_database
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - culturebridge
+    volumes:
+      - culturebrdige_data:/var/lib/postgres/data
+
+networks:
+  culturebridge:
+
+volumes:
+  culturebrdige_data:
