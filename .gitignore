@@ -1,2 +1,3 @@
 cultureVenv
 .env
+*pycache*
