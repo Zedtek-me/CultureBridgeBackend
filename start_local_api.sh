@@ -1,4 +1,4 @@
-#!bin/sh
+# !/bin/sh
 
 echo "running migrations>>>>>>>>>>>>>>>"
 python3 -m manage makemigrations --no-input

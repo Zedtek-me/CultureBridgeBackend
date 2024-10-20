@@ -15,6 +15,9 @@ services:
     volumes:
       - .:/app
       - .env:/app/.env
+
+    ports:
+      - 8001:8001
   
   culturebridge_database:
     image: postgres
@@ -26,6 +29,8 @@ services:
       - culturebridge
     volumes:
       - culturebrdige_data:/var/lib/postgres/data
+    ports:
+      - 5432:5432
 
 networks:
   culturebridge:
