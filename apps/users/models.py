@@ -10,6 +10,9 @@ class User(BaseModel, AbstractUser):
     last_name = models.CharField(max_length=255, null=True, blank=True)
     username = models.CharField(max_length=255, unique=True, null=True, blank=True)
     password = models.CharField(max_length=255)
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
+    objects = UserManager()
 
     class Meta:
         db_table = "users"
