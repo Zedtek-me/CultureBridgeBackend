@@ -45,6 +45,17 @@ class BlogViewSet(ViewSet):
             message="blog retrieved successfully!",
             data=BlogSerializer(blog).data
         )
+    
+    def update(self, request, pk=None):
+        """updates a blog"""
+        blog = Blog.objects.get(id=pk)
+        blog_serializer = BlogSerializer(blog, data=request.data, partial=True)
+        blog_serializer.is_valid(raise_exception=True)
+        return ResponseManager.handle_success_response(
+            message="blog updated successfully!",
+            data=blog_serializer.data
+        )
+    
 
     def delete(self, request, pk=None):
         """deletes a single blog object"""
