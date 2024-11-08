@@ -5,6 +5,7 @@ from rest_framework.authentication import TokenAuthentication
 from django.db import transaction
 from apps.blogs.seriaizers import BlogSerializer
 from apps.blogs.models import Blog
+from apps.blogs.permissions.is_authenticated import IsAuthenticated
 from utils.response_utils import ResponseManager
 import logging
 
@@ -19,7 +20,7 @@ logger.setLevel(logging.DEBUG)
 class BlogViewSet(ViewSet):
     """all things blog related"""
     authentication_classes = [TokenAuthentication]
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
 
     def list(self, request):
         """lists all blogs"""
