@@ -22,3 +22,7 @@ urlpatterns = [
     path("blogs/", include("apps.blogs.urls")),
     path("users/", include("apps.users.urls"))
 ]
+
+urlpatterns = [
+     path("api/v1/", include(urlpatterns))
+]

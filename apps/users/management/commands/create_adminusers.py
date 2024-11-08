@@ -4,7 +4,13 @@ from apps.users.models import User
 class Command(BaseCommand):
     help = "creates superuser accounts"
     user_creds = [
-        {"email": "zechariahadebayo42@gmail.com", "password": "Zedtek1@culturebridge"}
+        {
+            "email": "zechariahadebayo42@gmail.com",
+            "password": "Zedtek1@culturebridge",
+            "first_name":"Zechariah",
+            "last_name":"Adebayo",
+            "username":"Zedtek"
+        }
     ]
     def register_user_in_db(self, creds: dict = dict):
         """registers users"""

@@ -6,5 +6,5 @@ router.register("users", UserViewSet, basename="users")
 router.register("mailing", MailingViewSet, basename="mailing")
 
 urlpatterns = [
-    path("v1/", include(router.urls))
+    path("", include(router.urls))
 ]

@@ -6,5 +6,5 @@ router = DefaultRouter()
 router.register("blogs", BlogViewSet, basename="blogs")
 
 urlpatterns = [
-    path("v1/", include(router.urls))
+    path("", include(router.urls))
 ]
