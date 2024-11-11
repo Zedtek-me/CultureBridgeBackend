@@ -63,6 +63,7 @@ class BlogViewSet(ViewSet):
         blog = Blog.objects.get(id=pk)
         blog_serializer = BlogSerializer(blog, data=request.data, partial=True)
         blog_serializer.is_valid(raise_exception=True)
+        blog_serializer.save()
         return ResponseManager.handle_success_response(
             message="blog updated successfully!",
             data=blog_serializer.data
