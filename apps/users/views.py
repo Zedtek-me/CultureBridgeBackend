@@ -1,15 +1,19 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework import status
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from utils.response_utils import ResponseManager
 from apps.users.models import User
 from apps.users.serializers import UserSerializer
+from apps.blogs.permissions.is_authenticated import IsAuthenticated
+
+
 
 
 
 class UserViewSet(ViewSet):
     """viewset for all things user related"""
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     def list(self, request):

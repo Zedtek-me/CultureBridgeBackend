@@ -3,9 +3,12 @@ from apps.users.models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
+
+    password = serializers.CharField(write_only=True)
+
     class Meta:
         model = User
-        exclude = ["password", "user_permissions", "is_staff", "is_superuser", "groups", "last_login"]
+        fields = ["password", "email", "first_name", "last_name", "username", "meta"]
 
 
 class LoginSerializer(serializers.Serializer):

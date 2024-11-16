@@ -7,6 +7,8 @@ from rest_framework.decorators import action
 from rest_framework import permissions
 from apps.users.serializers import UserSerializer, LoginSerializer
 
+import logging
+logger = logging.getLogger("root")
 
 class AuthViewSet(ViewSet):
     """authentication viewset"""
@@ -26,11 +28,15 @@ class AuthViewSet(ViewSet):
         user.set_password(serializer.validated_data["password"])
         user.save()
         token = UserUtils.generate_auth_token(user)
+        data = {
+            "user_info": serializer.data,
+            "token": token
+        }
         serializer.data["token"] = token
         return ResponseManager.handle_success_response(
             message="user successfully created!",
             status_code=201,
-            data=serializer.data
+            data=data
         )
 
     @action(methods=["post"], detail=False, url_path="sign-in")
