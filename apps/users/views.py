@@ -3,7 +3,6 @@ from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from utils.response_utils import ResponseManager
-
 from apps.users.models import User
 from apps.users.serializers import UserSerializer
 
