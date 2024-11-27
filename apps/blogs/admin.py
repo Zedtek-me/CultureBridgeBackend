@@ -1,6 +1,5 @@
 from django.contrib import admin
-from apps.blogs.models import Blog
-from apps.users.models import User
+from apps.blogs.models import Blog, Vlog
 
 admin.site.register(Blog)
-admin.site.register(User)
+admin.site.register(Vlog)

@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.decorators import action
 from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import AllowAny
 from django.db import transaction
 from apps.blogs.seriaizers import BlogSerializer, VlogSerializer
 from apps.blogs.models import Blog, Vlog
@@ -18,8 +19,7 @@ logger.setLevel(logging.DEBUG)
 
 class BlogViewSet(ViewSet):
     """all things blog related"""
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def list(self, request):
         """lists all blogs"""
@@ -36,7 +36,7 @@ class BlogViewSet(ViewSet):
         logger.debug(f"user from request: {request.user}")
         serializer = BlogSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save(author=request.user)
+        serializer.save()
         return ResponseManager.handle_success_response(
             message="blog successfully created!",
             status_code=201,
@@ -89,7 +89,7 @@ class VlogViewSet(ViewSet):
         """uploads a video"""
         video_serializer = VlogSerializer(data=request.data, partial=True)
         video_serializer.is_valid(raise_exception=True)
-        video_serializer.save(uploaded_by=request.user)
+        video_serializer.save()
         return ResponseManager.handle_success_response(
             message="video uploaded successfully!",
             data=video_serializer.data,
