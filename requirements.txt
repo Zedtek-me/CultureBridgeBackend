@@ -8,6 +8,7 @@ graphql-core==3.2.5
 graphql-relay==3.2.0
 gunicorn==23.0.0
 packaging==24.1
+pillow==11.0.0
 promise==2.3
 psycopg2==2.9.10
 pycryptodome==3.21.0

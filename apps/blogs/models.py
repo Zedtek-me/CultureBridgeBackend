@@ -7,6 +7,7 @@ class Blog(BaseModel):
     """blog data schema"""
     title = models.CharField(max_length=255)
     content = models.TextField()
+    image = models.ImageField(help_text="blog image", upload_to="blogs", null=True, blank=True)
     author = models.ForeignKey("users.User", on_delete=models.SET_NULL, null=True)
 
     class Meta:
@@ -25,6 +26,7 @@ class Vlog(BaseModel):
     """vlog data schema"""
     title = models.CharField(max_length=255, null=True)
     url = models.URLField(null=True)
+    description = models.TextField(null=True)
     uploaded_by = models.ForeignKey(
         to="users.User", on_delete=models.SET_NULL, null=True
     )
