@@ -80,8 +80,7 @@ class BlogViewSet(ViewSet):
 
 class VlogViewSet(ViewSet):
     """all things vlog related"""
-    permission_classes = [IsAuthenticated]
-    authentication_classes = [TokenAuthentication]
+    permission_classes = [AllowAny]
 
     @transaction.atomic
     @action(methods=["post"], detail=False, url_path="upload-video")
