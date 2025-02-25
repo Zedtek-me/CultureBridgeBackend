@@ -19,7 +19,6 @@ class BaseValidator:
             personality_type (str): the personality type list
         """
         description_values = [isinstance(p_type, str) for p_type in value]
-        logger.debug(f"length of personality type: {len(value)}\n type of personality_type: {type(description_values)}")
         if not isinstance(value, list) or not all(description_values):
             raise ValidationError(
                 _("Personality type must be an array of strings")
