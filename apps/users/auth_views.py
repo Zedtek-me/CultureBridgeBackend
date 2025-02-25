@@ -32,7 +32,6 @@ class AuthViewSet(ViewSet):
                 status_code=status.HTTP_400_BAD_REQUEST
             )
         validated_data = serializer.validated_data
-        logger.debug(f"serialized_data: {validated_data}")
         user, token = UserUtils.signup_user(**validated_data)
         user_serializer = UserSerializer(user)
         return ResponseManager.handle_success_response(
