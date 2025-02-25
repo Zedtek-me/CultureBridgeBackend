@@ -21,4 +21,22 @@ class User(BaseModel, AbstractUser):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} >>> {self.username}"
-    
+
+class Profile(BaseModel):
+    """profile model"""
+    USER_TYPE_CHOICES = (
+        ("STUDENT", "STUDENT"),
+        ("INSTRUCTOR", "INSTRUCTOR")
+    )
+
+    user = models.OneToOneField(to="users.User", on_delete=models.CASCADE, null=True)
+    phone_number = models.CharField(max_length=15, blank=True)
+    address = models.CharField(max_length=255, blank=True)
+    country = models.CharField(max_length=255, blank=True)
+    state = models.CharField(max_length=255, blank=True)
+    city = models.CharField(max_length=255, blank=True)
+    user_type = models.CharField(max_length=50, choices=USER_TYPE_CHOICES, default="STUDENT")
+
+
+    def __str__(self):
+        return f"{self.user.first_name} {self.user.last_name}"

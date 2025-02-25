@@ -1,11 +1,17 @@
 from django.db.transaction import atomic, on_commit
-
-from utils.response_utils import ResponseManager
-from utils.user_utils import UserUtils
 from rest_framework.viewsets import ViewSet
 from rest_framework.decorators import action
 from rest_framework import permissions
-from apps.users.serializers import UserSerializer, LoginSerializer
+from rest_framework import status
+
+from utils.response_utils import ResponseManager
+from utils.user_utils import UserUtils
+
+from apps.users.serializers import (
+    UserSerializer, LoginSerializer,
+    CombinedAuthSerializer
+
+)
 
 import logging
 logger = logging.getLogger("root")
@@ -15,29 +21,25 @@ class AuthViewSet(ViewSet):
     permission_classes = [ permissions.AllowAny ]
 
     @atomic
-    @action(methods=["post"], detail=False, url_path="sign-up")
-    def sign_up(self, request):
-        """sign up view"""
-        serializer = UserSerializer(data=request.data)
+    @action(detail=False, methods=["post"], url_path="signup")
+    def signup(self, request):
+        """signup a user"""
+        serializer = CombinedAuthSerializer(data=request.data)
+
         if not serializer.is_valid(raise_exception=False):
             return ResponseManager.handle_error_response(
-                message=serializer.error_messages,
-                status_code=400
+                message=serializer.errors,
+                status_code=status.HTTP_400_BAD_REQUEST
             )
-        user = serializer.save()
-        user.set_password(serializer.validated_data["password"])
-        user.save()
-        token = UserUtils.generate_auth_token(user)
-        data = {
-            "user_info": serializer.data,
-            "token": token
-        }
-        serializer.data["token"] = token
+        validated_data = serializer.validated_data
+        logger.debug(f"serialized_data: {validated_data}")
+        user, token = UserUtils.signup_user(**validated_data)
+        user_serializer = UserSerializer(user)
         return ResponseManager.handle_success_response(
-            message="user successfully created!",
-            status_code=201,
-            data=data
+            message="user signed up successfully!",
+            data={"token": token, **(user_serializer.data)}
         )
+
 
     @action(methods=["post"], detail=False, url_path="sign-in")
     def sign_in(self, request):

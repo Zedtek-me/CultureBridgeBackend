@@ -3,8 +3,12 @@ from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.authentication import TokenAuthentication
 from utils.response_utils import ResponseManager
+from utils.user_utils import UserUtils
+
 from apps.users.models import User
-from apps.users.serializers import UserSerializer
+from apps.users.serializers import (
+    UserSerializer, SignupSerializer,
+)
 from apps.blogs.permissions.is_authenticated import IsAuthenticated
 
 
