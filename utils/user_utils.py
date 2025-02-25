@@ -1,3 +1,5 @@
+import logging
+
 from rest_framework.authtoken.models import Token
 from typing import Optional, Type, Union
 from django.db.transaction import atomic, on_commit
@@ -7,6 +9,7 @@ from utils.exception_utils import CustomException
 from apps.users.models import User
 from apps.core.models import TrainingForm, Training
 
+logger = logging.getLogger("root")
 class UserUtils:
     """all utils for user including authentication"""
 
@@ -47,9 +50,12 @@ class UserUtils:
         pass
 
     @classmethod
-    def _record_training_info(cls, user: User, training_info: dict, **kwargs) -> Type[TrainingForm]:
+    def _record_training_info(
+        cls, user: User, training_info: dict, **kwargs
+    ) -> Type[TrainingForm]:
         """records training info"""
         training_info = TrainingForm.objects.create(**training_info)
         training_info.user = user
         training_info.save()
+        logger.debug(f"training info: {training_info}")
         return training_info
