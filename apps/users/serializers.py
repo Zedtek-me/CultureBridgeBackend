@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from apps.users.models import User
-from apps.core.serializers import TrainingDataSerializer
+
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -25,6 +25,8 @@ class SignupSerializer(LoginSerializer):
     password = serializers.CharField(required=False, write_only=True)
 
 class CombinedAuthSerializer(serializers.Serializer):
+    from apps.core.serializers import TrainingDataSerializer
+
     signup = SignupSerializer(required=True)
     training_info = TrainingDataSerializer(required=True)
     login = LoginSerializer(required=False)

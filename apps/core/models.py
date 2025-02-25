@@ -19,52 +19,42 @@ class Training(BaseModel):
         ("IGBO", "IGBO"),
         ("ENGLISH", "ENGLISH")
     )
-    instructor = models.ForeignKey(
-        to="users.User", on_delete=models.SET_NULL, null=True,
-        related_name="instructor", related_query_name="instructor"
+    STATUSES = (
+        ("PENDING", "PENDING"),
+        ("ONGOING", "ONGOING"),
+        ("COMPLETED", "COMPLETED")
     )
-    stundent = models.ForeignKey(
-        to="users.User", on_delete=models.SET_NULL, null=True,
-        related_name="student", related_query_name="student"
+    user = models.ForeignKey(
+        to="users.User", on_delete=models.SET_NULL, null=True, blank=True,
+        help_text="user who enrolled for the training"
     )
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
+    language = models.CharField(max_length=50, choices=LANGUAGE_CHOICE, default="YORUBA")
+    instructor_id = models.CharField(max_length=255, blank=True, help_text="instructor's id")
+    status = models.CharField(max_length=50, choices=STATUSES, default="PENDING")
+    start_date = models.DateTimeField(null=True)
+    end_date = models.DateTimeField(null=True)
 
-class TrainingForm(BaseModel):
-    """
-    collects information about the training at signup
-    """
-    AGE_GROUP_CHOICES = (
-        ("CHILD (5-8)", "CHILD (5-8)"),
-        ("CHILD (9-12)", "CHILD 9-12"),
-        ("TEENAGER (13-17)", "TEENAGER (13-17)"),
-        ("ADULT (18-Above)", "ADULT (18-Above)")
-    )
-    PERSONALITY_TYPE_CHOICES = (
-        ("INTROVERT", "INTROVERT"),
-        ("EXTROVERT", "EXTROVERT"),
-        ("AMBIVERT", "AMBIVERT")
-    )
-    CONFIDENCE_LEVEL_CHOICES = (
-        ("BEGINNER", "BEGINNER"),
-        ("INTERMEDIATE", "INTERMEDIATE")
+    class Meta:
+        verbose_name = "Training"
+        verbose_name_plural = "Trainings"
+        db_table = "trainings"
+
+    def __str__(self):
+        return f"{self.language} - {self.user.first_name}"
+
+class Course(BaseModel):
+    """records all things courses"""
+    title = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
+    training = models.ForeignKey(to="Training", on_delete=models.CASCADE, null=True, blank=True)
+    sub_modules = models.ForeignKey(
+        to="self", on_delete=models.CASCADE, null=True, blank=True
     )
 
-    no_of_students = models.IntegerField(null=True)
-    including_me = models.BooleanField(null=True, default=False)
-    user = models.ForeignKey(to="users.User", on_delete=models.CASCADE, null=True, blank=True)
-    age_group = models.CharField(max_length=50, choices=AGE_GROUP_CHOICES, default="ADULT (18-Above)", blank=True)
-    reason = models.CharField(max_length=255, blank=True, help_text="why do you want to take this training")
-    personality = models.CharField(max_length=50, choices=PERSONALITY_TYPE_CHOICES, default="INTROVERT", blank=True)
-    self_description = models.JSONField(
-        null=True, blank=True, default=list, help_text="Three words that best describe you",
-        validators=[BaseValidator.validate_self_description]
-    )
-    confidence_level = models.CharField(
-        max_length=255, blank=True,
-        choices=CONFIDENCE_LEVEL_CHOICES,
-        default="BEGINNER"
-    )
-    training = models.ForeignKey(
-        to="Training", on_delete=models.CASCADE, null=True, blank=True
-    )
+    class Meta:
+        verbose_name = "Course"
+        verbose_name_plural = "Courses"
+        db_table = "courses"
+
+    def __str__(self):
+        return f"{self.title} - {self.training.language}"
