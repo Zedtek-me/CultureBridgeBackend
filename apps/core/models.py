@@ -46,9 +46,11 @@ class Course(BaseModel):
     """records all things courses"""
     title = models.CharField(max_length=255, blank=True)
     description = models.TextField(blank=True)
-    training = models.ForeignKey(to="Training", on_delete=models.CASCADE, null=True, blank=True)
     sub_modules = models.ForeignKey(
         to="self", on_delete=models.CASCADE, null=True, blank=True
+    )
+    language_category = models.CharField(
+        max_length=255, blank=True, choices=Training.LANGUAGE_CHOICE
     )
 
     class Meta:
@@ -58,3 +60,26 @@ class Course(BaseModel):
 
     def __str__(self):
         return f"{self.title} - {self.training.language}"
+
+class TrainingCourse(BaseModel):
+    """
+    Pivot table for training and course
+    """
+    training = models.ForeignKey(to="Training", on_delete=models.CASCADE, null=True, blank=True)
+    course = models.ForeignKey(to="Course", on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(
+        to="users.User", on_delete=models.CASCADE, null=True, blank=True,
+        help_text="""
+        who's taking the course.
+        (The person who enrolled might not be the one taking the course)
+        """
+    )
+    current_instructor_id = models.CharField(
+        max_length=255, blank=True, help_text="instructor's id"
+    )
+
+
+    class Meta:
+        verbose_name = "Training Course"
+        verbose_name_plural = "Training Courses"
+        db_table = "training_courses"

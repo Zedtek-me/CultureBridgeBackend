@@ -32,8 +32,8 @@ class UserUtils:
         """signs up a user"""
         signup_info = kwargs.pop("signup", {})
         training_info = kwargs.get("training_info", {})
-        if (User.objects.filter(email=signup_info.get("email")).exists() or
-                User.objects.filter(username=signup_info.get("username")).exists()):
+        if (User.objects.filter(email__iexact=signup_info.get("email")).exists() or
+                User.objects.filter(username__iexact=signup_info.get("username")).exists()):
             raise CustomException("User with email or username already exists")
         user = User.objects.create_user(**signup_info)
         user.set_password(signup_info.get("password"))
