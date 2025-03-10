@@ -28,7 +28,12 @@ class Profile(BaseModel):
         ("STUDENT", "STUDENT"),
         ("INSTRUCTOR", "INSTRUCTOR")
     )
-
+    LANGUAGE_CHOICE = (
+        ("YORUBA", "YORUBA"),
+        ("HAUSA", "HAUSA"),
+        ("IGBO", "IGBO"),
+        ("ENGLISH", "ENGLISH")
+    )
     user = models.OneToOneField(to="users.User", on_delete=models.CASCADE, null=True)
     phone_number = models.CharField(max_length=15, blank=True)
     address = models.CharField(max_length=255, blank=True)
@@ -36,6 +41,7 @@ class Profile(BaseModel):
     state = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=255, blank=True)
     user_type = models.CharField(max_length=50, choices=USER_TYPE_CHOICES, default="STUDENT")
+    language_taught = models.CharField(choices=LANGUAGE_CHOICE, blank=True)
 
 
     def __str__(self):

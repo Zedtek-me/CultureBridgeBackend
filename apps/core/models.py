@@ -59,7 +59,7 @@ class Course(BaseModel):
         db_table = "courses"
 
     def __str__(self):
-        return f"{self.title} - {self.training.language}"
+        return f"{self.title} - {self.language_category}"
 
 class TrainingCourse(BaseModel):
     """
@@ -77,7 +77,6 @@ class TrainingCourse(BaseModel):
     current_instructor_id = models.CharField(
         max_length=255, blank=True, help_text="instructor's id"
     )
-
 
     class Meta:
         verbose_name = "Training Course"

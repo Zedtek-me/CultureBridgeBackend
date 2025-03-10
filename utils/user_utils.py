@@ -5,8 +5,9 @@ from typing import Optional, Type, Union
 from django.db.transaction import atomic, on_commit
 
 from utils.exception_utils import CustomException
+from utils.core_utils import TrainingUtil
 
-from apps.users.models import User
+from apps.users.models import User, Profile
 from apps.core.models import Training
 
 logger = logging.getLogger("root")
@@ -54,13 +55,22 @@ class UserUtils:
         cls, user: User, training_info: dict, **kwargs
     ) -> Type[Training]:
         """records training info"""
-        training = Training(
-            user=user,
-            language=training_info.pop("language", "YORUBA"),
-            start_date=training_info.pop("start_date", None),
-        )
-        training.meta = training_info
+        language = training_info.pop("language", "YORUBA")
+        start_date = training_info.pop("start_date", None)
+        meta = training_info
+        training_data = {
+            "language": language,
+            "start_date": start_date,
+            "user": user,
+            "meta": meta
+        }
+        training = TrainingUtil.create_training(**training_data)
+        instructor_profile = Profile.objects.filter(
+            user_type="INSTRUCTOR", language_taught__iexact=language.upper()
+        ).first()
+        instructor = instructor_profile.user
+        training.instructor_id = instructor.id
         training.save()
         logger.debug(f"training info: {training}")
-        # TODO: automatically match user with instructor
+        # TODO: automatically match user with instructor the right instructor based on other criteria later
         return training
