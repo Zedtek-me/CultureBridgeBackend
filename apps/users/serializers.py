@@ -20,13 +20,18 @@ class SignupSerializer(LoginSerializer):
     first_name = serializers.CharField(required=True, write_only=True)
     last_name = serializers.CharField(required=True, write_only=True)
     username = serializers.CharField(required=False, write_only=True)
-    referral_code = serializers.CharField(required=False, write_only=True)
     phone_number = serializers.CharField(required=False, write_only=True)
     password = serializers.CharField(required=False, write_only=True)
 
 class CombinedAuthSerializer(serializers.Serializer):
     from apps.core.serializers import TrainingDataSerializer
 
-    signup = SignupSerializer(required=True)
-    training_info = TrainingDataSerializer(required=True)
+    USER_TYPE_CHOICES = (
+        ("STUDENT", "STUDENT"),
+        ("INSTRUCTOR", "INSTRUCTOR")
+    )
+    signup = SignupSerializer(required=False)
     login = LoginSerializer(required=False)
+    training_info = TrainingDataSerializer(required=False)
+    referral_code = serializers.CharField(required=False, write_only=True)
+    user_type = serializers.ChoiceField(choices=USER_TYPE_CHOICES, required=False, write_only=True)

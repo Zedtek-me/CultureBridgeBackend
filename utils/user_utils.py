@@ -33,21 +33,25 @@ class UserUtils:
         """signs up a user"""
         signup_info = kwargs.pop("signup", {})
         training_info = kwargs.get("training_info", {})
+        phone_number = signup_info.pop("phone_number")
         if (User.objects.filter(email__iexact=signup_info.get("email")).exists() or
                 User.objects.filter(username__iexact=signup_info.get("username")).exists()):
             raise CustomException("User with email or username already exists")
         user = User.objects.create_user(**signup_info)
         user.set_password(signup_info.get("password"))
         user.save()
+        cls.update_user_profile(user, phone_number=phone_number, **kwargs)
         token = cls.generate_auth_token(user)
         if signup_info.get("referral_code"):
             cls._process_referral_code(user, kwargs.get("referral_code"))
-        cls._record_training_info(user, training_info)
+        if training_info:
+            cls._record_training_info(user, training_info)
         return user, token
 
     @classmethod
     def _process_referral_code(cls, user: User, referral_code: str):
         """processes referral code"""
+        logger.debug("got into the process referral code block!!!!")
         pass
 
     @classmethod
@@ -68,9 +72,20 @@ class UserUtils:
         instructor_profile = Profile.objects.filter(
             user_type="INSTRUCTOR", language_taught__iexact=language.upper()
         ).first()
-        instructor = instructor_profile.user
-        training.instructor_id = instructor.id
+        instructor = (instructor_profile and instructor_profile.user)
+        training.instructor_id = (instructor and instructor.id) or ""
         training.save()
         logger.debug(f"training info: {training}")
         # TODO: automatically match user with instructor the right instructor based on other criteria later
         return training
+
+    @classmethod
+    def update_user_profile(
+        cls, user: Type[User], **kwargs
+    ) -> Type[Profile]:
+        user_type = kwargs.get("user_type")
+        profile: Profile = user.profile
+        profile.user_type = user_type
+        profile.phone_number = kwargs.get("phone_number")
+        profile.save()
+        return profile
