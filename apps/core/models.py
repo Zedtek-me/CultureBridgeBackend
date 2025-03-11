@@ -24,6 +24,10 @@ class Training(BaseModel):
         ("ONGOING", "ONGOING"),
         ("COMPLETED", "COMPLETED")
     )
+    PAYMENT_STATUSES = TRAINING_CHOICE + (
+        ("PARTIALLY_PAID", "PARTIALLY_PAID"),
+        ("UNPAID", "UNPAID")
+    )
     user = models.ForeignKey(
         to="users.User", on_delete=models.SET_NULL, null=True, blank=True,
         help_text="user who enrolled for the training"
@@ -31,6 +35,7 @@ class Training(BaseModel):
     language = models.CharField(max_length=50, choices=LANGUAGE_CHOICE, default="YORUBA")
     instructor_id = models.CharField(max_length=255, blank=True, help_text="instructor's id")
     status = models.CharField(max_length=50, choices=STATUSES, default="PENDING")
+    payment_status = models.CharField(max_length=255, choices=PAYMENT_STATUSES, default="UNPAID", blank=True)
     start_date = models.DateTimeField(null=True)
     end_date = models.DateTimeField(null=True)
 
@@ -82,3 +87,28 @@ class TrainingCourse(BaseModel):
         verbose_name = "Training Course"
         verbose_name_plural = "Training Courses"
         db_table = "training_courses"
+
+
+class PaymentTransaction(BaseModel):
+    STATUSES = (
+        ("PENDING", "PENDING"),
+        ("FAILED", "FAILED"),
+        ("SUCCESSFUL", "SUCCESSFUL")
+    )
+    CURRENCY_CHOICES = (
+        ("NGN", "NGN"),
+        ("USD", "USD")
+    )
+    training = models.ForeignKey(
+        to="Training", on_delete=models.SET_NULL, null=True, blank=True
+    )
+    status = models.CharField(max_length=255, choices=STATUSES, blank=True, default="PENDING")
+    amount = models.FloatField(null=True)
+    currency = models.CharField(max_length=255, choices=CURRENCY_CHOICES, default="USD", blank=True)
+    description = models.TextField(blank=True)
+    user_id = models.CharField(max_length=255, blank=True)
+
+    class Meta:
+        verbose_name = "Payment Transaction"
+        verbose_name_plural = "Payment Transactions"
+        db_table = "payment_transaction"

@@ -6,9 +6,9 @@ from apps.core.models import (
 
 
 class TrainingAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "language", "status", "start_date", "end_date")
+    list_display = ("id", "user", "language", "status", "payment_status", "start_date", "end_date")
     list_filter = (
-        "status", "language", "user", "start_date", "end_date"
+        "status", "language", "user", "payment_status", "start_date", "end_date"
     )
 
 class CourseAdmin(admin.ModelAdmin):

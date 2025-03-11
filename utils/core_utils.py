@@ -9,3 +9,8 @@ class TrainingUtil:
     def create_training(cls, **kwargs) -> Type[Training]:
         training = Training.objects.create(**kwargs)
         return training
+
+    @classmethod
+    def list_trainings(self, user, filter_params):
+        """
+        """
