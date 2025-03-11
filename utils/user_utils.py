@@ -42,7 +42,7 @@ class UserUtils:
         user.save()
         cls.update_user_profile(user, phone_number=phone_number, **kwargs)
         token = cls.generate_auth_token(user)
-        if signup_info.get("referral_code"):
+        if kwargs.get("referral_code"):
             cls._process_referral_code(user, kwargs.get("referral_code"))
         if training_info:
             cls._record_training_info(user, training_info)
