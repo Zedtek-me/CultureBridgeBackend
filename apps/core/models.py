@@ -107,6 +107,7 @@ class PaymentTransaction(BaseModel):
     currency = models.CharField(max_length=255, choices=CURRENCY_CHOICES, default="USD", blank=True)
     description = models.TextField(blank=True)
     user_id = models.CharField(max_length=255, blank=True)
+    txn_reference = models.CharField(max_length=255, blank=True, unique=True)
 
     class Meta:
         verbose_name = "Payment Transaction"

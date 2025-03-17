@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.core.models import Training
+from apps.core.models import Training, PaymentTransaction
 
 from utils.validators import BaseValidator
 
@@ -42,3 +42,11 @@ class TrainingDataSerializer(serializers.Serializer):
     confidence_level = serializers.ChoiceField(choices=CONFIDENCE_LEVEL_CHOICES, required=True)
     start_date = serializers.DateTimeField(required=False)
     end_date = serializers.DateTimeField(required=False)
+
+
+class AcceptPaymentSerializer(serializers.Serializer):
+    amount = serializers.FloatField()
+    email = serializers.EmailField(required=False)
+    currency = serializers.ChoiceField(choices=PaymentTransaction.CURRENCY_CHOICES, default="NGN")
+    user_id = serializers.CharField(required=False)
+    training_id = serializers.CharField()

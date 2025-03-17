@@ -23,7 +23,9 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("blogs/", include("apps.blogs.urls")),
-    path("users/", include("apps.users.urls"))
+    path("users/", include("apps.users.urls")),
+    path("core/", include("core.urls")),
+    path("hooks/", include("webhooks.urls"))
 ]
 
 urlpatterns = [
