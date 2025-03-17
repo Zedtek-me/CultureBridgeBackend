@@ -131,7 +131,6 @@ class PaymentService:
             raise CustomException(
                 message="unable to process payment at the moment!"
             )
-        # TODO: remember to update payment_txn status to "PAID" in the webhook that listens for payment event
         return response
 
     @staticmethod
