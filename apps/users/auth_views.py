@@ -40,7 +40,7 @@ class AuthViewSet(ViewSet):
         )
 
 
-    @action(methods=["post"], detail=False, url_path="sign-in")
+    @action(methods=["post"], detail=False, url_path="login")
     def sign_in(self, request):
         """sign in view"""
         serializers = LoginSerializer(data=request.data)
@@ -60,9 +60,8 @@ class AuthViewSet(ViewSet):
             )
         token = UserUtils.generate_auth_token(user)
         serialized_data = UserSerializer(user)
-        serialized_data.data["token"] = token
         return ResponseManager.handle_success_response(
             message="user successfully logged in!",
             status_code=200,
-            data=serialized_data.data
+            data={"token": token, **serialized_data.data}
         )
