@@ -4,8 +4,6 @@ import string
 
 from apps.core.models import Training, PaymentTransaction
 
-from services.payment import PaymentService
-
 from utils.exception_utils import CustomException
 
 class TrainingUtil:
@@ -34,6 +32,8 @@ class TrainingUtil:
         cls, **kwargs
     ):
         """connects to the payment platform for payment processing"""
+        from services.payment import PaymentService
+
         response = PaymentService("paystack").handle_payment(**kwargs)
         return response
 
