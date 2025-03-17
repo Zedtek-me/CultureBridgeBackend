@@ -105,7 +105,7 @@ class PaymentService:
             case _:
                 base_url += "/transaction/initialize"
                 payload = {
-                    "email": kwargs.get("email"),
+                    "email": kwargs.get("email") or (kwargs.get("user") and kwargs.get("user").email),
                     "amount": kwargs.get("amount"),
                     "callback_url": f"{settings.PAYSTACK_CALLBACK_URL}/paystack-events",
                     "reference": txn_data["txn_reference"],

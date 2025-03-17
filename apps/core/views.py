@@ -33,7 +33,7 @@ class TrainingViewSet(ViewSet):
                 message=serializer.error_messages,
                 status_code=400
             )
-        response = TrainingUtil.process_training_payment(**serializer.validated_data)
+        response = TrainingUtil.process_training_payment(**serializer.validated_data, user=request.user)
         if isinstance(response, tuple):
             access_code, _ = response
             return ResponseManager.handle_success_response(
