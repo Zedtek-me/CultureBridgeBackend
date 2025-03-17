@@ -5,6 +5,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
 
 from django.db.models import Q
+from django.db import transaction
 
 from apps.blogs.permissions.is_authenticated import IsAuthenticated
 from apps.core.serializers import (
@@ -88,10 +89,11 @@ class TrainingViewSet(ViewSet):
             message="training successfully retrieved!", data=serializer.data
         )
 
+    @transaction.atomic
     @action(detail=False, methods=["post"], url_path="process-payment")
     def process_training_payment(self, request):
         """processes training payment for user signing up"""
-        serializer = AcceptPaymentSerializer(request.data)
+        serializer = AcceptPaymentSerializer(data=request.data)
         if not serializer.is_valid(raise_exception=False):
             return ResponseManager.handle_error_response(
                 message=serializer.error_messages,

@@ -79,9 +79,9 @@ class PaymentService:
         """paystack"""
         paystack_option = kwargs.get("option")
         training_to_pay_for = TrainingUtil.get_training(
-            {
+            filter_params={
                 "status": "PENDING", "payment_status": "UNPAID",
-                "training__id": kwargs.get("training_id"),
+                "id": kwargs.get("training_id"),
                 "user__id": kwargs.get("user_id")
             }
         )
