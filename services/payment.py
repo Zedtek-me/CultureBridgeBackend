@@ -107,7 +107,7 @@ class PaymentService:
                 payload = {
                     "email": kwargs.get("email"),
                     "amount": kwargs.get("amount"),
-                    "callback_url": f"{settings.PAYSTACK_CALLBACK_URL}/pastack-events",
+                    "callback_url": f"{settings.PAYSTACK_CALLBACK_URL}/paystack-events",
                     "reference": txn_data["txn_reference"],
                     "channels": ["card", "bank", "apple_pay", "ussd", "qr", "mobile_money", "bank_transfer", "eft"]
                 }
