@@ -21,7 +21,7 @@ class PaymentService:
     PLATFORMS = {
         "paystack": f"{settings.PAYSTACK_BASE_URL}/",
         "paypal": f"{settings.PAYPAL_BASE_URL}",
-        "stripe": f"{settings.STRIPE_URL}/"
+        "stripe": f"{settings.STRIPE_BASE_URL}/"
     }
 
     def __init__(self, platform: str, *args, **kwargs) -> Union[CustomException, None]:
