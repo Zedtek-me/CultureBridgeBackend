@@ -89,7 +89,8 @@ class PaymentService:
             "amount": kwargs.get("amount"),
             "currency": kwargs.get("currency"),
             "user_id": kwargs.get("user_id"),
-            "txn_reference": self.generate_txn_reference(txn_type="training_payment")
+            "txn_reference": self.generate_txn_reference(txn_type="training_payment"),
+            "description": f"Training ({training_to_pay_for.language}): CultureBridge-Payment"
         }
         charge_type = "general"
         match paystack_option:
