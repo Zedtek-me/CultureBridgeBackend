@@ -1,3 +1,7 @@
+from typing import (
+    Optional, Union, Any
+)
+
 from rest_framework import serializers
 from apps.users.models import User
 
@@ -35,3 +39,7 @@ class CombinedAuthSerializer(serializers.Serializer):
     training_info = TrainingDataSerializer(required=False)
     referral_code = serializers.CharField(required=False, write_only=True)
     user_type = serializers.ChoiceField(choices=USER_TYPE_CHOICES, required=False, write_only=True)
+
+    def validate_referral_code(self, value: Optional[str]) -> Optional[str]:
+        """validates entire signup objects"""
+        return value
