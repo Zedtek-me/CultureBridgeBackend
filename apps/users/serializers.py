@@ -1,6 +1,7 @@
 from typing import (
     Optional, Union, Any
 )
+from django.core.exceptions import ValidationError
 
 from rest_framework import serializers
 from apps.users.models import User
@@ -40,6 +41,12 @@ class CombinedAuthSerializer(serializers.Serializer):
     referral_code = serializers.CharField(required=False, write_only=True)
     user_type = serializers.ChoiceField(choices=USER_TYPE_CHOICES, required=False, write_only=True)
 
-    def validate_referral_code(self, value: Optional[str]) -> Optional[str]:
+    def validate(self, data: dict) -> dict:
         """validates entire signup objects"""
-        return value
+        try:
+            referral_code = data.get("referral_code")
+            if not referral_code:
+                data.pop("referral_code", None)
+            return data
+        except Exception as e:
+            raise ValidationError(e)
