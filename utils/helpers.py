@@ -29,9 +29,9 @@ def format_date_time(
     if not date_str:
         return
     try:
+        tz = timezone.get_current_timezone()
         if date_str and time_str:
             datetime_str = f"{date_str} {time_str}"
-            tz = timezone.get_current_timezone()
             return datetime.strptime(datetime_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=tz)
         return datetime.strptime(date_str, "%Y:%m:%d").replace(tzinfo=tz)
     except (Exception, ValueError) as e:
