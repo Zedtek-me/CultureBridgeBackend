@@ -18,7 +18,7 @@ class TrainingDataSerializer(serializers.Serializer):
         ("CHILD (5-8)", "CHILD (5-8)"),
         ("CHILD (9-12)", "CHILD 9-12"),
         ("TEENAGER (13-17)", "TEENAGER (13-17)"),
-        ("ADULT (18-Above)", "ADULT (18-Above)")
+        ("ADULT (18-ABOVE)", "ADULT (18-ABOVE)")
     )
 
     PERSONALITY_TYPE_CHOICES = (
@@ -40,8 +40,9 @@ class TrainingDataSerializer(serializers.Serializer):
     reason = serializers.CharField(required=True)
     personality = serializers.ChoiceField(choices=PERSONALITY_TYPE_CHOICES, required=True)
     confidence_level = serializers.ChoiceField(choices=CONFIDENCE_LEVEL_CHOICES, required=True)
-    start_date = serializers.DateTimeField(required=False)
-    end_date = serializers.DateTimeField(required=False)
+    start_date = serializers.DateField(required=False)
+    start_time = serializers.CharField(required=False, write_only=True)
+    end_date = serializers.TimeField(required=False)
 
 
 class AcceptPaymentSerializer(serializers.Serializer):

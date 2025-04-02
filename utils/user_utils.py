@@ -6,6 +6,7 @@ from django.db.transaction import atomic, on_commit
 
 from utils.exception_utils import CustomException
 from utils.core_utils import TrainingUtil
+from utils.helpers import format_date_time
 
 from apps.users.models import User, Profile
 from apps.core.models import Training
@@ -61,10 +62,12 @@ class UserUtils:
         """records training info"""
         language = training_info.pop("language", "YORUBA")
         start_date = training_info.pop("start_date", None)
+        start_time = training_info.pop("start_time")
+        start_datetime = format_date_time(start_date, start_time)
         meta = training_info
         training_data = {
             "language": language,
-            "start_date": start_date,
+            "start_date": start_datetime,
             "user": user,
             "meta": meta
         }
