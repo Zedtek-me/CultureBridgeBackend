@@ -40,13 +40,3 @@ class CombinedAuthSerializer(serializers.Serializer):
     training_info = TrainingDataSerializer(required=False)
     referral_code = serializers.CharField(required=False, write_only=True)
     user_type = serializers.ChoiceField(choices=USER_TYPE_CHOICES, required=False, write_only=True)
-
-    def validate(self, data: dict) -> dict:
-        """validates entire signup objects"""
-        try:
-            referral_code = data.get("referral_code")
-            if not referral_code:
-                data.pop("referral_code", None)
-            return data
-        except Exception as e:
-            raise ValidationError(e)
