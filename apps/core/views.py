@@ -117,4 +117,5 @@ class Dashboard(ViewSet):
 
     @action(methods=["get"], detail=False, url_path="dashboard")
     def get_dashboard_data(self, request):
+        """gets the dashboard data based on the user profile type"""
         pass
