@@ -32,7 +32,7 @@ def format_date_time(
         tz = timezone.get_current_timezone()
         if date_str and time_str:
             datetime_str = f"{date_str} {time_str}"
-            return datetime.strptime(datetime_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=tz)
+            return datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=tz)
         return datetime.strptime(date_str, "%Y:%m:%d").replace(tzinfo=tz)
     except (Exception, ValueError) as e:
         logger.exception(f"error occured when formatting date string: {e}")

@@ -92,3 +92,8 @@ class UserUtils:
         profile.phone_number = kwargs.get("phone_number")
         profile.save()
         return profile
+
+    @classmethod
+    def get_user_type(cls, user: User) -> Optional[str]:
+        """retrieves user"""
+        return user.profile.user_type

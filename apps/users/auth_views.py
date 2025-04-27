@@ -43,25 +43,32 @@ class AuthViewSet(ViewSet):
     @action(methods=["post"], detail=False, url_path="login")
     def sign_in(self, request):
         """sign in view"""
-        serializers = LoginSerializer(data=request.data)
-        if not serializers.is_valid(raise_exception=False):
-            return ResponseManager.handle_error_response(
-                message=serializers.error_messages,
-                status_code=400
+        try:
+            serializers = LoginSerializer(data=request.data)
+            if not serializers.is_valid(raise_exception=False):
+                return ResponseManager.handle_error_response(
+                    message=serializers.error_messages,
+                    status_code=400
+                )
+            user = UserUtils.authenticate(
+                email=serializers.validated_data.get("email"),
+                password=serializers.validated_data.get("password")
             )
-        user = UserUtils.authenticate(
-            email=serializers.validated_data.get("email"),
-            password=serializers.validated_data.get("password")
-        )
-        if not user:
+            if not user:
+                return ResponseManager.handle_error_response(
+                    message="email or password is incorrect!",
+                    status_code=400
+                )
+            token = UserUtils.generate_auth_token(user)
+            serialized_data = UserSerializer(user)
             return ResponseManager.handle_success_response(
-                message="email or password is incorrect!",
-                status_code=400
+                message="user successfully logged in!",
+                status_code=200,
+                data={"token": token, **serialized_data.data}
             )
-        token = UserUtils.generate_auth_token(user)
-        serialized_data = UserSerializer(user)
-        return ResponseManager.handle_success_response(
-            message="user successfully logged in!",
-            status_code=200,
-            data={"token": token, **serialized_data.data}
-        )
+        except Exception as e:
+            logger.exception(f"exception occured during logging in: {e}")
+            return ResponseManager.handle_error_response(
+                message="Error occured during sign in. Try again later or contact admin!",
+                status_code=500
+            )

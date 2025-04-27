@@ -1,16 +1,37 @@
 from rest_framework import serializers
-from apps.core.models import Training, PaymentTransaction
+from apps.core.models import (
+    Training, PaymentTransaction,
+    Course, TrainingCourse
+)
 
 from utils.validators import BaseValidator
+from utils.core_utils import TrainingUtil
+from utils.user_utils import UserUtils
 
+
+class CourseSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Course
+        fields = "__all__"
 
 class TrainingSerializer(serializers.ModelSerializer):
     from apps.users.serializers import UserSerializer
 
     user = UserSerializer()
+    courses = serializers.SerializerMethodField()
+
     class Meta:
         model = Training
-        fields = "__all__"
+        exclude = ["_choice", "_type"]
+
+    def get_courses(self, obj):
+        """returns the courses that have been assigned to this training"""
+        course_ids = TrainingCourse.objects.filter(training__id=obj.id).\
+            values_list("course__id", flat=True)
+        return CourseSerializer(
+            Course.objects.filter(id__in=course_ids), many=True
+        ).data
 
 class TrainingDataSerializer(serializers.Serializer):
 
@@ -51,3 +72,26 @@ class AcceptPaymentSerializer(serializers.Serializer):
     currency = serializers.ChoiceField(choices=PaymentTransaction.CURRENCY_CHOICES, default="NGN")
     user_id = serializers.CharField(required=False)
     training_id = serializers.CharField()
+
+class TrainingMetrics(serializers.Serializer):
+    total_trainings = serializers.IntegerField()
+    completed_trainings = serializers.IntegerField()
+    in_progress_trainings = serializers.IntegerField()
+    pending_trainings = serializers.IntegerField()
+    free_trainings = serializers.IntegerField()
+    paid_trainings = serializers.IntegerField()
+    total_students = serializers.SerializerMethodField()
+
+    def get_total_students(self, obj: Training) -> int:
+        """gets the total no of students taken, in case the current user is an instructor"""
+        user = self.context.get("user")
+        if UserUtils.get_user_type(user) == "INSTRUCTOR":
+            return TrainingUtil.get_total_instructor_students(
+                instructor_id=user.id
+            )
+        return 0
+
+
+class AssignCourseSerializer(serializers.Serializer):
+    training_id = serializers.IntegerField()
+    course_ids = serializers.ListField(child=serializers.IntegerField())

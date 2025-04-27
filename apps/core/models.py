@@ -38,6 +38,8 @@ class Training(BaseModel):
     payment_status = models.CharField(max_length=255, choices=PAYMENT_STATUSES, default="UNPAID", blank=True)
     start_date = models.DateTimeField(null=True)
     end_date = models.DateTimeField(null=True)
+    _choice = models.CharField(max_length=255, choices=TRAINING_CHOICE, default="PAID")
+    _type = models.CharField(max_length=255, choices=TRAINING_TYPE, default="ONLINE")
 
     class Meta:
         verbose_name = "Training"
@@ -46,6 +48,25 @@ class Training(BaseModel):
 
     def __str__(self):
         return f"{self.language} - {self.user.first_name}"
+
+    @property
+    def choice(self):
+        return self._choice
+
+    @property
+    def type(self):
+        return self._type
+
+    @choice.setter
+    def update_choice(self, val: str):
+        self._choice = val
+        self.save()
+
+    @type.setter
+    def update_type(self, val):
+        self._type = val
+        self.save()
+
 
 class Course(BaseModel):
     """records all things courses"""

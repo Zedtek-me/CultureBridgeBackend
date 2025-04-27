@@ -6,16 +6,20 @@ from django.core.exceptions import ValidationError
 from rest_framework import serializers
 from apps.users.models import User
 
+from utils.user_utils import UserUtils
 
 
 class UserSerializer(serializers.ModelSerializer):
 
     password = serializers.CharField(write_only=True)
+    user_type = serializers.SerializerMethodField()
 
     class Meta:
         model = User
-        fields = ["password", "email", "first_name", "last_name", "username", "meta"]
+        fields = ["password", "email", "first_name", "last_name", "username", "meta", "user_type"]
 
+    def get_user_type(self, obj):
+        return UserUtils.get_user_type(obj)
 
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField(required=True, write_only=True)

@@ -10,11 +10,16 @@ from django.db import transaction
 from apps.blogs.permissions.is_authenticated import IsAuthenticated
 from apps.core.serializers import (
     TrainingSerializer,
-    AcceptPaymentSerializer
+    AcceptPaymentSerializer,
+    TrainingMetrics, CourseSerializer,
+    AssignCourseSerializer
 )
+
+from apps.core.models  import TrainingCourse
 
 from utils.core_utils import TrainingUtil
 from utils.response_utils import ResponseManager
+from utils.user_utils import UserUtils
 from utils.validators import format_date
 from utils.helpers import paginate_data
 
@@ -113,9 +118,65 @@ class TrainingViewSet(ViewSet):
         )
 
 
-class Dashboard(ViewSet):
+class DashboardViewSet(ViewSet):
 
-    @action(methods=["get"], detail=False, url_path="dashboard")
-    def get_dashboard_data(self, request):
-        """gets the dashboard data based on the user profile type"""
-        pass
+    authentication_classes = [ TokenAuthentication ]
+    permission_classes = [ IsAuthenticated ]
+
+    @action(detail=False, methods=["get"], url_path="training-data")
+    def get_training_info(self, request):
+        """dashboard training info"""
+        user = request.user
+        user_type = UserUtils.get_user_type(user)
+        logger.debug(f"user type here!!!!!: {user_type}")
+        filter_params = {"user__id": user.id}
+        if user_type == "INSTRUCTOR":
+            filter_params.pop("user__id")
+            filter_params.update({"instructor_id": user.id})
+            trainings = TrainingUtil.list_trainings(
+                filter_params=filter_params, paginate=False
+            )
+        else:
+            trainings = TrainingUtil.list_trainings(
+                filter_params=filter_params, paginate=False
+            )
+        metrics = TrainingUtil.get_training_metrics(trainings)
+        metric_serializer = TrainingMetrics(metrics, context={"user": user})
+        return ResponseManager.handle_success_response(
+            message="training metrics successfully retrieved!",
+            data=metric_serializer.data
+        )
+
+    @action(methods=["get"], detail=False, url_path="courses")
+    def get_courses(self, request):
+        """gets the courses in the system"""
+        user = request.user
+        courses = TrainingUtil.get_total_courses(filter_params={}, paginate=False)
+        if request.query_params.get("training_id"):
+            courses = courses.filter(training__id=request.query_params.get("training_id"))
+        if request.query_params.get("current_user_courses"):
+            course_ids = TrainingCourse.objects.filter(
+                Q(user_id=user.id) | Q(training__user__id=user.id)
+            ).values_list("course__id", flat=True)
+            courses = courses.filter(id__in=course_ids)
+        serializer = CourseSerializer(courses, many=True)
+        return ResponseManager.handle_success_response(
+            message="courses successfully retrieved!",
+            data=serializer.data
+        )
+
+    @action(detail=False, methods=["post"], url_path="assign-courses")
+    def assign_course_to_training(self, request):
+        """assigns courses to the give training"""
+        user = request.user
+        serializer = AssignCourseSerializer(data=request.data)
+        if not serializer.is_valid(raise_exception=False):
+            return ResponseManager.handle_error_response(
+                message=serializer.error_message
+            )
+        TrainingUtil.assign_training_courses(user, serializer.validated_data)
+        return ResponseManager.handle_success_response(
+            message="courses successfully added to training!",
+            data={},
+            status_code=201
+        )
