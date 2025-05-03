@@ -195,7 +195,6 @@ class DashboardViewSet(ViewSet):
             return ResponseManager.handle_error_response(
                 message=serializer.error_message
             )
-        logger.debug(f"data sent for assignment creation: {serializer.validated_data}")
         user = request.user
         assignment = DashboardUtil.create_user_assignment(
             user=user, data=serializer.validated_data
