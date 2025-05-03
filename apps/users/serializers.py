@@ -1,13 +1,17 @@
+import logging
+
 from typing import (
     Optional, Union, Any
 )
 from django.core.exceptions import ValidationError
 
 from rest_framework import serializers
-from apps.users.models import User
+from apps.users.models import User, Profile
 
 from utils.user_utils import UserUtils
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -16,10 +20,14 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ["password", "email", "first_name", "last_name", "username", "meta", "user_type"]
+        fields = ["id","password", "email", "first_name", "last_name", "username", "meta", "user_type"]
 
     def get_user_type(self, obj):
-        return UserUtils.get_user_type(obj)
+        try:
+            return UserUtils.get_user_type(obj)
+        except (Profile.DoesNotExist, ValidationError, Exception) as e:
+            logging.exception("Error getting user type: %s", e)
+            return None
 
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField(required=True, write_only=True)

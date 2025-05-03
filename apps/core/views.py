@@ -3,6 +3,7 @@ import logging
 from rest_framework.viewsets import ViewSet
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
+from rest_framework.response import Response
 
 from django.db.models import Q
 from django.db import transaction
@@ -12,12 +13,14 @@ from apps.core.serializers import (
     TrainingSerializer,
     AcceptPaymentSerializer,
     TrainingMetrics, CourseSerializer,
-    AssignCourseSerializer
+    AssignCourseSerializer, AssignmentSerializer,
+    MarkAttendanceSerializer, CreateAssignmentSerializer,
+    UpdateAssignmentSerializer
 )
 
 from apps.core.models  import TrainingCourse
 
-from utils.core_utils import TrainingUtil
+from utils.core_utils import TrainingUtil, DashboardUtil
 from utils.response_utils import ResponseManager
 from utils.user_utils import UserUtils
 from utils.validators import format_date
@@ -153,7 +156,9 @@ class DashboardViewSet(ViewSet):
         user = request.user
         courses = TrainingUtil.get_total_courses(filter_params={}, paginate=False)
         if request.query_params.get("training_id"):
-            courses = courses.filter(training__id=request.query_params.get("training_id"))
+            courses = TrainingUtil.get_training_courses(
+                request.query_params.get("training_id")
+            )
         if request.query_params.get("current_user_courses"):
             course_ids = TrainingCourse.objects.filter(
                 Q(user_id=user.id) | Q(training__user__id=user.id)
@@ -179,4 +184,87 @@ class DashboardViewSet(ViewSet):
             message="courses successfully added to training!",
             data={},
             status_code=201
+        )
+
+    @transaction.atomic
+    @action(detail=False, methods=["post"], url_path="create-assignment")
+    def create_assignment(self, request):
+        """creates an assignment for the given training"""
+        serializer = CreateAssignmentSerializer(data=request.data, partial=True)
+        if not serializer.is_valid(raise_exception=False):
+            return ResponseManager.handle_error_response(
+                message=serializer.error_message
+            )
+        logger.debug(f"data sent for assignment creation: {serializer.validated_data}")
+        user = request.user
+        assignment = DashboardUtil.create_user_assignment(
+            user=user, data=serializer.validated_data
+        )
+        serializer = AssignmentSerializer(assignment)
+        return ResponseManager.handle_success_response(
+            message="assignment successfully created!",
+            data=serializer.data
+        )
+
+    @action(detail=False, methods=["post"], url_path="update-assignment")
+    def update_assignment(self, request):
+        """updates an assignment"""
+        user = request.user
+        serializer = UpdateAssignmentSerializer(data=request.data, partial=True)
+        if not serializer.is_valid(raise_exception=False):
+            return ResponseManager.handle_error_response(
+                message=serializer.error_messages
+            )
+        assignment = DashboardUtil.update_assignment(user, serializer.validated_data)
+        serializer = AssignmentSerializer(assignment)
+        return ResponseManager.handle_success_response(
+            message="assignment successfully updated!",
+            data=serializer.data
+        )
+
+    @action(detail=False, methods=["get"], url_path="assignments")
+    def get_assignments(self, request):
+        """returns all the assignments"""
+        user = request.user
+        params = request.query_params
+        assignments = DashboardUtil.list_assignments(
+            user, params, paginate=True,
+        )
+        if not isinstance(assignments, dict):
+            return ResponseManager.handle_success_response(
+                message="assignments successfully retrieved!",
+                data=AssignmentSerializer(assignments, many=True).data
+            )
+        return Response(data={
+            "message": "assignments successfully retrieved!",
+            **assignments
+        }, status=200)
+
+    @action(detail=False, methods=["post"], url_path="mark-attendance")
+    def mark_attendance(self, request):
+        """allows student to mark his attendance of a training"""
+        user = request.user
+        serializer = MarkAttendanceSerializer(data=request.data)
+        if not serializer.is_valid(raise_exception=False):
+            return ResponseManager.handle_error_response(
+                message=serializer.error_message
+            )
+        training = DashboardUtil.mark_attendance(
+            user, serializer.validated_data
+        )
+        training_serializer = TrainingSerializer(training)
+        return ResponseManager.handle_success_response(
+            message="attendance successfully marked!",
+            data=training_serializer.data
+        )
+
+    @action(detail=False, methods=["get"], url_path="attendance-report")
+    def get_attendance_report(self, request):
+        """returns information related to the attendance of a training  and/or its courses"""
+        user = request.user
+        params = request.query_params
+        data = DashboardUtil.get_attendance_report(user, params)
+        return ResponseManager.handle_success_response(
+            message="attendance report successfully retrieved!",
+            data=data
         )

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from apps.core.models import (
     Training, PaymentTransaction,
-    Course, TrainingCourse
+    Course, TrainingCourse, Assignment
 )
 
 from utils.validators import BaseValidator
@@ -95,3 +95,40 @@ class TrainingMetrics(serializers.Serializer):
 class AssignCourseSerializer(serializers.Serializer):
     training_id = serializers.IntegerField()
     course_ids = serializers.ListField(child=serializers.IntegerField())
+
+
+class AssignmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Assignment
+        fields = "__all__"
+        read_only_fields = ["id", "created_at", "updated_at"]
+
+class CreateAssignmentSerializer(serializers.Serializer):
+    title = serializers.CharField(max_length=255)
+    description = serializers.CharField(max_length=255)
+    due_date = serializers.DateTimeField(required=False)
+    course_id = serializers.CharField()
+    training_id = serializers.CharField()
+
+class UpdateAssignmentSerializer(CreateAssignmentSerializer, serializers.Serializer):
+    assignment_id = serializers.CharField()
+    title = serializers.CharField(required=False)
+    description = serializers.CharField(required=False)
+    course_id = serializers.CharField(required=False)
+    training_id = serializers.CharField(required=False)
+    answer = serializers.CharField(required=False, max_length=5000)
+    update_src = serializers.CharField(required=False, write_only=True)
+    status = serializers.ChoiceField(
+        choices=Assignment.STATUSES, required=False
+    )
+
+    def validate_assignment_id(self, value):
+        """validates that the assignment id exists"""
+        if not Assignment.objects.filter(id=value).exists():
+            raise serializers.ValidationError("Assignment does not exist")
+        return value
+
+class MarkAttendanceSerializer(serializers.Serializer):
+    training_id = serializers.IntegerField()
+    course_id = serializers.IntegerField()
+    extra_note = serializers.CharField(required=False, max_length=255)

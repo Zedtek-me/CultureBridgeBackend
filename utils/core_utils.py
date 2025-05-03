@@ -1,14 +1,16 @@
-from typing import Type, Optional, Union, List, Dict
+from typing import Type, Optional, Union, List, Dict, Generic
 import random
 import string
 import logging
+from datetime import datetime, timedelta
 
-from django.db.models import Q, QuerySet
+from django.db.models import Q, QuerySet, Count, Sum
 from django.db import transaction
+from django.utils import timezone
 
 from apps.core.models import (
     Training, PaymentTransaction, TrainingCourse,
-    Course
+    Course, Assignment
 )
 
 from utils.exception_utils import CustomException
@@ -94,6 +96,21 @@ class TrainingUtil:
             .values_list("user__id", flat=True)
         )
         return students.count()
+    
+    @classmethod
+    def get_training_courses(
+        cls, training_id, course_ids: Optional[List[Union[str, int]]] = None
+    )-> Union[List[Course], QuerySet]:
+        """returns all courses that are currently being taken by the instructor"""
+        training_course_ids = (
+            TrainingCourse.objects
+            .filter(training__id=training_id)
+            .values_list("course__id", flat=True)
+        )
+        courses = Course.objects.filter(id__in=training_course_ids)
+        if course_ids:
+            courses = courses.filter(id__in=course_ids)
+        return courses
 
     @classmethod
     def get_total_courses(
@@ -126,3 +143,130 @@ class TrainingUtil:
             result = TrainingCourse.objects.bulk_create(training_courses)
             logger.debug(f"training course creation result: {result}")
             return result
+
+
+class DashboardUtil:
+    """all dashboard utility"""
+
+    @classmethod
+    def create_user_assignment(
+        cls, user, data: dict
+    ) -> Assignment:
+        """returns the dashboard data for the given user"""
+        training = TrainingUtil.get_training(filter_params={"id": data.pop("training_id")})
+        training_student = training.user
+        data = {
+            "training": training,
+            "content": data.pop("description", None),
+            **data
+        }
+        assignment = Assignment.objects.create(**data)
+        assignment.instructor_id = user.id
+        assignment.user_id = training_student.id
+        assignment.save()
+        return assignment
+
+
+    @classmethod
+    def list_assignments(
+        cls, user, filter_params: dict = dict,
+        page_count = 10, page_no = 1, paginate: bool = True
+    ) -> Union[QuerySet, dict, List[dict]]:
+        """returns all the assignments for the given user"""
+        from apps.core.serializers import (
+            AssignmentSerializer
+        )
+
+        _filter = {"user_id": user.id}
+        training_id = filter_params.get("training_id")
+        _all = filter_params.get("all")
+        status = filter_params.get("status")
+        valid_statuses = ["PENDING", "COMPLETED"]
+        if status and status.upper() not in valid_statuses:
+            raise CustomException(
+                message="Invalid status provided!",
+            )
+        if status:
+            _filter["status"] = status.upper()
+        if _all:
+            _filter.pop("user_id")
+        if training_id:
+            _filter["training__id"] = training_id
+        assignments = Assignment.objects.filter(**_filter)
+        if paginate and assignments:
+            logger.debug("got into the paginate block!!!!")
+            assignments = AssignmentSerializer(assignments, many=True).data
+            return paginate_data(assignments, page_count, page_no)
+        return assignments
+
+    @classmethod
+    def update_assignment(
+        cls, user, data: dict
+    ) -> Assignment:
+        """updates assignments"""
+        assignment_id = data.get("assignment_id")
+        assignment = Assignment.objects.get(id=assignment_id)
+        assignment_training = assignment.training
+        update_src = data.get("update_source")
+        if assignment_training.instructor_id and (
+            assignment_training.instructor_id != user.id and update_src == "instructor"
+        ):
+            raise CustomException(
+                "You are not allowed to update this assignment!",
+                403
+            )
+        assignment.title = data.get("title", assignment.title)
+        assignment.content = data.get("description", assignment.content)
+        assignment.answer = data.get("answer", assignment.answer)
+        assignment.status = data.get("status", assignment.status)
+        if update_src == "instructor":
+            assignment.instructor_id = user.id
+        assignment.save()
+        return assignment
+
+    @classmethod
+    def mark_attendance(
+        cls, user, data: dict
+    ) -> Optional[Training]:
+        """allows a student to mark his attendance of a training course"""
+        course_id = data.get("course_id")
+        training_id = data.get("training_id")
+        course = Course.objects.filter(id=course_id).first()
+        if not course or course.training.id != training_id:
+            raise CustomException("Course not found for the given training!", 404)
+        training = TrainingUtil.get_training(filter_params={"id": training_id})
+        attendance_record = {
+            "course_id": course_id,
+            "user_id": user.id,
+            "date": timezone.now().strftime("%Y-%m-%d %H:%M:%S"),
+        }
+        meta_attendance = (training.meta or {}).get("attendance", [])
+        meta_attendance.append(attendance_record)
+        training.meta["attendance"] = meta_attendance
+        training.save()
+        return training
+
+    @classmethod
+    def get_attendance_report(cls, user: Type["User"], filter_params: dict) -> dict:
+        """returns a dict of attendance report"""
+        training_id = filter_params.get("training_id")
+        training_qs = (
+            TrainingUtil
+            .list_trainings(filter_params={"user__id": user.id}, paginate=False)
+            .annotate(
+            attendance_per_training=Count("meta__attendance"))
+        )
+        if training_id:
+            training_qs = training_qs.filter(id=training_id)
+        total_attendance = training_qs\
+            .aggregate(total_attendance=Sum("attendance_per_training")).get("total_attendance", 0)
+
+        # total assignments done
+        assignments = cls.list_assignments(user=user, paginate=False)
+        completed_assignments = assignments.filter(status="COMPLETED").count()
+
+        metrics = {
+            "attendance": f"{total_attendance}/{training_qs.count()}",
+            "homework": f"{completed_assignments}/{assignments.count()}"
+        }
+        return metrics

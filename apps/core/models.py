@@ -78,6 +78,7 @@ class Course(BaseModel):
     language_category = models.CharField(
         max_length=255, blank=True, choices=Training.LANGUAGE_CHOICE
     )
+    links = models.JSONField(default=dict)
 
     class Meta:
         verbose_name = "Course"
@@ -134,3 +135,26 @@ class PaymentTransaction(BaseModel):
         verbose_name = "Payment Transaction"
         verbose_name_plural = "Payment Transactions"
         db_table = "payment_transaction"
+
+class Assignment(BaseModel):
+    """records assingments for trainings"""
+    STATUSES = (
+        ("PENDING", "PENDING"),
+        ("COMPLETED", "COMPLETED")
+    )
+    training = models.ForeignKey(
+        to="core.Training", on_delete=models.CASCADE
+    )
+    course_id = models.CharField(max_length=255, blank=True)
+    title = models.CharField(max_length=255, blank=True)
+    content = models.TextField(blank=True)
+    answer = models.TextField(blank=True)
+    instructor_id = models.CharField(max_length=255, blank=True)
+    user_id = models.CharField(max_length=255, blank=True)
+    status = models.CharField(max_length=255, blank=True, choices=STATUSES, default="PENDING")
+
+    class Meta:
+        verbose_name = "Assignment"
+        verbose_name_plural = "Assignments"
+        db_table = "assignments"
+        ordering = ("-created_at",)
