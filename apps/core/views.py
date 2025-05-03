@@ -234,10 +234,10 @@ class DashboardViewSet(ViewSet):
                 message="assignments successfully retrieved!",
                 data=AssignmentSerializer(assignments, many=True).data
             )
-        return Response(data={
-            "message": "assignments successfully retrieved!",
-            **assignments
-        }, status=200)
+        return ResponseManager.handle_paginated_response(
+            message="assignments successfully retrieved!",
+            data=assignments
+        )
 
     @action(detail=False, methods=["post"], url_path="mark-attendance")
     def mark_attendance(self, request):

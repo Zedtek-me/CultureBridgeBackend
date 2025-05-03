@@ -20,3 +20,11 @@ class ResponseManager:
             "data": None,
             "message": message
         }, status=status_code)
+
+    @classmethod
+    def handle_paginated_response(
+        cls, message: str = "Data successfully retrieved",
+        data: Optional[dict] = None, status_code: int = 200,
+    ):
+        """returns an already paginated data response"""
+        return Response(data={"message": message, **(data or {})}, status=status_code)
