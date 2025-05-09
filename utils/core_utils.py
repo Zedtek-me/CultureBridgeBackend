@@ -232,19 +232,21 @@ class DashboardUtil:
         course_id = data.get("course_id")
         training_id = data.get("training_id")
         course = Course.objects.filter(id=course_id).first()
-        if not course or course.training.id != training_id:
-            raise CustomException("Course not found for the given training!", 404)
-        training = TrainingUtil.get_training(filter_params={"id": training_id})
+        if not course:
+            raise CustomException("Course not found!", 404)
+        former_attendance = course.meta.get("attendance", {})
+        note = (former_attendance.get("notes") or [])
+        note.append(data.get("extra_note"))
         attendance_record = {
             "course_id": course_id,
+            "training_id": training_id,
             "user_id": user.id,
             "date": timezone.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "notes": note
         }
-        meta_attendance = (training.meta or {}).get("attendance", [])
-        meta_attendance.append(attendance_record)
-        training.meta["attendance"] = meta_attendance
-        training.save()
-        return training
+        course.meta["attendance"] = attendance_record
+        course.save()
+        return course
 
     @classmethod
     def get_attendance_report(cls, user: Type["User"], filter_params: dict) -> dict:

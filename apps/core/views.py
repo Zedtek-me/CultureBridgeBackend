@@ -248,13 +248,13 @@ class DashboardViewSet(ViewSet):
             return ResponseManager.handle_error_response(
                 message=serializer.error_message
             )
-        training = DashboardUtil.mark_attendance(
+        course = DashboardUtil.mark_attendance(
             user, serializer.validated_data
         )
-        training_serializer = TrainingSerializer(training)
+        course_serializer = CourseSerializer(course)
         return ResponseManager.handle_success_response(
             message="attendance successfully marked!",
-            data=training_serializer.data
+            data=course_serializer.data
         )
 
     @action(detail=False, methods=["get"], url_path="attendance-report")

@@ -129,6 +129,6 @@ class UpdateAssignmentSerializer(CreateAssignmentSerializer, serializers.Seriali
         return value
 
 class MarkAttendanceSerializer(serializers.Serializer):
-    training_id = serializers.IntegerField()
+    training_id = serializers.IntegerField(required=False)
     course_id = serializers.IntegerField()
     extra_note = serializers.CharField(required=False, max_length=255)
