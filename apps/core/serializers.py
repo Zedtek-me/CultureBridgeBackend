@@ -132,3 +132,15 @@ class MarkAttendanceSerializer(serializers.Serializer):
     training_id = serializers.IntegerField(required=False)
     course_id = serializers.IntegerField()
     extra_note = serializers.CharField(required=False, max_length=255)
+
+class ImageLinkSerializer(serializers.Serializer):
+    src = serializers.CharField(max_length=255)
+    link = serializers.CharField(max_length=5000)
+    height = serializers.CharField(required=False)
+    width = serializers.CharField(required=False)
+    type = serializers.CharField(max_length=255)
+
+class CreateCourseSerializer(serializers.Serializer):
+    title = serializers.CharField(max_length=255)
+    description = serializers.CharField(max_length=255)
+    images = serializers.ListField(child=ImageLinkSerializer())

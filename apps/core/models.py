@@ -78,7 +78,7 @@ class Course(BaseModel):
     language_category = models.CharField(
         max_length=255, blank=True, choices=Training.LANGUAGE_CHOICE
     )
-    links = models.JSONField(default=dict)
+    links = models.JSONField(default=list)
 
     class Meta:
         verbose_name = "Course"

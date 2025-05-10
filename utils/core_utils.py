@@ -276,3 +276,12 @@ class DashboardUtil:
             "homework": f"{completed_assignments}/{assignments.count()}"
         }
         return metrics
+
+    @classmethod
+    def create_course(cls, user, data: dict) -> Course:
+        """creates a course individually on the system"""
+        images = data.pop("images", [])
+        course = Course.objects.create(**data)
+        course.links = images
+        course.save()
+        return course

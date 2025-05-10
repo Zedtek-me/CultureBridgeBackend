@@ -15,7 +15,7 @@ from apps.core.serializers import (
     TrainingMetrics, CourseSerializer,
     AssignCourseSerializer, AssignmentSerializer,
     MarkAttendanceSerializer, CreateAssignmentSerializer,
-    UpdateAssignmentSerializer
+    UpdateAssignmentSerializer, CreateCourseSerializer
 )
 
 from apps.core.models  import TrainingCourse
@@ -266,4 +266,20 @@ class DashboardViewSet(ViewSet):
         return ResponseManager.handle_success_response(
             message="attendance report successfully retrieved!",
             data=data
+        )
+
+    @action(methods=["post"], detail=False, url_path="create-course")
+    def create_course(self, request):
+        """creates a course individually"""
+        user = request.user
+        serializer = CreateCourseSerializer(data=request.data)
+        if not serializer.is_valid(raise_exception=False):
+            return ResponseManager.handle_error_response(
+                message=serializer.error_messages
+            )
+        course = DashboardUtil.create_course(user, serializer.validated_data)
+        course_serializer = CourseSerializer(course)
+        return ResponseManager.handle_success_response(
+            message="Course Successfully created!",
+            data=course_serializer.data
         )
