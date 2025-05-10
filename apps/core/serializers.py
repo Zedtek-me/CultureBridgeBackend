@@ -135,7 +135,7 @@ class MarkAttendanceSerializer(serializers.Serializer):
 
 class ImageLinkSerializer(serializers.Serializer):
     src = serializers.CharField(max_length=255)
-    link = serializers.CharField(max_length=5000)
+    link = serializers.CharField(max_length=5000, required=False)
     height = serializers.CharField(required=False)
     width = serializers.CharField(required=False)
     type = serializers.CharField(max_length=255)

@@ -283,3 +283,13 @@ class DashboardViewSet(ViewSet):
             message="Course Successfully created!",
             data=course_serializer.data
         )
+
+    @action(methods=["get"], detail=False, url_path="get-course/(?P<pk>[a-z,A-Z,0-9]+)")
+    def retrieve_course(self, request, pk=None):
+        """single course"""
+        course = DashboardUtil.retrieve_course(pk, request.user)
+        serializer = CourseSerializer(course)
+        return ResponseManager.handle_success_response(
+            "course successfully retrieved!",
+            data=serializer.data
+        )

@@ -285,3 +285,8 @@ class DashboardUtil:
         course.links = images
         course.save()
         return course
+
+    @classmethod
+    def retrieve_course(cls, pk: Union[int, str], user = None):
+        """fetches a single course object"""
+        return Course.objects.filter(id=pk).first()
