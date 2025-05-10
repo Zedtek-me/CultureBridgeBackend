@@ -36,11 +36,12 @@ class TrainingViewSet(ViewSet):
     def list(self, request):
         user = request.user
         params = request.query_params
-        filters = {}
+        filters = {"user__id": user.id}
         page_count = params.get("page_count") or 10
         page_no = params.get("page_no") or 1
         search_filter = Q()
         if params.get("assigned_to_me"):
+            filters.pop("user__id", None)
             filters["instructor_id"] = user.id
         if params.get("search"):
             search_txt = params.get("search")
