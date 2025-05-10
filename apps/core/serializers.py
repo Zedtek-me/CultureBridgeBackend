@@ -143,4 +143,5 @@ class ImageLinkSerializer(serializers.Serializer):
 class CreateCourseSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=255)
     description = serializers.CharField(max_length=255)
+    language_category = serializers.CharField(max_length=255)
     images = serializers.ListField(child=ImageLinkSerializer())
