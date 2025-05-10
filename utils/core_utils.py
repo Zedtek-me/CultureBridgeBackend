@@ -141,7 +141,6 @@ class TrainingUtil:
                     current_instructor_id=user.id, user=training.user
                 ))
             result = TrainingCourse.objects.bulk_create(training_courses)
-            logger.debug(f"training course creation result: {result}")
             return result
 
 
@@ -256,23 +255,24 @@ class DashboardUtil:
     def get_attendance_report(cls, user: Type["User"], filter_params: dict) -> dict:
         """returns a dict of attendance report"""
         training_id = filter_params.get("training_id")
-        training_qs = (
-            TrainingUtil
-            .list_trainings(filter_params={"user__id": user.id}, paginate=False)
+        training_course_qs = (
+            TrainingCourse.objects.filter(
+                Q(user__id=user.id) | Q(training__user__id=user.id)
+            )
             .annotate(
-            attendance_per_training=Count("meta__attendance"))
+            attendance_per_course=Count("meta__attendance"))
         )
         if training_id:
-            training_qs = training_qs.filter(id=training_id)
-        total_attendance = training_qs\
-            .aggregate(total_attendance=Sum("attendance_per_training")).get("total_attendance", 0)
+            training_course_qs = training_course_qs.filter(training__id=training_id)
+        total_attendance = training_course_qs\
+            .aggregate(total_attendance=Sum("attendance_per_course")).get("total_attendance", 0)
 
         # total assignments done
-        assignments = cls.list_assignments(user=user, paginate=False)
+        assignments = cls.list_assignments(user=user, paginate=False, filter_params={})
         completed_assignments = assignments.filter(status="COMPLETED").count()
 
         metrics = {
-            "attendance": f"{total_attendance}/{training_qs.count()}",
+            "attendance": f"{total_attendance or 0}/{training_course_qs.count()}",
             "homework": f"{completed_assignments}/{assignments.count()}"
         }
         return metrics
