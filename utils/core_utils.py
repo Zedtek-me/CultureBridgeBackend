@@ -232,9 +232,13 @@ class DashboardUtil:
         course_id = data.get("course_id")
         training_id = data.get("training_id")
         course = Course.objects.filter(id=course_id).first()
-        if not course:
-            raise CustomException("Course not found!", 404)
-        former_attendance = course.meta.get("attendance", {})
+        training_course = TrainingCourse.objects.filter(
+            course__id=course_id, training__id=training_id
+        ).first()
+        if not training_course:
+            raise CustomException("Course not found for the given training!", 404)
+        logger.debug(f"training course found: {training_course}")
+        former_attendance = training_course.meta.get("attendance", {})
         note = (former_attendance.get("notes") or [])
         note.append(data.get("extra_note"))
         attendance_record = {
@@ -244,8 +248,8 @@ class DashboardUtil:
             "date": timezone.now().strftime("%Y-%m-%d %H:%M:%S"),
             "notes": note
         }
-        course.meta["attendance"] = attendance_record
-        course.save()
+        training_course.meta["attendance"] = attendance_record
+        training_course.save()
         return course
 
     @classmethod
