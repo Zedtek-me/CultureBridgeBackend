@@ -15,7 +15,9 @@ class Command(BaseCommand):
     def register_user_in_db(self, creds: dict = dict):
         """registers users"""
         self.stdout.write(f"creating user:::: {creds}")
-        return User.objects.create_superuser(**creds)
+        if not User.objects.filter(email=creds.get("email")).exists():
+            return User.objects.create_superuser(**creds)
+        return f"user with email {creds.get('email')} already exists"
 
     def handle(self, *args, **kwargs):
         """creates super user"""
