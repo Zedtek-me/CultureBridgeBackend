@@ -4,8 +4,9 @@ from apps.users.models import(
      User, Profile
 )
 
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
+def optionally_create_user_profile(sender, instance, created, **kwargs):
+    existing_profile = Profile.objects.filter(user=instance).first()
+    if not created and not existing_profile:
         Profile.objects.create(user=instance)
 
-post_save.connect(create_user_profile, sender=User)
+post_save.connect(optionally_create_user_profile, sender=User)
