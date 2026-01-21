@@ -8,7 +8,7 @@ from rest_framework import status
 from utils.response_utils import ResponseManager
 from utils.user_utils import UserUtils
 from utils.helpers import get_logger
-from utils.emial_utils import EmailUtil
+from utils.email_utils import EmailUtil
 
 from apps.users.serializers import (
     UserSerializer, LoginSerializer,
@@ -89,22 +89,18 @@ class AuthViewSet(ViewSet):
             )
         validated_data = serializer.validated_data
         # Send email to admin and stakeholders
-        subject = "New Marketing Signup"
+        subject = "New Marketing Signup - Culturebridge"
         to_email = settings.MARKETING_TEAM_EMAILS
         template_name = "emails/marketing_signup.html"
-        email_sent = EmailUtil.send_templated_email(
+        EmailUtil.send_templated_email.delay(
             subject=subject,
             to_email=to_email,
             template_name=template_name,
-            context=validated_data
+            context=validated_data,
+            from_email=settings.DEFAULT_FROM_EMAIL
         )
-        logger.debug(f"email sent::: {email_sent}")
-        if not email_sent:
-            return ResponseManager.handle_error_response(
-                message="Failed to send marketing signup email.",
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
         return ResponseManager.handle_success_response(
             message="Marketing signup information submitted successfully.",
-            status_code=status.HTTP_200_OK
+            status_code=status.HTTP_200_OK,
+            data={}
         )

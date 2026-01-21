@@ -4,15 +4,17 @@ from typing import Union
 
 from utils.helpers import get_logger
 
+from celery import shared_task
+
 logger = get_logger()
 
 
 class EmailUtil:
     RETRY_COUNT = 3
 
-    @classmethod
+    @shared_task(bind=True, name="send_templated_email_task")
     def send_templated_email(
-        cls,
+        self,
         subject: str,
         to_email: Union[str, list],
         template_name: str,
@@ -43,9 +45,9 @@ class EmailUtil:
             email.send(fail_silently=False)
         except Exception as e:
             logger.exception(f"Error sending email to {to_email}: {e}")
-            if cls.RETRY_COUNT > 0:
-                cls.RETRY_COUNT -= 1
-                return cls.send_templated_email(
+            if EmailUtil.RETRY_COUNT > 0:
+                EmailUtil.RETRY_COUNT -= 1
+                return EmailUtil.send_templated_email(
                     subject, to_email, template_name, context, from_email
                 )
             return False

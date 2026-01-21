@@ -6,7 +6,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "culturebridge.settings")
 
 app = Celery(
     'culturebridge',
-    include=['apps.users.tasks', 'apps.blogs.tasks']
+    include=['apps.users.tasks', 'utils.email_utils']
 )
 
 app.config_from_object('django.conf:settings', namespace='CELERY')
