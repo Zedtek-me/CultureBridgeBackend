@@ -52,3 +52,13 @@ class CombinedAuthSerializer(serializers.Serializer):
     training_info = TrainingDataSerializer(required=False)
     referral_code = serializers.CharField(required=False, write_only=True)
     user_type = serializers.ChoiceField(choices=USER_TYPE_CHOICES, required=False, write_only=True)
+
+
+class MarketingSignupSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    first_name = serializers.CharField()
+    last_name = serializers.CharField()
+    country = serializers.CharField()
+    age = serializers.CharField()
+    language = serializers.CharField()
+    phone_number = serializers.CharField(required=False)

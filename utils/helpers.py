@@ -6,7 +6,15 @@ from django.core.paginator import Paginator
 from django.db.models.query import QuerySet
 from django.utils import timezone
 
-logger = logging.getLogger(__name__)
+
+def get_logger():
+    """returns a configured logger"""
+    _logger = logging.getLogger("root")
+    _logger.setLevel(logging.DEBUG)
+    return _logger
+
+
+logger = get_logger()
 
 def paginate_data(
     data: Union[List, QuerySet],

@@ -32,6 +32,37 @@ services:
     ports:
       - 5432:5432
 
+  culturebridge_celery:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: culturebridge_celery
+    container_name: culturebridge_celery
+    restart: unless-stopped
+    depends_on:
+      - culturebridge_database
+      - culturebridge_redis
+      - culturebridge
+    command: celery -A culturebridge.celery worker --loglevel=info
+    env_file:
+      - .env
+    networks:
+      - culturebridge
+    volumes:
+      - .:/app
+      - .env:/app/.env
+
+  culturebridge_redis:
+    image: redis:alpine
+    container_name: culturebridge_redis
+    restart: unless-stopped
+    networks:
+      - culturebridge
+    ports:
+      - 6380:6379
+    env_file:
+      - .env
+
 networks:
   culturebridge:
 
