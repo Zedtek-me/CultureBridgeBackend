@@ -8,8 +8,10 @@ click==8.3.1
 click-didyoumean==0.3.1
 click-plugins==1.1.1.2
 click-repl==0.3.0
+croniter==6.0.0
 Django==5.1.2
 django-cors-headers==4.6.0
+django-rq==3.2.2
 djangorestframework==3.15.2
 graphene==3.4
 graphene-django==3.2.2
@@ -26,8 +28,10 @@ psycopg2==2.9.10
 pycryptodome==3.21.0
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
+pytz==2025.2
 redis==7.1.0
 requests==2.32.3
+rq==2.6.1
 six==1.16.0
 sqlparse==0.5.1
 text-unidecode==1.3

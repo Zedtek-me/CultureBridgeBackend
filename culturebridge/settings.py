@@ -46,11 +46,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'django_rq',
 
     # local apps
     'apps.blogs',
     'apps.users',
-    'apps.core'
+    'apps.core',
+    'apps.background_tasks.apps.BackgroundTasksConfig',
 ]
 
 MIDDLEWARE = [
@@ -158,6 +160,7 @@ LOGGING = {
     },
 }
 
+REDIS_URL = os.getenv("REDIS_URL")
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -166,6 +169,25 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': REDIS_URL, 
+        # 'OPTIONS': { 
+        #     'CLIENT_CLASS': 'django_redis.client.DefaultClient', 
+        #     'MAX_ENTRIES': 5000, 
+        # }
+    }
+}
+
+
+RQ_QUEUES = {
+    "default": {
+        "URL": REDIS_URL,
+        "DEFAULT_TIMEOUT": None
+    }
 }
 
 

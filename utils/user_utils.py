@@ -3,12 +3,14 @@ import logging
 from rest_framework.authtoken.models import Token
 from typing import Optional, Type, Union
 from django.db.transaction import atomic, on_commit
+from django.conf import settings
 
 from utils.exception_utils import CustomException
 from utils.core_utils import TrainingUtil
 from utils.helpers import format_date_time
 
 from apps.users.models import User, Profile
+from apps.users.tasks import send_mail_async
 from apps.core.models import Training
 
 logger = logging.getLogger("root")
@@ -97,3 +99,30 @@ class UserUtils:
     def get_user_type(cls, user: User) -> Optional[str]:
         """retrieves user"""
         return user.profile.user_type
+
+    @classmethod
+    def handle_marketing_signup(
+        cls, data: dict
+    ) -> None:
+        """handles marketing signup info"""
+        from apps.users.models import CampaignUser
+
+        subject = "New Marketing Signup - Culturebridge"
+        to_email = settings.MARKETING_TEAM_EMAILS
+        template_name = "emails/marketing_signup.html"
+
+        with atomic():
+            campaign_user = CampaignUser.objects.create(**data)
+            logger.debug(f"campaign user created: {campaign_user}")
+
+            on_commit(
+                lambda :
+                # send email to admin and other stakeholders
+                send_mail_async.delay(
+                    subject=subject,
+                    to_email=to_email,
+                    template_name=template_name,
+                    context=data,
+                    from_email=settings.DEFAULT_FROM_EMAIL
+                )
+            )

@@ -46,3 +46,25 @@ class Profile(BaseModel):
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name}"
+
+
+class CampaignUser(BaseModel):
+    """
+    All users who sign up for marketing campaigns
+    """
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255, unique=True)
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    campaign_source = models.CharField(max_length=255, blank=True, null=True)
+    language = models.CharField(max_length=50, choices=Profile.LANGUAGE_CHOICE, default="ENGLISH")
+    age = models.PositiveIntegerField(blank=True, null=True)
+    country = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return self.email
+
+    class Meta(BaseModel.Meta):
+        db_table = "campaign_users"
+        verbose_name = "campaign user"
+        verbose_name_plural = "campaign users"

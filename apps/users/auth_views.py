@@ -15,6 +15,8 @@ from apps.users.serializers import (
     CombinedAuthSerializer, MarketingSignupSerializer
 
 )
+from .tasks import send_mail_async
+import threading
 
 logger = get_logger()
 
@@ -88,19 +90,9 @@ class AuthViewSet(ViewSet):
                 status_code=status.HTTP_400_BAD_REQUEST
             )
         validated_data = serializer.validated_data
-        # Send email to admin and stakeholders
-        subject = "New Marketing Signup - Culturebridge"
-        to_email = settings.MARKETING_TEAM_EMAILS
-        template_name = "emails/marketing_signup.html"
-        EmailUtil.send_templated_email.delay(
-            subject=subject,
-            to_email=to_email,
-            template_name=template_name,
-            context=validated_data,
-            from_email=settings.DEFAULT_FROM_EMAIL
-        )
+        UserUtils.handle_marketing_signup(validated_data)
         return ResponseManager.handle_success_response(
-            message="Marketing signup information submitted successfully.",
+            message="Info submitted successfully.",
             status_code=status.HTTP_200_OK,
             data={}
         )

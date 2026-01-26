@@ -30,25 +30,10 @@ class EmailUtil:
             context (dict): The context to render the template with
             from_email (str, optional): The sender's email address. Defaults to None.
         """
-        context = context or {}
-        try:
-            email_content = render_to_string(template_name, context)
+        from apps.users.tasks import send_mail_async
 
-            # Create the email message
-            email = EmailMessage(
-                subject=subject,
-                body=email_content,
-                from_email=from_email,
-                to=[to_email] if isinstance(to_email, str) else to_email
-            )
-            email.content_subtype = "html"
-            email.send(fail_silently=False)
-        except Exception as e:
-            logger.exception(f"Error sending email to {to_email}: {e}")
-            if EmailUtil.RETRY_COUNT > 0:
-                EmailUtil.RETRY_COUNT -= 1
-                return EmailUtil.send_templated_email(
-                    subject, to_email, template_name, context, from_email
-                )
-            return False
-        return True
+        return send_mail_async(
+            subject, to_email,
+            template_name, context,
+            from_email
+        )
