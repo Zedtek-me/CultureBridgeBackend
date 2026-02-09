@@ -38,6 +38,10 @@ class Training(BaseModel):
     payment_status = models.CharField(max_length=255, choices=PAYMENT_STATUSES, default="UNPAID", blank=True)
     start_date = models.DateTimeField(null=True)
     end_date = models.DateTimeField(null=True)
+    amount = models.FloatField(
+        null=True, default=0.0,
+        help_text="amount to be paid for the training, if it's a paid training"
+    )
     _choice = models.CharField(max_length=255, choices=TRAINING_CHOICE, default="PAID")
     _type = models.CharField(max_length=255, choices=TRAINING_TYPE, default="ONLINE")
 

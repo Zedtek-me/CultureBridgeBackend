@@ -5,7 +5,7 @@ from rest_framework.decorators import action
 from rest_framework import permissions
 from rest_framework import status
 
-from utils.response_utils import ResponseManager
+from utils.http_utils import ResponseManager
 from utils.user_utils import UserUtils
 from utils.helpers import get_logger
 from utils.email_utils import EmailUtil

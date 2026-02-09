@@ -6,7 +6,7 @@ from django.db import transaction
 from apps.blogs.seriaizers import BlogSerializer, VlogSerializer
 from apps.blogs.models import Blog, Vlog
 from apps.blogs.permissions.is_authenticated import IsAuthenticated
-from utils.response_utils import ResponseManager
+from utils.http_utils import ResponseManager
 import logging
 
 logger = logging.getLogger(__name__)

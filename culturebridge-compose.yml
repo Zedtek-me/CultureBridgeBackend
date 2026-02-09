@@ -28,7 +28,7 @@ services:
     networks:
       - culturebridge
     volumes:
-      - culturebrdige_data:/var/lib/postgresql/data
+      - culturebrdige_data:/var/lib/postgresql
     ports:
       - 5432:5432
 

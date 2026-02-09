@@ -21,7 +21,7 @@ from apps.core.serializers import (
 from apps.core.models  import TrainingCourse
 
 from utils.core_utils import TrainingUtil, DashboardUtil
-from utils.response_utils import ResponseManager
+from utils.http_utils import ResponseManager
 from utils.user_utils import UserUtils
 from utils.validators import format_date
 from utils.helpers import paginate_data
@@ -108,13 +108,22 @@ class TrainingViewSet(ViewSet):
                 message=serializer.error_messages,
                 status_code=400
             )
-        response = TrainingUtil.process_training_payment(**serializer.validated_data, user=request.user)
+        data = serializer.validated_data
+        data.update(option=data.pop("payment_option", "card"))
+        logger.debug(f"payment data:::: {data}")
+        response = TrainingUtil.process_training_payment(**data, user=request.user)
         if isinstance(response, tuple):
             access_code, _ = response
             return ResponseManager.handle_success_response(
                 message="payment initiated successfully!",
                 data={"access_code": access_code},
                 status_code=200
+            )
+        if not response.get("success"):
+            msg = response.get("message", "Unable to process payment at the moment!")
+            return ResponseManager.handle_error_response(
+                message=msg,
+                status_code=400
             )
         return ResponseManager.handle_success_response(
             message="payment initiated successfully!",

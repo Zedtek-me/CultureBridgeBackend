@@ -8,8 +8,11 @@ from typing import Optional, Type, List, Union
 
 from apps.core.models import PaymentTransaction, Training
 
+from services.payments.squad import SquadPaymentService
+from services.payments.paystack import PaystackPaymentService
+
 from utils.exception_utils import CustomException
-from utils.core_utils import TrainingUtil
+from utils.core_utils import TrainingUtil, TransactionUtil
 
 
 logger = logging.getLogger(__name__)
@@ -21,7 +24,8 @@ class PaymentService:
     PLATFORMS = {
         "paystack": f"{settings.PAYSTACK_BASE_URL}/",
         "paypal": f"{settings.PAYPAL_BASE_URL}",
-        "stripe": f"{settings.STRIPE_BASE_URL}/"
+        "stripe": f"{settings.STRIPE_BASE_URL}/",
+        "squad": f"{settings.SQUAD_BASE_URL}/"
     }
 
     def __init__(self, platform: str, *args, **kwargs) -> Union[CustomException, None]:
@@ -64,18 +68,30 @@ class PaymentService:
         """handles according to platforms"""
         base_url = self.PLATFORMS.get(self.platform)
         if self.platform == "paystack":
-            response = self.handle_paystack_payment(base_url, *args, **kwargs)
-            access_code, auth_url = (
-                response.get("data", {}).get("access_code"),
-                response.get("data", {}).get("authorization_url")
+            # response = self.handle_paystack_payment(base_url, *args, **kwargs)
+            # access_code, auth_url = (
+            #     response.get("data", {}).get("access_code"),
+            #     response.get("data", {}).get("authorization_url")
+            # )
+            paystack_payment_service = PaystackPaymentService(
+                payment_channel=kwargs.get("option"), payment_data=kwargs
             )
-            return access_code, auth_url
+            response = paystack_payment_service.handle_payment()
+            return response
+
+        if self.platform == "squad":
+                # handle squad payment
+                squad_payment_service = SquadPaymentService(
+                    payment_channel=kwargs.get("option"), payment_data=kwargs
+                )
+                response = squad_payment_service.handle_payment()
+                return response
         raise CustomException(
             message="Payment platform not available at the moment!",
             status_code=404
         )
 
-    def handle_paystack_payment(self, base_url: str, *args, **kwargs) -> Optional[tuple]:
+    def handle_paystack_payment(self, base_url: str, *args, **kwargs) -> dict:
         """paystack"""
         paystack_option = kwargs.get("option")
         training_to_pay_for = TrainingUtil.get_training(
@@ -96,13 +112,13 @@ class PaymentService:
         match paystack_option:
             case "card":
                 charge_type = "card"
-                response = ""
+                response = {}
             case "bank_transfer":
                 charge_type = "bank_transfer"
-                response = ""
+                response = {}
             case "ussd":
                 charge_type = "ussd"
-                response = ""
+                response = {}
             case _:
                 base_url += "/transaction/initialize"
                 payload = {
@@ -119,7 +135,7 @@ class PaymentService:
                     url=base_url, method="POST", data=payload, extra_headers=headers
                 )
                 logger.debug(f"paystack response: {response}")
-        payment_txn = self.create_transaction(txn_data)
+        payment_txn = TransactionUtil.create_transaction(txn_data)
         payment_txn.meta = {
             "channel": "paystack",
             "charge_type": charge_type
@@ -135,21 +151,12 @@ class PaymentService:
         return response
 
     @staticmethod
-    def create_transaction(
-        data: dict
-    ) -> Type[PaymentTransaction]:
-        """records a transaction"""
-        return PaymentTransaction.objects.create(**data)
-
-    @staticmethod
     def generate_txn_reference(txn_type: Optional[str] = "training_payment") -> str:
         """generates txn reference based on txn type"""
-        ref = "".join(
-            random.choices(string.ascii_letters + string.digits, k=32)
-        )
         if txn_type == "training_payment":
-            ref = "TRNG-" + ref
-        return ref
+            prefix = "CLTBRGTRNTRX"
+            return TransactionUtil.generate_transaction_ref(prefix=prefix)
+        return TransactionUtil.generate_transaction_ref()
 
     def verify_txn_status(self, ref: str, **kwargs) -> Union[dict, str, tuple]:
         """verifies txn status (platform agnostic)"""

@@ -22,10 +22,24 @@ logger.setLevel(logging.DEBUG)
 class TrainingUtil:
     """all things training utility"""
 
+    CULTUREBRIDGE_LANGUAGE_AMOUNT_MAP = {
+        "YORUBA": 5.0,
+        "IGBO": 5.0,
+        "HAUSA": 5.0,
+        "ENGLISH": 5.0
+    }
+
     @classmethod
     def create_training(cls, **kwargs) -> Type[Training]:
         training = Training.objects.create(**kwargs)
         return training
+
+    @classmethod
+    def get_training_cost(
+        cls, language: str, **kwargs
+    ) -> float:
+        """returns the cost of a training based on the language choice"""
+        return cls.CULTUREBRIDGE_LANGUAGE_AMOUNT_MAP.get(language.upper(), 5.0)
 
     @classmethod
     def list_trainings(
@@ -46,6 +60,7 @@ class TrainingUtil:
         raise_exception: bool = True
     ) -> Training:
         """fetches a training that matches filter params"""
+        logger.debug(f"search filter: {search_filter}, filter params: {filter_params}")
         training = Training.objects.filter(search_filter, **filter_params).first()
         if not training and raise_exception is True:
             raise CustomException("Training not found!", 404)
@@ -56,9 +71,18 @@ class TrainingUtil:
         cls, **kwargs
     ):
         """connects to the payment platform for payment processing"""
-        from services.payment import PaymentService
+        from services.payments.base import PaymentService
 
-        response = PaymentService("paystack").handle_payment(**kwargs)
+        platform = kwargs.pop("platform", "squad")
+        response = PaymentService(platform).handle_payment(**kwargs)
+        logger.debug(f"response from payment service::::::: {response}")
+        trxn_reference = response.get("data", {}).get("transaction_reference")
+        payment_trxn = cls.get_payment_txn({"txn_reference": trxn_reference}, raise_exception=False)
+        if not response.get("success"):
+            if payment_trxn:
+                payment_trxn.meta["payment_failed_response"] = response
+                payment_trxn.status = "FAILED"
+                payment_trxn.save()
         return response
 
     @classmethod
@@ -290,3 +314,23 @@ class DashboardUtil:
     def retrieve_course(cls, pk: Union[int, str], user = None):
         """fetches a single course object"""
         return Course.objects.filter(id=pk).first()
+
+
+
+class TransactionUtil:
+
+    @classmethod
+    def generate_transaction_ref(
+        cls, prefix: Optional[str] = "CLTBRGTRX"
+    ) -> str:
+        ref = "".join(
+            random.choices(string.ascii_letters + string.digits, k=32)
+        )
+        return f"{prefix}-{ref}"
+
+    @staticmethod
+    def create_transaction(
+        data: dict
+    ) -> Type[PaymentTransaction]:
+        """records a transaction"""
+        return PaymentTransaction.objects.create(**data)

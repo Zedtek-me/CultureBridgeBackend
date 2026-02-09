@@ -1,7 +1,6 @@
 # !/bin/sh
 
 echo "running migrations>>>>>>>>>>>>>>>"
-python3 -m manage makemigrations --no-input
 python3 -m manage migrate --no-input
 # python3 -m manage rqworker default
 

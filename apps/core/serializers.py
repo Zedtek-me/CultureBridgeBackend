@@ -66,12 +66,25 @@ class TrainingDataSerializer(serializers.Serializer):
     end_date = serializers.TimeField(required=False)
 
 
+class CardPaymentSerializer(serializers.Serializer):
+    number = serializers.CharField(max_length=255)
+    expiry_month = serializers.CharField(max_length=2)
+    expiry_year = serializers.CharField(max_length=4)
+    cvv = serializers.CharField(max_length=4)
+
 class AcceptPaymentSerializer(serializers.Serializer):
     amount = serializers.FloatField()
     email = serializers.EmailField(required=False)
-    currency = serializers.ChoiceField(choices=PaymentTransaction.CURRENCY_CHOICES, default="NGN")
+    currency = serializers.ChoiceField(choices=PaymentTransaction.CURRENCY_CHOICES, default="USD")
     user_id = serializers.CharField(required=False)
     training_id = serializers.CharField()
+    payment_platform = serializers.CharField(
+        max_length=255, required=False, default="sqaud"
+    )
+    payment_option = serializers.CharField(
+        max_length=255, required=False, default="card"
+    )
+    card = CardPaymentSerializer(required=False)
 
 class TrainingMetrics(serializers.Serializer):
     total_trainings = serializers.IntegerField()

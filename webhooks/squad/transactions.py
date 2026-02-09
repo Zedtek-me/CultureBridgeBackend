@@ -9,10 +9,10 @@ from utils.exception_utils import CustomException
 
 class TransactionHooks(ViewSet):
 
-    @action(detail=False, methods=["post"], url_path="paystack-events")
-    def handle_paystack_txn_events(self, request):
+    @action(detail=False, methods=["post"], url_path="squad-events")
+    def handle_squad_txn_events(self, request):
         """verifies and update payment status"""
-        payment_service = PaymentService("paystack")
+        payment_service = PaymentService("squad")
         event_data = request.data
         payment_ref = event_data.get("reference")
         p_txn = TrainingUtil.get_payment_txn({"txn_reference": payment_ref})

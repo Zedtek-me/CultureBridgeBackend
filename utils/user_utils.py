@@ -71,7 +71,8 @@ class UserUtils:
             "language": language,
             "start_date": start_datetime,
             "user": user,
-            "meta": meta
+            "meta": meta,
+            "amount": TrainingUtil.get_training_cost(language=language)
         }
         training = TrainingUtil.create_training(**training_data)
         instructor_profile = Profile.objects.filter(

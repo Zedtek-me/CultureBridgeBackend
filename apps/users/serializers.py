@@ -49,8 +49,8 @@ class CombinedAuthSerializer(serializers.Serializer):
     )
     signup = SignupSerializer(required=False)
     login = LoginSerializer(required=False)
-    training_info = TrainingDataSerializer(required=False)
-    referral_code = serializers.CharField(required=False, write_only=True)
+    training_info = TrainingDataSerializer(required=False, allow_null=True)
+    referral_code = serializers.CharField(required=False, write_only=True, allow_blank=True, allow_null=True)
     user_type = serializers.ChoiceField(choices=USER_TYPE_CHOICES, required=False, write_only=True)
 
 
