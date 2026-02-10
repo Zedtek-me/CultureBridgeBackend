@@ -40,7 +40,7 @@ class PaymentTransactionAdmin(admin.ModelAdmin):
     )
     fields = [
         "training", "user_id", "amount", "currency", "description", "txn_reference", "status",
-        "meta", "created_at", "updated_at"
+        "meta"
     ]
 
 admin.site.register(Training, TrainingAdmin)
