@@ -18,15 +18,17 @@ class ResponseManager:
         """handles success response"""
         return Response({
             "data": data,
-            "message": message
+            "message": message,
+            "status": "success"
         }, status=status_code)
-    
+
     @classmethod
     def handle_error_response(cls, message: Optional[str] = "", status_code: int = 400) -> Response:
         """handles error response"""
         return Response({
             "data": None,
-            "message": message
+            "message": message,
+            "status": "error"
         }, status=status_code)
 
     @classmethod

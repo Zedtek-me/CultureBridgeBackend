@@ -127,7 +127,7 @@ class TrainingViewSet(ViewSet):
             )
         return ResponseManager.handle_success_response(
             message="payment initiated successfully!",
-            data=response
+            data=response["data"]
         )
 
 
