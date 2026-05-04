@@ -1,0 +1,6337 @@
+[
+  {
+    "_id": {
+      "$oid": "63e4e7b27d282d291761a886"
+    },
+    "group": "user",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "SAR Token",
+    "crypto_symbol": "SART",
+    "category": "fiat",
+    "decimal_places": 4,
+    "country": "Saudi Arabia",
+    "country_currency": "SAR",
+    "country_code": "SA",
+    "logo": "https://instance-test-bucket.s3.eu-central-1.amazonaws.com/asset/GGwbRgzVqonyzY6f-1675945906106.png",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1675945906000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "63e4eab27d282d291761a88b"
+    },
+    "group": "user",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Naira Token",
+    "crypto_symbol": "NGNT",
+    "category": "fiat",
+    "decimal_places": 4,
+    "country": "Nigeria",
+    "country_currency": "NGN",
+    "country_code": "NG",
+    "logo": "https://instance-test-bucket.s3.eu-central-1.amazonaws.com/asset/89i8ov679UTfgGvN-1675946674515.png",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1675946674000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "63e4eb337d282d291761a890"
+    },
+    "group": "user",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "USD Token",
+    "crypto_symbol": "USDT",
+    "category": "fiat",
+    "decimal_places": 4,
+    "country": "United States",
+    "country_currency": "USD",
+    "country_code": "US",
+    "logo": "https://instance-test-bucket.s3.eu-central-1.amazonaws.com/asset/VMidPRyhfwXAooC0-1675946803140.png",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1675946803000"
+      }
+    },
+    "__v": 0,
+    "updated_at": {
+      "$date": {
+        "$numberLong": "1675946859000"
+      }
+    },
+    "updated_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "63e4ebbc7d282d291761a89a"
+    },
+    "group": "user",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "GHC Token",
+    "crypto_symbol": "GHCT",
+    "category": "fiat",
+    "decimal_places": 4,
+    "country": "Ghana",
+    "country_currency": "GHC",
+    "country_code": "GH",
+    "logo": "https://instance-test-bucket.s3.eu-central-1.amazonaws.com/asset/0YIOwbeg3EcZrhIh-1675946940399.png",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1675946940000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "63e4e7b27d282d291761a883"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Saudi Arabia Token",
+    "crypto_symbol": "Saudi Arabia SART",
+    "category": "fiat",
+    "decimal_places": 4,
+    "country": "Saudi Arabia",
+    "country_currency": "SAR",
+    "country_code": "SA",
+    "logo": "https://instance-test-bucket.s3.eu-central-1.amazonaws.com/asset/GGwbRgzVqonyzY6f-1675945906106.png",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1675945906000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "63e4eab27d282d291761a88a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Nigeria Naira Token",
+    "crypto_symbol": "Nigeria NGNT",
+    "category": "fiat",
+    "decimal_places": 4,
+    "country": "Nigeria",
+    "country_currency": "NGN",
+    "country_code": "NG",
+    "logo": "https://instance-test-bucket.s3.eu-central-1.amazonaws.com/asset/89i8ov679UTfgGvN-1675946674515.png",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1675946674000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "63e4eb337d282d291761a898"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "United States USD Token",
+    "crypto_symbol": "United States USDT",
+    "category": "fiat",
+    "decimal_places": 4,
+    "country": "United States",
+    "country_currency": "USD",
+    "country_code": "US",
+    "logo": "https://instance-test-bucket.s3.eu-central-1.amazonaws.com/asset/VMidPRyhfwXAooC0-1675946803140.png",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1675946803000"
+      }
+    },
+    "__v": 0,
+    "updated_at": {
+      "$date": {
+        "$numberLong": "1675946859000"
+      }
+    },
+    "updated_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "63e4ebbc7d282d291761a89b"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Ghana GHC Token",
+    "crypto_symbol": "Ghana GHCT",
+    "category": "fiat",
+    "decimal_places": 4,
+    "country": "Ghana",
+    "country_currency": "GHC",
+    "country_code": "GH",
+    "logo": "https://instance-test-bucket.s3.eu-central-1.amazonaws.com/asset/0YIOwbeg3EcZrhIh-1675946940399.png",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1675946940000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a793fd1c1718774eeaaf0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Ascension Island USD",
+    "crypto_symbol": "Ascension Island USDT",
+    "decimal_places": 4,
+    "country": "Ascension Island",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "AC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650879000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7941d1c1718774eeaaf2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Andorra EUR",
+    "crypto_symbol": "Andorra EURT",
+    "decimal_places": 4,
+    "country": "Andorra",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "AD",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650881000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7944d1c1718774eeaaf4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "United Arab Emirates AED",
+    "crypto_symbol": "United Arab Emirates AEDT",
+    "decimal_places": 4,
+    "country": "United Arab Emirates",
+    "country_currency": "AED",
+    "category": "fiat",
+    "country_code": "AE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650884000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7946d1c1718774eeaaf6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Afghanistan AFN",
+    "crypto_symbol": "Afghanistan AFNT",
+    "decimal_places": 4,
+    "country": "Afghanistan",
+    "country_currency": "AFN",
+    "category": "fiat",
+    "country_code": "AF",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650886000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7949d1c1718774eeaaf8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Antigua And Barbuda XCD",
+    "crypto_symbol": "Antigua And Barbuda XCDT",
+    "decimal_places": 4,
+    "country": "Antigua And Barbuda",
+    "country_currency": "XCD",
+    "category": "fiat",
+    "country_code": "AG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650889000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a794bd1c1718774eeaafa"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Anguilla XCD",
+    "crypto_symbol": "Anguilla XCDT",
+    "decimal_places": 4,
+    "country": "Anguilla",
+    "country_currency": "XCD",
+    "category": "fiat",
+    "country_code": "AI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650891000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a794ed1c1718774eeaafc"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Albania ALL",
+    "crypto_symbol": "Albania ALLT",
+    "decimal_places": 4,
+    "country": "Albania",
+    "country_currency": "ALL",
+    "category": "fiat",
+    "country_code": "AL",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650894000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7950d1c1718774eeaafe"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Armenia AMD",
+    "crypto_symbol": "Armenia AMDT",
+    "decimal_places": 4,
+    "country": "Armenia",
+    "country_currency": "AMD",
+    "category": "fiat",
+    "country_code": "AM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650896000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7953d1c1718774eeab00"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Angola AOA",
+    "crypto_symbol": "Angola AOAT",
+    "decimal_places": 4,
+    "country": "Angola",
+    "country_currency": "AOA",
+    "category": "fiat",
+    "country_code": "AO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650899000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7955d1c1718774eeab02"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Antarctica undefined",
+    "crypto_symbol": "Antarctica undefinedT",
+    "decimal_places": 4,
+    "country": "Antarctica",
+    "category": "fiat",
+    "country_code": "AQ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650901000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7958d1c1718774eeab04"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Argentina ARS",
+    "crypto_symbol": "Argentina ARST",
+    "decimal_places": 4,
+    "country": "Argentina",
+    "country_currency": "ARS",
+    "category": "fiat",
+    "country_code": "AR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650904000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a795ad1c1718774eeab06"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "American Samoa USD",
+    "crypto_symbol": "American Samoa USDT",
+    "decimal_places": 4,
+    "country": "American Samoa",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "AS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650906000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a795cd1c1718774eeab08"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Austria EUR",
+    "crypto_symbol": "Austria EURT",
+    "decimal_places": 4,
+    "country": "Austria",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "AT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650908000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a795fd1c1718774eeab0a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Australia AUD",
+    "crypto_symbol": "Australia AUDT",
+    "decimal_places": 4,
+    "country": "Australia",
+    "country_currency": "AUD",
+    "category": "fiat",
+    "country_code": "AU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650911000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7961d1c1718774eeab0c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Aruba AWG",
+    "crypto_symbol": "Aruba AWGT",
+    "decimal_places": 4,
+    "country": "Aruba",
+    "country_currency": "AWG",
+    "category": "fiat",
+    "country_code": "AW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650913000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7964d1c1718774eeab0e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Åland Islands EUR",
+    "crypto_symbol": "Åland Islands EURT",
+    "decimal_places": 4,
+    "country": "Åland Islands",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "AX",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650916000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7966d1c1718774eeab10"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Azerbaijan AZN",
+    "crypto_symbol": "Azerbaijan AZNT",
+    "decimal_places": 4,
+    "country": "Azerbaijan",
+    "country_currency": "AZN",
+    "category": "fiat",
+    "country_code": "AZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650918000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7969d1c1718774eeab12"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bosnia & Herzegovina BAM",
+    "crypto_symbol": "Bosnia & Herzegovina BAMT",
+    "decimal_places": 4,
+    "country": "Bosnia & Herzegovina",
+    "country_currency": "BAM",
+    "category": "fiat",
+    "country_code": "BA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650921000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a796bd1c1718774eeab14"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Barbados BBD",
+    "crypto_symbol": "Barbados BBDT",
+    "decimal_places": 4,
+    "country": "Barbados",
+    "country_currency": "BBD",
+    "category": "fiat",
+    "country_code": "BB",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650923000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a796dd1c1718774eeab16"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bangladesh BDT",
+    "crypto_symbol": "Bangladesh BDTT",
+    "decimal_places": 4,
+    "country": "Bangladesh",
+    "country_currency": "BDT",
+    "category": "fiat",
+    "country_code": "BD",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650925000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7970d1c1718774eeab18"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Belgium EUR",
+    "crypto_symbol": "Belgium EURT",
+    "decimal_places": 4,
+    "country": "Belgium",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "BE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650928000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7972d1c1718774eeab1a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Burkina Faso XOF",
+    "crypto_symbol": "Burkina Faso XOFT",
+    "decimal_places": 4,
+    "country": "Burkina Faso",
+    "country_currency": "XOF",
+    "category": "fiat",
+    "country_code": "BF",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650930000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7975d1c1718774eeab1c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bulgaria BGN",
+    "crypto_symbol": "Bulgaria BGNT",
+    "decimal_places": 4,
+    "country": "Bulgaria",
+    "country_currency": "BGN",
+    "category": "fiat",
+    "country_code": "BG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650933000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7977d1c1718774eeab1e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bahrain BHD",
+    "crypto_symbol": "Bahrain BHDT",
+    "decimal_places": 4,
+    "country": "Bahrain",
+    "country_currency": "BHD",
+    "category": "fiat",
+    "country_code": "BH",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650935000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a797ad1c1718774eeab20"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Burundi BIF",
+    "crypto_symbol": "Burundi BIFT",
+    "decimal_places": 4,
+    "country": "Burundi",
+    "country_currency": "BIF",
+    "category": "fiat",
+    "country_code": "BI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650938000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a797cd1c1718774eeab22"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Benin XOF",
+    "crypto_symbol": "Benin XOFT",
+    "decimal_places": 4,
+    "country": "Benin",
+    "country_currency": "XOF",
+    "category": "fiat",
+    "country_code": "BJ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650940000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a797cd1c1718774eeab24"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Ivory Coast",
+    "crypto_symbol": "CAF",
+    "decimal_places": 4,
+    "country": "Ivory Coast",
+    "country_currency": "CAF",
+    "category": "fiat",
+    "country_code": "225",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650940000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a797fd1c1718774eeab24"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Saint Barthélemy EUR",
+    "crypto_symbol": "Saint Barthélemy EURT",
+    "decimal_places": 4,
+    "country": "Saint Barthélemy",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "BL",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650943000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7981d1c1718774eeab26"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bermuda BMD",
+    "crypto_symbol": "Bermuda BMDT",
+    "decimal_places": 4,
+    "country": "Bermuda",
+    "country_currency": "BMD",
+    "category": "fiat",
+    "country_code": "BM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650945000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7983d1c1718774eeab28"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Brunei Darussalam BND",
+    "crypto_symbol": "Brunei Darussalam BNDT",
+    "decimal_places": 4,
+    "country": "Brunei Darussalam",
+    "country_currency": "BND",
+    "category": "fiat",
+    "country_code": "BN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650947000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7986d1c1718774eeab2a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bolivia, Plurinational State Of BOB",
+    "crypto_symbol": "Bolivia, Plurinational State Of BOBT",
+    "decimal_places": 4,
+    "country": "Bolivia, Plurinational State Of",
+    "country_currency": "BOB",
+    "category": "fiat",
+    "country_code": "BO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650950000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7988d1c1718774eeab2c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bonaire, Saint Eustatius And Saba USD",
+    "crypto_symbol": "Bonaire, Saint Eustatius And Saba USDT",
+    "decimal_places": 4,
+    "country": "Bonaire, Saint Eustatius And Saba",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "BQ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650952000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a798bd1c1718774eeab2e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Brazil BRL",
+    "crypto_symbol": "Brazil BRLT",
+    "decimal_places": 4,
+    "country": "Brazil",
+    "country_currency": "BRL",
+    "category": "fiat",
+    "country_code": "BR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650955000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a798dd1c1718774eeab30"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bahamas BSD",
+    "crypto_symbol": "Bahamas BSDT",
+    "decimal_places": 4,
+    "country": "Bahamas",
+    "country_currency": "BSD",
+    "category": "fiat",
+    "country_code": "BS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650957000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7990d1c1718774eeab32"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bhutan INR",
+    "crypto_symbol": "Bhutan INRT",
+    "decimal_places": 4,
+    "country": "Bhutan",
+    "country_currency": "INR",
+    "category": "fiat",
+    "country_code": "BT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650960000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7992d1c1718774eeab34"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Bouvet Island NOK",
+    "crypto_symbol": "Bouvet Island NOKT",
+    "decimal_places": 4,
+    "country": "Bouvet Island",
+    "country_currency": "NOK",
+    "category": "fiat",
+    "country_code": "BV",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650962000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7995d1c1718774eeab36"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Botswana BWP",
+    "crypto_symbol": "Botswana BWPT",
+    "decimal_places": 4,
+    "country": "Botswana",
+    "country_currency": "BWP",
+    "category": "fiat",
+    "country_code": "BW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650965000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7997d1c1718774eeab38"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Belarus BYR",
+    "crypto_symbol": "Belarus BYRT",
+    "decimal_places": 4,
+    "country": "Belarus",
+    "country_currency": "BYR",
+    "category": "fiat",
+    "country_code": "BY",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650967000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7999d1c1718774eeab3a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Belize BZD",
+    "crypto_symbol": "Belize BZDT",
+    "decimal_places": 4,
+    "country": "Belize",
+    "country_currency": "BZD",
+    "category": "fiat",
+    "country_code": "BZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650969000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a799cd1c1718774eeab3c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Canada CAD",
+    "crypto_symbol": "Canada CADT",
+    "decimal_places": 4,
+    "country": "Canada",
+    "country_currency": "CAD",
+    "category": "fiat",
+    "country_code": "CA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650972000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a799ed1c1718774eeab3e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Cocos (Keeling) Islands AUD",
+    "crypto_symbol": "Cocos (Keeling) Islands AUDT",
+    "decimal_places": 4,
+    "country": "Cocos (Keeling) Islands",
+    "country_currency": "AUD",
+    "category": "fiat",
+    "country_code": "CC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650974000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79a1d1c1718774eeab40"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Democratic Republic Of Congo CDF",
+    "crypto_symbol": "Democratic Republic Of Congo CDFT",
+    "decimal_places": 4,
+    "country": "Democratic Republic Of Congo",
+    "country_currency": "CDF",
+    "category": "fiat",
+    "country_code": "CD",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650977000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79a3d1c1718774eeab42"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Central African Republic XAF",
+    "crypto_symbol": "Central African Republic XAFT",
+    "decimal_places": 4,
+    "country": "Central African Republic",
+    "country_currency": "XAF",
+    "category": "fiat",
+    "country_code": "CF",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650979000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79a6d1c1718774eeab44"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Republic Of Congo XAF",
+    "crypto_symbol": "Republic Of Congo XAFT",
+    "decimal_places": 4,
+    "country": "Republic Of Congo",
+    "country_currency": "XAF",
+    "category": "fiat",
+    "country_code": "CG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650982000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79a8d1c1718774eeab46"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Switzerland CHF",
+    "crypto_symbol": "Switzerland CHFT",
+    "decimal_places": 4,
+    "country": "Switzerland",
+    "country_currency": "CHF",
+    "category": "fiat",
+    "country_code": "CH",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650984000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79abd1c1718774eeab48"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Cote d'Ivoire XOF",
+    "crypto_symbol": "Cote d'Ivoire XOFT",
+    "decimal_places": 4,
+    "country": "Cote d'Ivoire",
+    "country_currency": "XOF",
+    "category": "fiat",
+    "country_code": "CI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650987000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79add1c1718774eeab4a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Cook Islands NZD",
+    "crypto_symbol": "Cook Islands NZDT",
+    "decimal_places": 4,
+    "country": "Cook Islands",
+    "country_currency": "NZD",
+    "category": "fiat",
+    "country_code": "CK",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650989000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79afd1c1718774eeab4c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Chile CLP",
+    "crypto_symbol": "Chile CLPT",
+    "decimal_places": 4,
+    "country": "Chile",
+    "country_currency": "CLP",
+    "category": "fiat",
+    "country_code": "CL",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650991000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79b2d1c1718774eeab4e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Cameroon XAF",
+    "crypto_symbol": "Cameroon XAFT",
+    "decimal_places": 4,
+    "country": "Cameroon",
+    "country_currency": "XAF",
+    "category": "fiat",
+    "country_code": "CM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650994000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79b4d1c1718774eeab50"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "China CNY",
+    "crypto_symbol": "China CNYT",
+    "decimal_places": 4,
+    "country": "China",
+    "country_currency": "CNY",
+    "category": "fiat",
+    "country_code": "CN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650996000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79b7d1c1718774eeab52"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Colombia COP",
+    "crypto_symbol": "Colombia COPT",
+    "decimal_places": 4,
+    "country": "Colombia",
+    "country_currency": "COP",
+    "category": "fiat",
+    "country_code": "CO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683650999000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79b9d1c1718774eeab54"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Clipperton Island EUR",
+    "crypto_symbol": "Clipperton Island EURT",
+    "decimal_places": 4,
+    "country": "Clipperton Island",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "CP",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651001000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79bcd1c1718774eeab56"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Costa Rica CRC",
+    "crypto_symbol": "Costa Rica CRCT",
+    "decimal_places": 4,
+    "country": "Costa Rica",
+    "country_currency": "CRC",
+    "category": "fiat",
+    "country_code": "CR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651004000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79bed1c1718774eeab58"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Cuba CUP",
+    "crypto_symbol": "Cuba CUPT",
+    "decimal_places": 4,
+    "country": "Cuba",
+    "country_currency": "CUP",
+    "category": "fiat",
+    "country_code": "CU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651006000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79c1d1c1718774eeab5a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Cabo Verde CVE",
+    "crypto_symbol": "Cabo Verde CVET",
+    "decimal_places": 4,
+    "country": "Cabo Verde",
+    "country_currency": "CVE",
+    "category": "fiat",
+    "country_code": "CV",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651009000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79c3d1c1718774eeab5c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Curacao ANG",
+    "crypto_symbol": "Curacao ANGT",
+    "decimal_places": 4,
+    "country": "Curacao",
+    "country_currency": "ANG",
+    "category": "fiat",
+    "country_code": "CW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651011000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79c6d1c1718774eeab5e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Christmas Island AUD",
+    "crypto_symbol": "Christmas Island AUDT",
+    "decimal_places": 4,
+    "country": "Christmas Island",
+    "country_currency": "AUD",
+    "category": "fiat",
+    "country_code": "CX",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651014000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79c8d1c1718774eeab60"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Cyprus EUR",
+    "crypto_symbol": "Cyprus EURT",
+    "decimal_places": 4,
+    "country": "Cyprus",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "CY",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651016000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79cbd1c1718774eeab62"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Czech Republic CZK",
+    "crypto_symbol": "Czech Republic CZKT",
+    "decimal_places": 4,
+    "country": "Czech Republic",
+    "country_currency": "CZK",
+    "category": "fiat",
+    "country_code": "CZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651019000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79cdd1c1718774eeab64"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Germany EUR",
+    "crypto_symbol": "Germany EURT",
+    "decimal_places": 4,
+    "country": "Germany",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "DE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651021000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79cfd1c1718774eeab66"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Diego Garcia USD",
+    "crypto_symbol": "Diego Garcia USDT",
+    "decimal_places": 4,
+    "country": "Diego Garcia",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "DG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651023000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79d2d1c1718774eeab68"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Djibouti DJF",
+    "crypto_symbol": "Djibouti DJFT",
+    "decimal_places": 4,
+    "country": "Djibouti",
+    "country_currency": "DJF",
+    "category": "fiat",
+    "country_code": "DJ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651026000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79d4d1c1718774eeab6a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Denmark DKK",
+    "crypto_symbol": "Denmark DKKT",
+    "decimal_places": 4,
+    "country": "Denmark",
+    "country_currency": "DKK",
+    "category": "fiat",
+    "country_code": "DK",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651028000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79d7d1c1718774eeab6c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Dominica XCD",
+    "crypto_symbol": "Dominica XCDT",
+    "decimal_places": 4,
+    "country": "Dominica",
+    "country_currency": "XCD",
+    "category": "fiat",
+    "country_code": "DM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651031000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79d9d1c1718774eeab6e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Dominican Republic DOP",
+    "crypto_symbol": "Dominican Republic DOPT",
+    "decimal_places": 4,
+    "country": "Dominican Republic",
+    "country_currency": "DOP",
+    "category": "fiat",
+    "country_code": "DO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651033000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79dcd1c1718774eeab70"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Algeria DZD",
+    "crypto_symbol": "Algeria DZDT",
+    "decimal_places": 4,
+    "country": "Algeria",
+    "country_currency": "DZD",
+    "category": "fiat",
+    "country_code": "DZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651036000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79ded1c1718774eeab72"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Ceuta, Mulilla EUR",
+    "crypto_symbol": "Ceuta, Mulilla EURT",
+    "decimal_places": 4,
+    "country": "Ceuta, Mulilla",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "EA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651038000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79e1d1c1718774eeab74"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Ecuador USD",
+    "crypto_symbol": "Ecuador USDT",
+    "decimal_places": 4,
+    "country": "Ecuador",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "EC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651041000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79e3d1c1718774eeab76"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Estonia EUR",
+    "crypto_symbol": "Estonia EURT",
+    "decimal_places": 4,
+    "country": "Estonia",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "EE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651043000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79e5d1c1718774eeab78"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Egypt EGP",
+    "crypto_symbol": "Egypt EGPT",
+    "decimal_places": 4,
+    "country": "Egypt",
+    "country_currency": "EGP",
+    "category": "fiat",
+    "country_code": "EG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651045000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79e8d1c1718774eeab7a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Western Sahara MAD",
+    "crypto_symbol": "Western Sahara MADT",
+    "decimal_places": 4,
+    "country": "Western Sahara",
+    "country_currency": "MAD",
+    "category": "fiat",
+    "country_code": "EH",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651048000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79ead1c1718774eeab7c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Eritrea ERN",
+    "crypto_symbol": "Eritrea ERNT",
+    "decimal_places": 4,
+    "country": "Eritrea",
+    "country_currency": "ERN",
+    "category": "fiat",
+    "country_code": "ER",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651050000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79edd1c1718774eeab7e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Spain EUR",
+    "crypto_symbol": "Spain EURT",
+    "decimal_places": 4,
+    "country": "Spain",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "ES",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651053000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79efd1c1718774eeab80"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Ethiopia ETB",
+    "crypto_symbol": "Ethiopia ETBT",
+    "decimal_places": 4,
+    "country": "Ethiopia",
+    "country_currency": "ETB",
+    "category": "fiat",
+    "country_code": "ET",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651055000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79f2d1c1718774eeab82"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "European Union EUR",
+    "crypto_symbol": "European Union EURT",
+    "decimal_places": 4,
+    "country": "European Union",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "EU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651058000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79f4d1c1718774eeab84"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Finland EUR",
+    "crypto_symbol": "Finland EURT",
+    "decimal_places": 4,
+    "country": "Finland",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "FI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651060000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79f7d1c1718774eeab86"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Fiji FJD",
+    "crypto_symbol": "Fiji FJDT",
+    "decimal_places": 4,
+    "country": "Fiji",
+    "country_currency": "FJD",
+    "category": "fiat",
+    "country_code": "FJ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651063000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79f9d1c1718774eeab88"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Falkland Islands FKP",
+    "crypto_symbol": "Falkland Islands FKPT",
+    "decimal_places": 4,
+    "country": "Falkland Islands",
+    "country_currency": "FKP",
+    "category": "fiat",
+    "country_code": "FK",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651065000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79fbd1c1718774eeab8a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Micronesia, Federated States Of USD",
+    "crypto_symbol": "Micronesia, Federated States Of USDT",
+    "decimal_places": 4,
+    "country": "Micronesia, Federated States Of",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "FM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651067000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a79fed1c1718774eeab8c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Faroe Islands DKK",
+    "crypto_symbol": "Faroe Islands DKKT",
+    "decimal_places": 4,
+    "country": "Faroe Islands",
+    "country_currency": "DKK",
+    "category": "fiat",
+    "country_code": "FO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651070000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a00d1c1718774eeab8e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "France EUR",
+    "crypto_symbol": "France EURT",
+    "decimal_places": 4,
+    "country": "France",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "FR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651072000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a03d1c1718774eeab90"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "France, Metropolitan EUR",
+    "crypto_symbol": "France, Metropolitan EURT",
+    "decimal_places": 4,
+    "country": "France, Metropolitan",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "FX",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651075000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a06d1c1718774eeab92"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Gabon XAF",
+    "crypto_symbol": "Gabon XAFT",
+    "decimal_places": 4,
+    "country": "Gabon",
+    "country_currency": "XAF",
+    "category": "fiat",
+    "country_code": "GA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651078000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a08d1c1718774eeab94"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "United Kingdom GBP",
+    "crypto_symbol": "United Kingdom GBPT",
+    "decimal_places": 4,
+    "country": "United Kingdom",
+    "country_currency": "GBP",
+    "category": "fiat",
+    "country_code": "GB",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651080000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a0ad1c1718774eeab96"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Grenada XCD",
+    "crypto_symbol": "Grenada XCDT",
+    "decimal_places": 4,
+    "country": "Grenada",
+    "country_currency": "XCD",
+    "category": "fiat",
+    "country_code": "GD",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651082000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a0dd1c1718774eeab98"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Georgia GEL",
+    "crypto_symbol": "Georgia GELT",
+    "decimal_places": 4,
+    "country": "Georgia",
+    "country_currency": "GEL",
+    "category": "fiat",
+    "country_code": "GE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651085000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a0fd1c1718774eeab9a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "French Guiana EUR",
+    "crypto_symbol": "French Guiana EURT",
+    "decimal_places": 4,
+    "country": "French Guiana",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "GF",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651087000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a12d1c1718774eeab9c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Guernsey GBP",
+    "crypto_symbol": "Guernsey GBPT",
+    "decimal_places": 4,
+    "country": "Guernsey",
+    "country_currency": "GBP",
+    "category": "fiat",
+    "country_code": "GG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651090000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a14d1c1718774eeaba0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Gibraltar GIP",
+    "crypto_symbol": "Gibraltar GIPT",
+    "decimal_places": 4,
+    "country": "Gibraltar",
+    "country_currency": "GIP",
+    "category": "fiat",
+    "country_code": "GI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651092000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a17d1c1718774eeaba2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Greenland DKK",
+    "crypto_symbol": "Greenland DKKT",
+    "decimal_places": 4,
+    "country": "Greenland",
+    "country_currency": "DKK",
+    "category": "fiat",
+    "country_code": "GL",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651095000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a19d1c1718774eeaba4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Gambia GMD",
+    "crypto_symbol": "Gambia GMDT",
+    "decimal_places": 4,
+    "country": "Gambia",
+    "country_currency": "GMD",
+    "category": "fiat",
+    "country_code": "GM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651097000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a1cd1c1718774eeaba6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Guinea GNF",
+    "crypto_symbol": "Guinea GNFT",
+    "decimal_places": 4,
+    "country": "Guinea",
+    "country_currency": "GNF",
+    "category": "fiat",
+    "country_code": "GN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651100000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a1ed1c1718774eeaba8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Guadeloupe EUR",
+    "crypto_symbol": "Guadeloupe EURT",
+    "decimal_places": 4,
+    "country": "Guadeloupe",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "GP",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651102000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a21d1c1718774eeabaa"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Equatorial Guinea XAF",
+    "crypto_symbol": "Equatorial Guinea XAFT",
+    "decimal_places": 4,
+    "country": "Equatorial Guinea",
+    "country_currency": "XAF",
+    "category": "fiat",
+    "country_code": "GQ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651105000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a23d1c1718774eeabac"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Greece EUR",
+    "crypto_symbol": "Greece EURT",
+    "decimal_places": 4,
+    "country": "Greece",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "GR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651107000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a26d1c1718774eeabae"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "South Georgia And The South Sandwich Islands GBP",
+    "crypto_symbol": "South Georgia And The South Sandwich Islands GBPT",
+    "decimal_places": 4,
+    "country": "South Georgia And The South Sandwich Islands",
+    "country_currency": "GBP",
+    "category": "fiat",
+    "country_code": "GS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651110000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a28d1c1718774eeabb0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Guatemala GTQ",
+    "crypto_symbol": "Guatemala GTQT",
+    "decimal_places": 4,
+    "country": "Guatemala",
+    "country_currency": "GTQ",
+    "category": "fiat",
+    "country_code": "GT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651112000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a2ad1c1718774eeabb2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Guam USD",
+    "crypto_symbol": "Guam USDT",
+    "decimal_places": 4,
+    "country": "Guam",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "GU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651114000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a2dd1c1718774eeabb4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Guinea-bissau XOF",
+    "crypto_symbol": "Guinea-bissau XOFT",
+    "decimal_places": 4,
+    "country": "Guinea-bissau",
+    "country_currency": "XOF",
+    "category": "fiat",
+    "country_code": "GW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651117000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a2fd1c1718774eeabb6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Guyana GYD",
+    "crypto_symbol": "Guyana GYDT",
+    "decimal_places": 4,
+    "country": "Guyana",
+    "country_currency": "GYD",
+    "category": "fiat",
+    "country_code": "GY",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651119000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a32d1c1718774eeabb8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Hong Kong HKD",
+    "crypto_symbol": "Hong Kong HKDT",
+    "decimal_places": 4,
+    "country": "Hong Kong",
+    "country_currency": "HKD",
+    "category": "fiat",
+    "country_code": "HK",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651122000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a34d1c1718774eeabba"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Heard Island And McDonald Islands AUD",
+    "crypto_symbol": "Heard Island And McDonald Islands AUDT",
+    "decimal_places": 4,
+    "country": "Heard Island And McDonald Islands",
+    "country_currency": "AUD",
+    "category": "fiat",
+    "country_code": "HM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651124000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a37d1c1718774eeabbc"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Honduras HNL",
+    "crypto_symbol": "Honduras HNLT",
+    "decimal_places": 4,
+    "country": "Honduras",
+    "country_currency": "HNL",
+    "category": "fiat",
+    "country_code": "HN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651127000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a39d1c1718774eeabbe"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Croatia HRK",
+    "crypto_symbol": "Croatia HRKT",
+    "decimal_places": 4,
+    "country": "Croatia",
+    "country_currency": "HRK",
+    "category": "fiat",
+    "country_code": "HR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651129000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a3cd1c1718774eeabc0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Haiti HTG",
+    "crypto_symbol": "Haiti HTGT",
+    "decimal_places": 4,
+    "country": "Haiti",
+    "country_currency": "HTG",
+    "category": "fiat",
+    "country_code": "HT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651132000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a3ed1c1718774eeabc2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Hungary HUF",
+    "crypto_symbol": "Hungary HUFT",
+    "decimal_places": 4,
+    "country": "Hungary",
+    "country_currency": "HUF",
+    "category": "fiat",
+    "country_code": "HU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651134000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a40d1c1718774eeabc4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Canary Islands EUR",
+    "crypto_symbol": "Canary Islands EURT",
+    "decimal_places": 4,
+    "country": "Canary Islands",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "IC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651136000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a43d1c1718774eeabc6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Indonesia IDR",
+    "crypto_symbol": "Indonesia IDRT",
+    "decimal_places": 4,
+    "country": "Indonesia",
+    "country_currency": "IDR",
+    "category": "fiat",
+    "country_code": "ID",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651139000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a45d1c1718774eeabc8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Ireland EUR",
+    "crypto_symbol": "Ireland EURT",
+    "decimal_places": 4,
+    "country": "Ireland",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "IE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651141000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a48d1c1718774eeabca"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Israel ILS",
+    "crypto_symbol": "Israel ILST",
+    "decimal_places": 4,
+    "country": "Israel",
+    "country_currency": "ILS",
+    "category": "fiat",
+    "country_code": "IL",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651144000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a4ad1c1718774eeabcc"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Isle Of Man GBP",
+    "crypto_symbol": "Isle Of Man GBPT",
+    "decimal_places": 4,
+    "country": "Isle Of Man",
+    "country_currency": "GBP",
+    "category": "fiat",
+    "country_code": "IM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651146000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a4dd1c1718774eeabce"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "India INR",
+    "crypto_symbol": "India INRT",
+    "decimal_places": 4,
+    "country": "India",
+    "country_currency": "INR",
+    "category": "fiat",
+    "country_code": "IN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651149000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a4fd1c1718774eeabd0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "British Indian Ocean Territory USD",
+    "crypto_symbol": "British Indian Ocean Territory USDT",
+    "decimal_places": 4,
+    "country": "British Indian Ocean Territory",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "IO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651151000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a52d1c1718774eeabd2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Iraq IQD",
+    "crypto_symbol": "Iraq IQDT",
+    "decimal_places": 4,
+    "country": "Iraq",
+    "country_currency": "IQD",
+    "category": "fiat",
+    "country_code": "IQ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651154000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a54d1c1718774eeabd4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Iran, Islamic Republic Of IRR",
+    "crypto_symbol": "Iran, Islamic Republic Of IRRT",
+    "decimal_places": 4,
+    "country": "Iran, Islamic Republic Of",
+    "country_currency": "IRR",
+    "category": "fiat",
+    "country_code": "IR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651156000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a56d1c1718774eeabd6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Iceland ISK",
+    "crypto_symbol": "Iceland ISKT",
+    "decimal_places": 4,
+    "country": "Iceland",
+    "country_currency": "ISK",
+    "category": "fiat",
+    "country_code": "IS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651158000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a59d1c1718774eeabd8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Italy EUR",
+    "crypto_symbol": "Italy EURT",
+    "decimal_places": 4,
+    "country": "Italy",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "IT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651161000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a5bd1c1718774eeabda"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Jersey GBP",
+    "crypto_symbol": "Jersey GBPT",
+    "decimal_places": 4,
+    "country": "Jersey",
+    "country_currency": "GBP",
+    "category": "fiat",
+    "country_code": "JE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651163000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a5ed1c1718774eeabdc"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Jamaica JMD",
+    "crypto_symbol": "Jamaica JMDT",
+    "decimal_places": 4,
+    "country": "Jamaica",
+    "country_currency": "JMD",
+    "category": "fiat",
+    "country_code": "JM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651166000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a60d1c1718774eeabde"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Jordan JOD",
+    "crypto_symbol": "Jordan JODT",
+    "decimal_places": 4,
+    "country": "Jordan",
+    "country_currency": "JOD",
+    "category": "fiat",
+    "country_code": "JO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651168000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a63d1c1718774eeabe0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Japan JPY",
+    "crypto_symbol": "Japan JPYT",
+    "decimal_places": 4,
+    "country": "Japan",
+    "country_currency": "JPY",
+    "category": "fiat",
+    "country_code": "JP",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651171000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a65d1c1718774eeabe2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Kenya KES",
+    "crypto_symbol": "Kenya KEST",
+    "decimal_places": 4,
+    "country": "Kenya",
+    "country_currency": "KES",
+    "category": "fiat",
+    "country_code": "KE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651173000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a68d1c1718774eeabe4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Kyrgyzstan KGS",
+    "crypto_symbol": "Kyrgyzstan KGST",
+    "decimal_places": 4,
+    "country": "Kyrgyzstan",
+    "country_currency": "KGS",
+    "category": "fiat",
+    "country_code": "KG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651176000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a6ad1c1718774eeabe6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Cambodia KHR",
+    "crypto_symbol": "Cambodia KHRT",
+    "decimal_places": 4,
+    "country": "Cambodia",
+    "country_currency": "KHR",
+    "category": "fiat",
+    "country_code": "KH",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651178000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a6cd1c1718774eeabe8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Kiribati AUD",
+    "crypto_symbol": "Kiribati AUDT",
+    "decimal_places": 4,
+    "country": "Kiribati",
+    "country_currency": "AUD",
+    "category": "fiat",
+    "country_code": "KI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651180000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a6fd1c1718774eeabea"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Comoros KMF",
+    "crypto_symbol": "Comoros KMFT",
+    "decimal_places": 4,
+    "country": "Comoros",
+    "country_currency": "KMF",
+    "category": "fiat",
+    "country_code": "KM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651183000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a71d1c1718774eeabec"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Saint Kitts And Nevis XCD",
+    "crypto_symbol": "Saint Kitts And Nevis XCDT",
+    "decimal_places": 4,
+    "country": "Saint Kitts And Nevis",
+    "country_currency": "XCD",
+    "category": "fiat",
+    "country_code": "KN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651185000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a74d1c1718774eeabee"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Korea, Democratic People's Republic Of KPW",
+    "crypto_symbol": "Korea, Democratic People's Republic Of KPWT",
+    "decimal_places": 4,
+    "country": "Korea, Democratic People's Republic Of",
+    "country_currency": "KPW",
+    "category": "fiat",
+    "country_code": "KP",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651188000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a76d1c1718774eeabf0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Korea, Republic Of KRW",
+    "crypto_symbol": "Korea, Republic Of KRWT",
+    "decimal_places": 4,
+    "country": "Korea, Republic Of",
+    "country_currency": "KRW",
+    "category": "fiat",
+    "country_code": "KR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651190000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a79d1c1718774eeabf2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Kuwait KWD",
+    "crypto_symbol": "Kuwait KWDT",
+    "decimal_places": 4,
+    "country": "Kuwait",
+    "country_currency": "KWD",
+    "category": "fiat",
+    "country_code": "KW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651193000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a7bd1c1718774eeabf4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Cayman Islands KYD",
+    "crypto_symbol": "Cayman Islands KYDT",
+    "decimal_places": 4,
+    "country": "Cayman Islands",
+    "country_currency": "KYD",
+    "category": "fiat",
+    "country_code": "KY",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651195000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a7ed1c1718774eeabf6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Kazakhstan KZT",
+    "crypto_symbol": "Kazakhstan KZTT",
+    "decimal_places": 4,
+    "country": "Kazakhstan",
+    "country_currency": "KZT",
+    "category": "fiat",
+    "country_code": "KZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651198000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a80d1c1718774eeabf8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Lao People's Democratic Republic LAK",
+    "crypto_symbol": "Lao People's Democratic Republic LAKT",
+    "decimal_places": 4,
+    "country": "Lao People's Democratic Republic",
+    "country_currency": "LAK",
+    "category": "fiat",
+    "country_code": "LA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651200000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a83d1c1718774eeabfa"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Lebanon LBP",
+    "crypto_symbol": "Lebanon LBPT",
+    "decimal_places": 4,
+    "country": "Lebanon",
+    "country_currency": "LBP",
+    "category": "fiat",
+    "country_code": "LB",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651203000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a85d1c1718774eeabfc"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Saint Lucia XCD",
+    "crypto_symbol": "Saint Lucia XCDT",
+    "decimal_places": 4,
+    "country": "Saint Lucia",
+    "country_currency": "XCD",
+    "category": "fiat",
+    "country_code": "LC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651205000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a87d1c1718774eeabfe"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Liechtenstein CHF",
+    "crypto_symbol": "Liechtenstein CHFT",
+    "decimal_places": 4,
+    "country": "Liechtenstein",
+    "country_currency": "CHF",
+    "category": "fiat",
+    "country_code": "LI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651207000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a8ad1c1718774eeac00"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Sri Lanka LKR",
+    "crypto_symbol": "Sri Lanka LKRT",
+    "decimal_places": 4,
+    "country": "Sri Lanka",
+    "country_currency": "LKR",
+    "category": "fiat",
+    "country_code": "LK",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651210000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a8cd1c1718774eeac02"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Liberia LRD",
+    "crypto_symbol": "Liberia LRDT",
+    "decimal_places": 4,
+    "country": "Liberia",
+    "country_currency": "LRD",
+    "category": "fiat",
+    "country_code": "LR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651212000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a8fd1c1718774eeac04"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Lesotho LSL",
+    "crypto_symbol": "Lesotho LSLT",
+    "decimal_places": 4,
+    "country": "Lesotho",
+    "country_currency": "LSL",
+    "category": "fiat",
+    "country_code": "LS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651215000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a91d1c1718774eeac06"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Lithuania EUR",
+    "crypto_symbol": "Lithuania EURT",
+    "decimal_places": 4,
+    "country": "Lithuania",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "LT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651217000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a94d1c1718774eeac08"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Luxembourg EUR",
+    "crypto_symbol": "Luxembourg EURT",
+    "decimal_places": 4,
+    "country": "Luxembourg",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "LU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651220000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a96d1c1718774eeac0a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Latvia EUR",
+    "crypto_symbol": "Latvia EURT",
+    "decimal_places": 4,
+    "country": "Latvia",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "LV",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651222000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a98d1c1718774eeac0c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Libya LYD",
+    "crypto_symbol": "Libya LYDT",
+    "decimal_places": 4,
+    "country": "Libya",
+    "country_currency": "LYD",
+    "category": "fiat",
+    "country_code": "LY",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651224000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a9bd1c1718774eeac0e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Morocco MAD",
+    "crypto_symbol": "Morocco MADT",
+    "decimal_places": 4,
+    "country": "Morocco",
+    "country_currency": "MAD",
+    "category": "fiat",
+    "country_code": "MA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651227000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7a9dd1c1718774eeac10"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Monaco EUR",
+    "crypto_symbol": "Monaco EURT",
+    "decimal_places": 4,
+    "country": "Monaco",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "MC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651229000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aa0d1c1718774eeac12"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Moldova MDL",
+    "crypto_symbol": "Moldova MDLT",
+    "decimal_places": 4,
+    "country": "Moldova",
+    "country_currency": "MDL",
+    "category": "fiat",
+    "country_code": "MD",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651232000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aa2d1c1718774eeac14"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Montenegro EUR",
+    "crypto_symbol": "Montenegro EURT",
+    "decimal_places": 4,
+    "country": "Montenegro",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "ME",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651234000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aa5d1c1718774eeac16"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Saint Martin EUR",
+    "crypto_symbol": "Saint Martin EURT",
+    "decimal_places": 4,
+    "country": "Saint Martin",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "MF",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651237000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aa7d1c1718774eeac18"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Madagascar MGA",
+    "crypto_symbol": "Madagascar MGAT",
+    "decimal_places": 4,
+    "country": "Madagascar",
+    "country_currency": "MGA",
+    "category": "fiat",
+    "country_code": "MG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651239000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aaad1c1718774eeac1a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Marshall Islands USD",
+    "crypto_symbol": "Marshall Islands USDT",
+    "decimal_places": 4,
+    "country": "Marshall Islands",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "MH",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651242000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aacd1c1718774eeac1c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Macedonia, The Former Yugoslav Republic Of MKD",
+    "crypto_symbol": "Macedonia, The Former Yugoslav Republic Of MKDT",
+    "decimal_places": 4,
+    "country": "Macedonia, The Former Yugoslav Republic Of",
+    "country_currency": "MKD",
+    "category": "fiat",
+    "country_code": "MK",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651244000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aafd1c1718774eeac1e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Mali XOF",
+    "crypto_symbol": "Mali XOFT",
+    "decimal_places": 4,
+    "country": "Mali",
+    "country_currency": "XOF",
+    "category": "fiat",
+    "country_code": "ML",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651247000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ab1d1c1718774eeac20"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Myanmar MMK",
+    "crypto_symbol": "Myanmar MMKT",
+    "decimal_places": 4,
+    "country": "Myanmar",
+    "country_currency": "MMK",
+    "category": "fiat",
+    "country_code": "MM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651249000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ab3d1c1718774eeac22"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Mongolia MNT",
+    "crypto_symbol": "Mongolia MNTT",
+    "decimal_places": 4,
+    "country": "Mongolia",
+    "country_currency": "MNT",
+    "category": "fiat",
+    "country_code": "MN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651251000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ab6d1c1718774eeac24"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Macao MOP",
+    "crypto_symbol": "Macao MOPT",
+    "decimal_places": 4,
+    "country": "Macao",
+    "country_currency": "MOP",
+    "category": "fiat",
+    "country_code": "MO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651254000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ab8d1c1718774eeac26"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Northern Mariana Islands USD",
+    "crypto_symbol": "Northern Mariana Islands USDT",
+    "decimal_places": 4,
+    "country": "Northern Mariana Islands",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "MP",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651256000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7abbd1c1718774eeac28"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Martinique EUR",
+    "crypto_symbol": "Martinique EURT",
+    "decimal_places": 4,
+    "country": "Martinique",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "MQ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651259000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7abdd1c1718774eeac2a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Mauritania MRO",
+    "crypto_symbol": "Mauritania MROT",
+    "decimal_places": 4,
+    "country": "Mauritania",
+    "country_currency": "MRO",
+    "category": "fiat",
+    "country_code": "MR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651261000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ac0d1c1718774eeac2c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Montserrat XCD",
+    "crypto_symbol": "Montserrat XCDT",
+    "decimal_places": 4,
+    "country": "Montserrat",
+    "country_currency": "XCD",
+    "category": "fiat",
+    "country_code": "MS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651264000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ac2d1c1718774eeac2e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Malta EUR",
+    "crypto_symbol": "Malta EURT",
+    "decimal_places": 4,
+    "country": "Malta",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "MT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651266000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ac5d1c1718774eeac30"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Mauritius MUR",
+    "crypto_symbol": "Mauritius MURT",
+    "decimal_places": 4,
+    "country": "Mauritius",
+    "country_currency": "MUR",
+    "category": "fiat",
+    "country_code": "MU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651269000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ac7d1c1718774eeac32"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Maldives MVR",
+    "crypto_symbol": "Maldives MVRT",
+    "decimal_places": 4,
+    "country": "Maldives",
+    "country_currency": "MVR",
+    "category": "fiat",
+    "country_code": "MV",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651271000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7acad1c1718774eeac34"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Malawi MWK",
+    "crypto_symbol": "Malawi MWKT",
+    "decimal_places": 4,
+    "country": "Malawi",
+    "country_currency": "MWK",
+    "category": "fiat",
+    "country_code": "MW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651274000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7accd1c1718774eeac36"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Mexico MXN",
+    "crypto_symbol": "Mexico MXNT",
+    "decimal_places": 4,
+    "country": "Mexico",
+    "country_currency": "MXN",
+    "category": "fiat",
+    "country_code": "MX",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651276000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aced1c1718774eeac38"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Malaysia MYR",
+    "crypto_symbol": "Malaysia MYRT",
+    "decimal_places": 4,
+    "country": "Malaysia",
+    "country_currency": "MYR",
+    "category": "fiat",
+    "country_code": "MY",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651278000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ad1d1c1718774eeac3a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Mozambique MZN",
+    "crypto_symbol": "Mozambique MZNT",
+    "decimal_places": 4,
+    "country": "Mozambique",
+    "country_currency": "MZN",
+    "category": "fiat",
+    "country_code": "MZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651281000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ad3d1c1718774eeac3c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Namibia NAD",
+    "crypto_symbol": "Namibia NADT",
+    "decimal_places": 4,
+    "country": "Namibia",
+    "country_currency": "NAD",
+    "category": "fiat",
+    "country_code": "NA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651283000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ad6d1c1718774eeac3e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "New Caledonia XPF",
+    "crypto_symbol": "New Caledonia XPFT",
+    "decimal_places": 4,
+    "country": "New Caledonia",
+    "country_currency": "XPF",
+    "category": "fiat",
+    "country_code": "NC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651286000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ad8d1c1718774eeac40"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Niger XOF",
+    "crypto_symbol": "Niger XOFT",
+    "decimal_places": 4,
+    "country": "Niger",
+    "country_currency": "XOF",
+    "category": "fiat",
+    "country_code": "NE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651288000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7adbd1c1718774eeac42"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Norfolk Island AUD",
+    "crypto_symbol": "Norfolk Island AUDT",
+    "decimal_places": 4,
+    "country": "Norfolk Island",
+    "country_currency": "AUD",
+    "category": "fiat",
+    "country_code": "NF",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651291000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7addd1c1718774eeac46"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Nicaragua NIO",
+    "crypto_symbol": "Nicaragua NIOT",
+    "decimal_places": 4,
+    "country": "Nicaragua",
+    "country_currency": "NIO",
+    "category": "fiat",
+    "country_code": "NI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651293000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ae0d1c1718774eeac48"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Netherlands EUR",
+    "crypto_symbol": "Netherlands EURT",
+    "decimal_places": 4,
+    "country": "Netherlands",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "NL",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651296000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ae2d1c1718774eeac4a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Norway NOK",
+    "crypto_symbol": "Norway NOKT",
+    "decimal_places": 4,
+    "country": "Norway",
+    "country_currency": "NOK",
+    "category": "fiat",
+    "country_code": "NO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651298000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ae5d1c1718774eeac4c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Nepal NPR",
+    "crypto_symbol": "Nepal NPRT",
+    "decimal_places": 4,
+    "country": "Nepal",
+    "country_currency": "NPR",
+    "category": "fiat",
+    "country_code": "NP",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651301000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ae7d1c1718774eeac4e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Nauru AUD",
+    "crypto_symbol": "Nauru AUDT",
+    "decimal_places": 4,
+    "country": "Nauru",
+    "country_currency": "AUD",
+    "category": "fiat",
+    "country_code": "NR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651303000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aead1c1718774eeac50"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Niue NZD",
+    "crypto_symbol": "Niue NZDT",
+    "decimal_places": 4,
+    "country": "Niue",
+    "country_currency": "NZD",
+    "category": "fiat",
+    "country_code": "NU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651306000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aecd1c1718774eeac52"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "New Zealand NZD",
+    "crypto_symbol": "New Zealand NZDT",
+    "decimal_places": 4,
+    "country": "New Zealand",
+    "country_currency": "NZD",
+    "category": "fiat",
+    "country_code": "NZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651308000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7aefd1c1718774eeac54"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Oman OMR",
+    "crypto_symbol": "Oman OMRT",
+    "decimal_places": 4,
+    "country": "Oman",
+    "country_currency": "OMR",
+    "category": "fiat",
+    "country_code": "OM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651311000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7af1d1c1718774eeac56"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Panama PAB",
+    "crypto_symbol": "Panama PABT",
+    "decimal_places": 4,
+    "country": "Panama",
+    "country_currency": "PAB",
+    "category": "fiat",
+    "country_code": "PA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651313000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7af3d1c1718774eeac58"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Peru PEN",
+    "crypto_symbol": "Peru PENT",
+    "decimal_places": 4,
+    "country": "Peru",
+    "country_currency": "PEN",
+    "category": "fiat",
+    "country_code": "PE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651315000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7af6d1c1718774eeac5a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "French Polynesia XPF",
+    "crypto_symbol": "French Polynesia XPFT",
+    "decimal_places": 4,
+    "country": "French Polynesia",
+    "country_currency": "XPF",
+    "category": "fiat",
+    "country_code": "PF",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651318000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7af8d1c1718774eeac5c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Papua New Guinea PGK",
+    "crypto_symbol": "Papua New Guinea PGKT",
+    "decimal_places": 4,
+    "country": "Papua New Guinea",
+    "country_currency": "PGK",
+    "category": "fiat",
+    "country_code": "PG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651320000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7afbd1c1718774eeac5e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Philippines PHP",
+    "crypto_symbol": "Philippines PHPT",
+    "decimal_places": 4,
+    "country": "Philippines",
+    "country_currency": "PHP",
+    "category": "fiat",
+    "country_code": "PH",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651323000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7afdd1c1718774eeac60"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Pakistan PKR",
+    "crypto_symbol": "Pakistan PKRT",
+    "decimal_places": 4,
+    "country": "Pakistan",
+    "country_currency": "PKR",
+    "category": "fiat",
+    "country_code": "PK",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651325000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b00d1c1718774eeac62"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Poland PLN",
+    "crypto_symbol": "Poland PLNT",
+    "decimal_places": 4,
+    "country": "Poland",
+    "country_currency": "PLN",
+    "category": "fiat",
+    "country_code": "PL",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651328000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b03d1c1718774eeac64"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Saint Pierre And Miquelon EUR",
+    "crypto_symbol": "Saint Pierre And Miquelon EURT",
+    "decimal_places": 4,
+    "country": "Saint Pierre And Miquelon",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "PM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651331000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b05d1c1718774eeac66"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Pitcairn NZD",
+    "crypto_symbol": "Pitcairn NZDT",
+    "decimal_places": 4,
+    "country": "Pitcairn",
+    "country_currency": "NZD",
+    "category": "fiat",
+    "country_code": "PN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651333000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b08d1c1718774eeac68"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Puerto Rico USD",
+    "crypto_symbol": "Puerto Rico USDT",
+    "decimal_places": 4,
+    "country": "Puerto Rico",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "PR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651336000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b0ad1c1718774eeac6a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Palestinian Territory, Occupied JOD",
+    "crypto_symbol": "Palestinian Territory, Occupied JODT",
+    "decimal_places": 4,
+    "country": "Palestinian Territory, Occupied",
+    "country_currency": "JOD",
+    "category": "fiat",
+    "country_code": "PS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651338000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b0dd1c1718774eeac6c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Portugal EUR",
+    "crypto_symbol": "Portugal EURT",
+    "decimal_places": 4,
+    "country": "Portugal",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "PT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651340000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b0fd1c1718774eeac6e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Palau USD",
+    "crypto_symbol": "Palau USDT",
+    "decimal_places": 4,
+    "country": "Palau",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "PW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651343000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b11d1c1718774eeac70"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Paraguay PYG",
+    "crypto_symbol": "Paraguay PYGT",
+    "decimal_places": 4,
+    "country": "Paraguay",
+    "country_currency": "PYG",
+    "category": "fiat",
+    "country_code": "PY",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651345000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b14d1c1718774eeac72"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Qatar QAR",
+    "crypto_symbol": "Qatar QART",
+    "decimal_places": 4,
+    "country": "Qatar",
+    "country_currency": "QAR",
+    "category": "fiat",
+    "country_code": "QA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651348000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b16d1c1718774eeac74"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Reunion EUR",
+    "crypto_symbol": "Reunion EURT",
+    "decimal_places": 4,
+    "country": "Reunion",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "RE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651350000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b19d1c1718774eeac76"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Romania RON",
+    "crypto_symbol": "Romania RONT",
+    "decimal_places": 4,
+    "country": "Romania",
+    "country_currency": "RON",
+    "category": "fiat",
+    "country_code": "RO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651353000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b1bd1c1718774eeac78"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Serbia RSD",
+    "crypto_symbol": "Serbia RSDT",
+    "decimal_places": 4,
+    "country": "Serbia",
+    "country_currency": "RSD",
+    "category": "fiat",
+    "country_code": "RS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651355000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b1ed1c1718774eeac7a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Russian Federation RUB",
+    "crypto_symbol": "Russian Federation RUBT",
+    "decimal_places": 4,
+    "country": "Russian Federation",
+    "country_currency": "RUB",
+    "category": "fiat",
+    "country_code": "RU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651358000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b20d1c1718774eeac7c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Rwanda RWF",
+    "crypto_symbol": "Rwanda RWFT",
+    "decimal_places": 4,
+    "country": "Rwanda",
+    "country_currency": "RWF",
+    "category": "fiat",
+    "country_code": "RW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651360000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b23d1c1718774eeac80"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Solomon Islands SBD",
+    "crypto_symbol": "Solomon Islands SBDT",
+    "decimal_places": 4,
+    "country": "Solomon Islands",
+    "country_currency": "SBD",
+    "category": "fiat",
+    "country_code": "SB",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651363000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b25d1c1718774eeac82"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Seychelles SCR",
+    "crypto_symbol": "Seychelles SCRT",
+    "decimal_places": 4,
+    "country": "Seychelles",
+    "country_currency": "SCR",
+    "category": "fiat",
+    "country_code": "SC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651365000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b28d1c1718774eeac84"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Sudan SDG",
+    "crypto_symbol": "Sudan SDGT",
+    "decimal_places": 4,
+    "country": "Sudan",
+    "country_currency": "SDG",
+    "category": "fiat",
+    "country_code": "SD",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651368000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b2ad1c1718774eeac86"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Sweden SEK",
+    "crypto_symbol": "Sweden SEKT",
+    "decimal_places": 4,
+    "country": "Sweden",
+    "country_currency": "SEK",
+    "category": "fiat",
+    "country_code": "SE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651370000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b2dd1c1718774eeac88"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Singapore SGD",
+    "crypto_symbol": "Singapore SGDT",
+    "decimal_places": 4,
+    "country": "Singapore",
+    "country_currency": "SGD",
+    "category": "fiat",
+    "country_code": "SG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651373000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b2fd1c1718774eeac8a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Saint Helena, Ascension And Tristan Da Cunha SHP",
+    "crypto_symbol": "Saint Helena, Ascension And Tristan Da Cunha SHPT",
+    "decimal_places": 4,
+    "country": "Saint Helena, Ascension And Tristan Da Cunha",
+    "country_currency": "SHP",
+    "category": "fiat",
+    "country_code": "SH",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651375000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b31d1c1718774eeac8c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Slovenia EUR",
+    "crypto_symbol": "Slovenia EURT",
+    "decimal_places": 4,
+    "country": "Slovenia",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "SI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651377000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b34d1c1718774eeac8e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Svalbard And Jan Mayen NOK",
+    "crypto_symbol": "Svalbard And Jan Mayen NOKT",
+    "decimal_places": 4,
+    "country": "Svalbard And Jan Mayen",
+    "country_currency": "NOK",
+    "category": "fiat",
+    "country_code": "SJ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651380000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b36d1c1718774eeac90"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Slovakia EUR",
+    "crypto_symbol": "Slovakia EURT",
+    "decimal_places": 4,
+    "country": "Slovakia",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "SK",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651382000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b39d1c1718774eeac92"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Sierra Leone SLL",
+    "crypto_symbol": "Sierra Leone SLLT",
+    "decimal_places": 4,
+    "country": "Sierra Leone",
+    "country_currency": "SLL",
+    "category": "fiat",
+    "country_code": "SL",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651385000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b3bd1c1718774eeac94"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "San Marino EUR",
+    "crypto_symbol": "San Marino EURT",
+    "decimal_places": 4,
+    "country": "San Marino",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "SM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651387000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b3ed1c1718774eeac96"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Senegal XOF",
+    "crypto_symbol": "Senegal XOFT",
+    "decimal_places": 4,
+    "country": "Senegal",
+    "country_currency": "XOF",
+    "category": "fiat",
+    "country_code": "SN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651390000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b40d1c1718774eeac98"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Somalia SOS",
+    "crypto_symbol": "Somalia SOST",
+    "decimal_places": 4,
+    "country": "Somalia",
+    "country_currency": "SOS",
+    "category": "fiat",
+    "country_code": "SO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651392000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b43d1c1718774eeac9a"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Suriname SRD",
+    "crypto_symbol": "Suriname SRDT",
+    "decimal_places": 4,
+    "country": "Suriname",
+    "country_currency": "SRD",
+    "category": "fiat",
+    "country_code": "SR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651395000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b45d1c1718774eeac9c"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "South Sudan SSP",
+    "crypto_symbol": "South Sudan SSPT",
+    "decimal_places": 4,
+    "country": "South Sudan",
+    "country_currency": "SSP",
+    "category": "fiat",
+    "country_code": "SS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651397000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b48d1c1718774eeac9e"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "São Tomé and Príncipe STD",
+    "crypto_symbol": "São Tomé and Príncipe STDT",
+    "decimal_places": 4,
+    "country": "São Tomé and Príncipe",
+    "country_currency": "STD",
+    "category": "fiat",
+    "country_code": "ST",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651400000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b4ad1c1718774eeaca0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "USSR RUB",
+    "crypto_symbol": "USSR RUBT",
+    "decimal_places": 4,
+    "country": "USSR",
+    "country_currency": "RUB",
+    "category": "fiat",
+    "country_code": "SU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651402000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b4cd1c1718774eeaca2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "El Salvador USD",
+    "crypto_symbol": "El Salvador USDT",
+    "decimal_places": 4,
+    "country": "El Salvador",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "SV",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651404000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b4fd1c1718774eeaca4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Sint Maarten ANG",
+    "crypto_symbol": "Sint Maarten ANGT",
+    "decimal_places": 4,
+    "country": "Sint Maarten",
+    "country_currency": "ANG",
+    "category": "fiat",
+    "country_code": "SX",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651407000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b51d1c1718774eeaca6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Syrian Arab Republic SYP",
+    "crypto_symbol": "Syrian Arab Republic SYPT",
+    "decimal_places": 4,
+    "country": "Syrian Arab Republic",
+    "country_currency": "SYP",
+    "category": "fiat",
+    "country_code": "SY",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651409000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b54d1c1718774eeaca8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Swaziland SZL",
+    "crypto_symbol": "Swaziland SZLT",
+    "decimal_places": 4,
+    "country": "Swaziland",
+    "country_currency": "SZL",
+    "category": "fiat",
+    "country_code": "SZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651412000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b56d1c1718774eeacaa"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Tristan de Cunha GBP",
+    "crypto_symbol": "Tristan de Cunha GBPT",
+    "decimal_places": 4,
+    "country": "Tristan de Cunha",
+    "country_currency": "GBP",
+    "category": "fiat",
+    "country_code": "TA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651414000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b59d1c1718774eeacac"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Turks And Caicos Islands USD",
+    "crypto_symbol": "Turks And Caicos Islands USDT",
+    "decimal_places": 4,
+    "country": "Turks And Caicos Islands",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "TC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651417000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b5bd1c1718774eeacae"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Chad XAF",
+    "crypto_symbol": "Chad XAFT",
+    "decimal_places": 4,
+    "country": "Chad",
+    "country_currency": "XAF",
+    "category": "fiat",
+    "country_code": "TD",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651419000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b5ed1c1718774eeacb0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "French Southern Territories EUR",
+    "crypto_symbol": "French Southern Territories EURT",
+    "decimal_places": 4,
+    "country": "French Southern Territories",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "TF",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651422000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b60d1c1718774eeacb2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Togo XOF",
+    "crypto_symbol": "Togo XOFT",
+    "decimal_places": 4,
+    "country": "Togo",
+    "country_currency": "XOF",
+    "category": "fiat",
+    "country_code": "TG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651424000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b62d1c1718774eeacb4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Thailand THB",
+    "crypto_symbol": "Thailand THBT",
+    "decimal_places": 4,
+    "country": "Thailand",
+    "country_currency": "THB",
+    "category": "fiat",
+    "country_code": "TH",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651426000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b65d1c1718774eeacb6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Tajikistan TJS",
+    "crypto_symbol": "Tajikistan TJST",
+    "decimal_places": 4,
+    "country": "Tajikistan",
+    "country_currency": "TJS",
+    "category": "fiat",
+    "country_code": "TJ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651429000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b67d1c1718774eeacb8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Tokelau NZD",
+    "crypto_symbol": "Tokelau NZDT",
+    "decimal_places": 4,
+    "country": "Tokelau",
+    "country_currency": "NZD",
+    "category": "fiat",
+    "country_code": "TK",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651431000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b6ad1c1718774eeacba"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "East Timor USD",
+    "crypto_symbol": "East Timor USDT",
+    "decimal_places": 4,
+    "country": "East Timor",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "TL",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651434000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b6cd1c1718774eeacbc"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Turkmenistan TMT",
+    "crypto_symbol": "Turkmenistan TMTT",
+    "decimal_places": 4,
+    "country": "Turkmenistan",
+    "country_currency": "TMT",
+    "category": "fiat",
+    "country_code": "TM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651436000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b6fd1c1718774eeacbe"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Tunisia TND",
+    "crypto_symbol": "Tunisia TNDT",
+    "decimal_places": 4,
+    "country": "Tunisia",
+    "country_currency": "TND",
+    "category": "fiat",
+    "country_code": "TN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651439000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b71d1c1718774eeacc0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Tonga TOP",
+    "crypto_symbol": "Tonga TOPT",
+    "decimal_places": 4,
+    "country": "Tonga",
+    "country_currency": "TOP",
+    "category": "fiat",
+    "country_code": "TO",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651441000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b74d1c1718774eeacc2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Turkey TRY",
+    "crypto_symbol": "Turkey TRYT",
+    "decimal_places": 4,
+    "country": "Turkey",
+    "country_currency": "TRY",
+    "category": "fiat",
+    "country_code": "TR",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651444000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b76d1c1718774eeacc4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Trinidad And Tobago TTD",
+    "crypto_symbol": "Trinidad And Tobago TTDT",
+    "decimal_places": 4,
+    "country": "Trinidad And Tobago",
+    "country_currency": "TTD",
+    "category": "fiat",
+    "country_code": "TT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651446000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b78d1c1718774eeacc6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Tuvalu AUD",
+    "crypto_symbol": "Tuvalu AUDT",
+    "decimal_places": 4,
+    "country": "Tuvalu",
+    "country_currency": "AUD",
+    "category": "fiat",
+    "country_code": "TV",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651448000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b7bd1c1718774eeacc8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Taiwan, Province Of China TWD",
+    "crypto_symbol": "Taiwan, Province Of China TWDT",
+    "decimal_places": 4,
+    "country": "Taiwan, Province Of China",
+    "country_currency": "TWD",
+    "category": "fiat",
+    "country_code": "TW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651451000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b7dd1c1718774eeacca"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Tanzania, United Republic Of TZS",
+    "crypto_symbol": "Tanzania, United Republic Of TZST",
+    "decimal_places": 4,
+    "country": "Tanzania, United Republic Of",
+    "country_currency": "TZS",
+    "category": "fiat",
+    "country_code": "TZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651453000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b80d1c1718774eeaccc"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Ukraine UAH",
+    "crypto_symbol": "Ukraine UAHT",
+    "decimal_places": 4,
+    "country": "Ukraine",
+    "country_currency": "UAH",
+    "category": "fiat",
+    "country_code": "UA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651456000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b82d1c1718774eeacce"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Uganda UGX",
+    "crypto_symbol": "Uganda UGXT",
+    "decimal_places": 4,
+    "country": "Uganda",
+    "country_currency": "UGX",
+    "category": "fiat",
+    "country_code": "UG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651458000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b85d1c1718774eeacd2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "United States Minor Outlying Islands USD",
+    "crypto_symbol": "United States Minor Outlying Islands USDT",
+    "decimal_places": 4,
+    "country": "United States Minor Outlying Islands",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "UM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651461000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b87d1c1718774eeacd6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Uruguay UYU",
+    "crypto_symbol": "Uruguay UYUT",
+    "decimal_places": 4,
+    "country": "Uruguay",
+    "country_currency": "UYU",
+    "category": "fiat",
+    "country_code": "UY",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651463000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b8ad1c1718774eeacd8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Uzbekistan UZS",
+    "crypto_symbol": "Uzbekistan UZST",
+    "decimal_places": 4,
+    "country": "Uzbekistan",
+    "country_currency": "UZS",
+    "category": "fiat",
+    "country_code": "UZ",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651466000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b8cd1c1718774eeacda"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Vatican City State EUR",
+    "crypto_symbol": "Vatican City State EURT",
+    "decimal_places": 4,
+    "country": "Vatican City State",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "VA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651468000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b8fd1c1718774eeacdc"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Saint Vincent And The Grenadines XCD",
+    "crypto_symbol": "Saint Vincent And The Grenadines XCDT",
+    "decimal_places": 4,
+    "country": "Saint Vincent And The Grenadines",
+    "country_currency": "XCD",
+    "category": "fiat",
+    "country_code": "VC",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651471000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b91d1c1718774eeacde"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Venezuela, Bolivarian Republic Of VEF",
+    "crypto_symbol": "Venezuela, Bolivarian Republic Of VEFT",
+    "decimal_places": 4,
+    "country": "Venezuela, Bolivarian Republic Of",
+    "country_currency": "VEF",
+    "category": "fiat",
+    "country_code": "VE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651473000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b94d1c1718774eeace0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Virgin Islands (British) USD",
+    "crypto_symbol": "Virgin Islands (British) USDT",
+    "decimal_places": 4,
+    "country": "Virgin Islands (British)",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "VG",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651476000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b96d1c1718774eeace2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Virgin Islands (US) USD",
+    "crypto_symbol": "Virgin Islands (US) USDT",
+    "decimal_places": 4,
+    "country": "Virgin Islands (US)",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "VI",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651478000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b98d1c1718774eeace4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Viet Nam VND",
+    "crypto_symbol": "Viet Nam VNDT",
+    "decimal_places": 4,
+    "country": "Viet Nam",
+    "country_currency": "VND",
+    "category": "fiat",
+    "country_code": "VN",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651480000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b9bd1c1718774eeace6"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Vanuatu VUV",
+    "crypto_symbol": "Vanuatu VUVT",
+    "decimal_places": 4,
+    "country": "Vanuatu",
+    "country_currency": "VUV",
+    "category": "fiat",
+    "country_code": "VU",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651483000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7b9dd1c1718774eeace8"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Wallis And Futuna XPF",
+    "crypto_symbol": "Wallis And Futuna XPFT",
+    "decimal_places": 4,
+    "country": "Wallis And Futuna",
+    "country_currency": "XPF",
+    "category": "fiat",
+    "country_code": "WF",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651485000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ba0d1c1718774eeacea"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Samoa WST",
+    "crypto_symbol": "Samoa WSTT",
+    "decimal_places": 4,
+    "country": "Samoa",
+    "country_currency": "WST",
+    "category": "fiat",
+    "country_code": "WS",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651488000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ba2d1c1718774eeacec"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Yemen YER",
+    "crypto_symbol": "Yemen YERT",
+    "decimal_places": 4,
+    "country": "Yemen",
+    "country_currency": "YER",
+    "category": "fiat",
+    "country_code": "YE",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651490000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ba5d1c1718774eeacee"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Mayotte EUR",
+    "crypto_symbol": "Mayotte EURT",
+    "decimal_places": 4,
+    "country": "Mayotte",
+    "country_currency": "EUR",
+    "category": "fiat",
+    "country_code": "YT",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651493000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7ba7d1c1718774eeacf0"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "South Africa ZAR",
+    "crypto_symbol": "South Africa ZART",
+    "decimal_places": 4,
+    "country": "South Africa",
+    "country_currency": "ZAR",
+    "category": "fiat",
+    "country_code": "ZA",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651495000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7baad1c1718774eeacf2"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Zambia ZMW",
+    "crypto_symbol": "Zambia ZMWT",
+    "decimal_places": 4,
+    "country": "Zambia",
+    "country_currency": "ZMW",
+    "category": "fiat",
+    "country_code": "ZM",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651498000"
+      }
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "645a7bacd1c1718774eeacf4"
+    },
+    "group": "merchant_customer",
+    "is_deleted": false,
+    "is_active": true,
+    "name": "Zimbabwe USD",
+    "crypto_symbol": "Zimbabwe USDT",
+    "decimal_places": 4,
+    "country": "Zimbabwe",
+    "country_currency": "USD",
+    "category": "fiat",
+    "country_code": "ZW",
+    "created_by": {
+      "$oid": "63e4e3b4f769f04e14bec114"
+    },
+    "created_at": {
+      "$date": {
+        "$numberLong": "1683651500000"
+      }
+    },
+    "__v": 0
+  }
+]

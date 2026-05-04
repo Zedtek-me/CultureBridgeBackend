@@ -73,18 +73,40 @@ class CardPaymentSerializer(serializers.Serializer):
     cvv = serializers.CharField(max_length=4)
 
 class AcceptPaymentSerializer(serializers.Serializer):
+    PAYMENT_PLATFORM_CHOICES = (
+        ("paystack", "paystack"),
+        ("squad", "squad"),
+        ("flutterwave", "flutterwave")
+    )
+    PAYMENT_OPTION_CHOICES = (
+        ("card", "card"),
+        ("bank_transfer", "bank_transfer"),
+        ("ussd", "ussd"),
+        ("general", "general")
+    )
     amount = serializers.FloatField()
     email = serializers.EmailField(required=False)
-    currency = serializers.ChoiceField(choices=PaymentTransaction.CURRENCY_CHOICES, default="USD")
+    currency = serializers.CharField(required=False, max_length=10)
+    country = serializers.CharField(max_length=255, required=False)
     user_id = serializers.CharField(required=False)
     training_id = serializers.CharField()
-    payment_platform = serializers.CharField(
-        max_length=255, required=False, default="sqaud"
+    payment_platform = serializers.ChoiceField(
+        choices=PAYMENT_PLATFORM_CHOICES, required=False, default="squad"
     )
-    payment_option = serializers.CharField(
-        max_length=255, required=False, default="card"
+    payment_option = serializers.ChoiceField(
+        choices=PAYMENT_OPTION_CHOICES, required=False, default="card"
     )
     card = CardPaymentSerializer(required=False)
+
+
+class ConfirmPaymentSerializer(serializers.Serializer):
+    txn_reference = serializers.CharField(max_length=255)
+    payment_platform = serializers.ChoiceField(
+        choices=AcceptPaymentSerializer.PAYMENT_PLATFORM_CHOICES,
+        required=False
+    )
+    otp = serializers.CharField(max_length=10)
+
 
 class TrainingMetrics(serializers.Serializer):
     total_trainings = serializers.IntegerField()

@@ -116,14 +116,14 @@ class UserUtils:
             campaign_user = CampaignUser.objects.create(**data)
             logger.debug(f"campaign user created: {campaign_user}")
 
-            on_commit(
-                lambda :
-                # send email to admin and other stakeholders
-                send_mail_async.delay(
-                    subject=subject,
-                    to_email=to_email,
-                    template_name=template_name,
-                    context=data,
-                    from_email=settings.DEFAULT_FROM_EMAIL
-                )
+        on_commit(
+            lambda :
+            # send email to admin and other stakeholders
+            send_mail_async.delay(
+                subject=subject,
+                to_email=to_email,
+                template_name=template_name,
+                context=data,
+                from_email=settings.DEFAULT_FROM_EMAIL
             )
+        )

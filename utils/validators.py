@@ -1,4 +1,5 @@
 import logging
+import re
 from datetime import datetime, date, timedelta
 
 from django.core.exceptions import ValidationError
@@ -34,6 +35,14 @@ class BaseValidator:
             )
 
 
+    @classmethod
+    def validate_phone_number(cls, value: str):
+        """validates phone number format: e.g +234 91309234"""
+        phone_regex = r"^\+\d{1,9}\s\d{4,15}$"
+        if not re.match(phone_regex, value):
+            raise ValidationError(
+                _("Phone number must start with '+' followed by a country code, a space, and the main number (e.g., +234 91309234)")
+            )
 
 def format_date(date_str: str) -> Type[datetime]:
     """converts a date string to a `datetime` obj"""

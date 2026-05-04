@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractUser
 from .managers import UserManager
 from interfaces.models import BaseModel
 
+from utils.validators import BaseValidator
+
 class User(BaseModel, AbstractUser):
     """custom user model"""
     email = models.EmailField(max_length=255, unique=True)
@@ -22,6 +24,18 @@ class User(BaseModel, AbstractUser):
     def __str__(self):
         return f"{self.first_name} {self.last_name} >>> {self.username}"
 
+
+    @property
+    def middle_name(self) -> str:
+        """
+        returns middle name if available, else empty string
+        """
+        names = self.first_name.split()
+        if len(names) > 1:
+            return " ".join(names[1:])
+        return ""
+
+
 class Profile(BaseModel):
     """profile model"""
     USER_TYPE_CHOICES = (
@@ -35,7 +49,12 @@ class Profile(BaseModel):
         ("ENGLISH", "ENGLISH")
     )
     user = models.OneToOneField(to="users.User", on_delete=models.CASCADE, null=True)
-    phone_number = models.CharField(max_length=15, blank=True)
+    phone_number = models.CharField(
+        max_length=15, blank=True,
+        validators=[
+            BaseValidator.validate_phone_number
+        ]
+    )
     address = models.CharField(max_length=255, blank=True)
     country = models.CharField(max_length=255, blank=True)
     state = models.CharField(max_length=255, blank=True)
@@ -46,6 +65,28 @@ class Profile(BaseModel):
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name}"
+
+
+    @property
+    def address_lines(self) -> tuple[str, str]:
+        """returns address lines"""
+        line1 = f"{self.address}, {self.city}"
+        line2 = f"{self.state}, {self.country}"
+        return line1, line2
+
+
+    @property
+    def phone_country_code(self) -> str:
+        """returns the country code from the phone number"""
+        country_code, _ = self.phone_number.split(" ", 1) if self.phone_number else ("", "")
+        return country_code[1:] if country_code.startswith("+") else ""
+
+
+    @property
+    def phone_main_number(self) -> str:
+        """returns the main number from the phone number"""
+        _, main_number = self.phone_number.split(" ", 1) if self.phone_number else ("", "")
+        return main_number if main_number else ""
 
 
 class CampaignUser(BaseModel):

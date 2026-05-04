@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 from interfaces.models import BaseModel
 from utils.validators import BaseValidator
@@ -162,3 +163,71 @@ class Assignment(BaseModel):
         verbose_name_plural = "Assignments"
         db_table = "assignments"
         ordering = ("-created_at",)
+
+
+class PaymentPlatformToken(BaseModel):
+    TOKEN_SOURCES = [
+        ("FLUTTERWAVE", "FLUTTERWAVE"),
+        ("PAYSTACK", "PAYSTACK"),
+        ("ANCHOR", "ANCHOR"),
+        ("SQUAD", "SQUAD"),
+        ("STRIPE", "STRIPE")
+    ]
+    token = models.TextField(null=True, blank=True)
+    source = models.CharField(
+        max_length=255, choices=TOKEN_SOURCES,
+        default="FLUTTERWAVE", null=True, blank=True
+    )
+    expires_in = models.DateTimeField(
+        default=timezone.now() + timezone.timedelta(seconds=600)
+    )
+
+
+    class Meta(BaseModel.Meta):
+        verbose_name = "payment platform token"
+        verbose_name_plural = "payment platform tokens"
+        db_table = "payment_platform_token"
+
+    def __str__(self):
+        return f"{self.source} <--> expires in {self.expires_in.min}"
+
+
+    @classmethod
+    def fetch_token_info(cls, platform: str):
+        return cls.objects.filter(source__icontains=platform).first()
+
+
+
+class CountryAsset(BaseModel):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    country = models.CharField(max_length=255, null=True, blank=True)
+    country_code = models.CharField(max_length=255, null=True, blank=True)
+    currency = models.CharField(max_length=255, null=True, blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = "country asset"
+        verbose_name_plural = "country assets"
+        db_table = "country_asset"
+
+    def __str__(self):
+        return f"{self.name if self.name else self.country}"
+
+
+    @classmethod
+    def get_asset(
+        cls, filter_params: dict, raise_exception: bool = False, *args, **kwargs
+    ):
+        """fetches country asset based on filter params"""
+        from django.db.models import Q
+        from utils.exception_utils import CustomException
+
+        search_params = kwargs.get("search_filter", Q())
+        asset = cls.objects.filter(search_params, **filter_params).first()
+        if not asset and raise_exception:
+            raise CustomException(
+                "Asset not found for the specified country!"
+                "please select another country or try again later!"
+                ,
+                status_code=404
+            )
+        return asset

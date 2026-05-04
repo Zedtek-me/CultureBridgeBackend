@@ -2,7 +2,8 @@ from django.contrib import admin
 
 from apps.core.models import (
     Training, Course, TrainingCourse,
-    PaymentTransaction
+    PaymentTransaction, PaymentPlatformToken,
+    CountryAsset
 )
 
 
@@ -42,8 +43,25 @@ class PaymentTransactionAdmin(admin.ModelAdmin):
         "training", "user_id", "amount", "currency", "description", "txn_reference", "status",
         "meta"
     ]
+    search_fields = [
+        "user_id__iexact", "training__language__icontains", "txn_reference__iexact"
+    ]
+
+
+class PaymentPlatformTokenAdmin(admin.ModelAdmin):
+    list_display = ("source", "token", "created_at", "updated_at")
+    list_filter = ("source", "created_at", "updated_at")
+
+
+class CountryAssetAdmin(admin.ModelAdmin):
+    list_display = ("name", "country", "country_code", "currency")
+    list_filter = ("name", "country", "country_code", "currency")
+    search_fields = ("name__icontains", "country__icontains", "country_code__iexact", "currency__iexact")
+
 
 admin.site.register(Training, TrainingAdmin)
 admin.site.register(Course, CourseAdmin)
 admin.site.register(TrainingCourse, TrainingCourseAdmin)
 admin.site.register(PaymentTransaction, PaymentTransactionAdmin)
+admin.site.register(PaymentPlatformToken, PaymentPlatformTokenAdmin)
+admin.site.register(CountryAsset, CountryAssetAdmin)

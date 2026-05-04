@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 
+from celery.schedules import crontab
+
 load_dotenv()
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'django_rq',
+    'django_celery_beat',
 
     # local apps
     'apps.blogs',
@@ -244,6 +247,24 @@ MARKETING_TEAM_EMAILS = os.getenv("MARKETING_TEAM_EMAILS", "").split(",")
 
 CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL", "redis://localhost:6379/0")
 CELERY_RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND", "redis://localhost:6379/0")
+CELERY_BEAT_SCHEDULE = {
+    "refresh-flutterwave-access-token": {
+        "task": "refresh-flutterwave-access-token",
+        "schedule": crontab(
+            day_of_week="*", hour="*", minute="*/3"
+        )
+    }
+}
 
 
 DEFAULT_REQUEST_TIMEOUT = os.getenv("DEFAULT_REQUEST_TIMEOUT")
+
+FERNET_TOKEN_KEY = os.getenv("FERNET_TOKEN_KEY")
+
+FLUTTERWAVE_BASE_URL = os.getenv("FLUTTERWAVE_BASE_URL")
+FLUTTERWAVE_ENCRYPTION_KEY = os.getenv("FLUTTERWAVE_ENCRYPTION_KEY")
+FLUTTERWAVE_PUBLIC_KEY = os.getenv("FLUTTERWAVE_PUBLIC_KEY")
+FLUTTERWAVE_CALLBACK_URL = os.getenv("FLUTTERWAVE_CALLBACK_URL")
+FLUTTERWAVE_CLIENT_ID = os.getenv("FLUTTERWAVE_CLIENT_ID")
+FLUTTERWAVE_CLIENT_SECRET = os.getenv("FLUTTERWAVE_CLIENT_SECRET")
+FLUTTERWAVE_OAUTH_URL = os.getenv("FLUTTERWAVE_OAUTH_URL")

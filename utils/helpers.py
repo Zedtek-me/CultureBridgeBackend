@@ -1,4 +1,5 @@
 import logging
+import json
 from datetime import datetime, date, timedelta
 from typing import List, Union, Optional, Type
 
@@ -45,3 +46,11 @@ def format_date_time(
     except (Exception, ValueError) as e:
         logger.exception(f"error occured when formatting date string: {e}")
         return None
+
+
+
+def extract_json_data_from_file(
+    file_path: str
+) -> list[dict]:
+    with open(file_path, mode="r") as file:
+        return json.load(file)

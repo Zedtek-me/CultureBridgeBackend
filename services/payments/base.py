@@ -10,6 +10,7 @@ from apps.core.models import PaymentTransaction, Training
 
 from services.payments.squad import SquadPaymentService
 from services.payments.paystack import PaystackPaymentService
+from services.payments.flutterwave import FlutterwavePaymentService
 
 from utils.exception_utils import CustomException
 from utils.core_utils import TrainingUtil, TransactionUtil
@@ -25,7 +26,8 @@ class PaymentService:
         "paystack": f"{settings.PAYSTACK_BASE_URL}/",
         "paypal": f"{settings.PAYPAL_BASE_URL}",
         "stripe": f"{settings.STRIPE_BASE_URL}/",
-        "squad": f"{settings.SQUAD_BASE_URL}/"
+        "squad": f"{settings.SQUAD_BASE_URL}/",
+        "flutterwave": f"{settings.FLUTTERWAVE_BASE_URL}/"
     }
 
     def __init__(self, platform: str, *args, **kwargs) -> Union[CustomException, None]:
@@ -66,13 +68,7 @@ class PaymentService:
 
     def handle_payment(self, *args, **kwargs)-> Union[tuple, str, dict]:
         """handles according to platforms"""
-        base_url = self.PLATFORMS.get(self.platform)
         if self.platform == "paystack":
-            # response = self.handle_paystack_payment(base_url, *args, **kwargs)
-            # access_code, auth_url = (
-            #     response.get("data", {}).get("access_code"),
-            #     response.get("data", {}).get("authorization_url")
-            # )
             paystack_payment_service = PaystackPaymentService(
                 payment_channel=kwargs.get("option"), payment_data=kwargs
             )
@@ -86,6 +82,14 @@ class PaymentService:
                 )
                 response = squad_payment_service.handle_payment()
                 return response
+
+        if self.platform == "flutterwave":
+            flutterwave_payment_service = FlutterwavePaymentService(
+                payment_channel=kwargs.get("option"), payment_data=kwargs
+            )
+            response = flutterwave_payment_service.handle_payment()
+            return response
+
         raise CustomException(
             message="Payment platform not available at the moment!",
             status_code=404
@@ -142,7 +146,7 @@ class PaymentService:
         }
         payment_txn.training = training_to_pay_for
         payment_txn.save()
-        if (response and not response.get("status")) or response.get("status") not in ("success", True):
+        if (response and not response.get("status")) or (response and response.get("status") not in ("success", True)):
             payment_txn.status = "FAILED"
             payment_txn.save()
             raise CustomException(

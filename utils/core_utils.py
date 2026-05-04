@@ -73,7 +73,7 @@ class TrainingUtil:
         """connects to the payment platform for payment processing"""
         from services.payments.base import PaymentService
 
-        platform = kwargs.pop("platform", "squad")
+        platform = kwargs.pop("payment_platform", "flutterwave")
         response = PaymentService(platform).handle_payment(**kwargs)
         logger.debug(f"response from payment service::::::: {response}")
         trxn_reference = response.get("data", {}).get("transaction_reference")
@@ -84,6 +84,17 @@ class TrainingUtil:
                 payment_trxn.status = "FAILED"
                 payment_trxn.save()
         return response
+
+
+    @classmethod
+    def confirm_training_payment(
+        cls, data: dict, **kwargs
+    ) -> dict:
+        """
+        used to authorize charges for the student's payment method
+        """
+        return {}
+
 
     @classmethod
     def get_payment_txn(
@@ -331,6 +342,6 @@ class TransactionUtil:
     @staticmethod
     def create_transaction(
         data: dict
-    ) -> Type[PaymentTransaction]:
+    ) -> PaymentTransaction:
         """records a transaction"""
         return PaymentTransaction.objects.create(**data)

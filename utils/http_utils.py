@@ -100,5 +100,5 @@ class HttpClient:
         self, endpoint: Optional[str] = None
     ) -> str:
         if not endpoint:
-            return f"{self.base_url}{'/' if '/' not in self.endpoint else ''}{self.endpoint}"
+            return f"{self.base_url}{'/' if '/' not in self.base_url else ''}{self.endpoint or ''}"
         return f"{self.base_url}{'/' if '/' not in endpoint else ''}{endpoint}"

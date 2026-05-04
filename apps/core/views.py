@@ -11,7 +11,7 @@ from django.db import transaction
 from apps.blogs.permissions.is_authenticated import IsAuthenticated
 from apps.core.serializers import (
     TrainingSerializer,
-    AcceptPaymentSerializer,
+    AcceptPaymentSerializer, ConfirmPaymentSerializer,
     TrainingMetrics, CourseSerializer,
     AssignCourseSerializer, AssignmentSerializer,
     MarkAttendanceSerializer, CreateAssignmentSerializer,
@@ -127,6 +127,30 @@ class TrainingViewSet(ViewSet):
             )
         return ResponseManager.handle_success_response(
             message="payment initiated successfully!",
+            data=response["data"]
+        )
+
+
+    @transaction.atomic
+    @action(detail=False, methods=["post"], url_path="confirm-payment")
+    def confirm_training_payment(self, request):
+        """confirms training payment for user signing up"""
+        serializer = ConfirmPaymentSerializer(data=request.data)
+        if not serializer.is_valid(raise_exception=False):
+            return ResponseManager.handle_error_response(
+                message=serializer.error_messages,
+                status_code=400
+            )
+        data: dict = serializer.validated_data
+        response = TrainingUtil.confirm_training_payment(data)
+        if not response.get("success"):
+            msg = response.get("message", "Unable to confirm payment at the moment!")
+            return ResponseManager.handle_error_response(
+                message=msg,
+                status_code=400
+            )
+        return ResponseManager.handle_success_response(
+            message="payment confirmed successfully!",
             data=response["data"]
         )
 
