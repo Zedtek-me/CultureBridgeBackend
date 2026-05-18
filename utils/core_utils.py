@@ -60,7 +60,6 @@ class TrainingUtil:
         raise_exception: bool = True
     ) -> Training:
         """fetches a training that matches filter params"""
-        logger.debug(f"search filter: {search_filter}, filter params: {filter_params}")
         training = Training.objects.filter(search_filter, **filter_params).first()
         if not training and raise_exception is True:
             raise CustomException("Training not found!", 404)
@@ -74,11 +73,21 @@ class TrainingUtil:
         from services.payments.base import PaymentService
 
         platform = kwargs.pop("payment_platform", "flutterwave")
-        response = PaymentService(platform).handle_payment(**kwargs)
+        try:
+            response: dict = PaymentService(platform).handle_payment(**kwargs)
+        except Exception as e:
+            logger.exception(e)
+            return {}
         logger.debug(f"response from payment service::::::: {response}")
+        # TODO: update this part to cater for the different scenerios of payment response.
+        # e.g: card payment would return some "next_action" value from flutterwave.
+        # update the trxn or return the next action dict as a response to the frontend for further processing.
         trxn_reference = response.get("data", {}).get("transaction_reference")
+        response_succeeded = (
+            response.get("status") == "success" or response.get("success") is True
+        )
         payment_trxn = cls.get_payment_txn({"txn_reference": trxn_reference}, raise_exception=False)
-        if not response.get("success"):
+        if not response_succeeded:
             if payment_trxn:
                 payment_trxn.meta["payment_failed_response"] = response
                 payment_trxn.status = "FAILED"
@@ -332,10 +341,10 @@ class TransactionUtil:
 
     @classmethod
     def generate_transaction_ref(
-        cls, prefix: Optional[str] = "CLTBRGTRX"
+        cls, prefix: Optional[str] = "CLTBRGTRX", length: Optional[int] = 32
     ) -> str:
         ref = "".join(
-            random.choices(string.ascii_letters + string.digits, k=32)
+            random.choices(string.ascii_letters + string.digits, k=length)
         )
         return f"{prefix}-{ref}"
 

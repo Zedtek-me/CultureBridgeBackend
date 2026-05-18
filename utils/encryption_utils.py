@@ -1,6 +1,7 @@
 import string
 import random
 import json
+import secrets
 
 from typing import Any
 
@@ -12,6 +13,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from django.conf import settings
 
 from utils.exception_utils import CustomException
+from utils.helpers import logger
 
 
 def encrypt_data_with_fernet(
@@ -35,7 +37,7 @@ def decrypt_data_with_fernet(
 class AESOperations:
 
     ENCRYPTION_KEY_SOURCES = {
-        "FLUTTERWAVE": settings.FLUTTERWAVE_ENCRYPTION_KEY.encode(),
+        "FLUTTERWAVE": settings.FLUTTERWAVE_ENCRYPTION_KEY,
     }
 
 
@@ -45,8 +47,9 @@ class AESOperations:
             raise CustomException(
                 "encryption key or valid key source must be provided for encryption operations!"
             )
-        self.key = self._decode_key(key or self.ENCRYPTION_KEY_SOURCES[source])
+        self.key: bytes = self._decode_key(key or self.ENCRYPTION_KEY_SOURCES[source])
         self.source = source
+        logger.debug(f"encryption key used::::::: {self.key}\n key before decoding::::: {self.ENCRYPTION_KEY_SOURCES.get(source)}")
 
 
     def encrypt_data(
@@ -68,12 +71,22 @@ class AESOperations:
         """
 
 
-    def _decode_key(self, key: str | bytes) -> str:
+    def _decode_key(self, key: str | bytes) -> bytes:
         decoded_key = None
         if isinstance(key, str):
-            decoded_key = self._decode_key_from_str(key)
-        elif isinstance(key, bytes):
-            decoded_key = self._decode_key_from_bytes(key)
+            decoded_key = self._decode_from_str(key)
+            return decoded_key
+        if isinstance(key, bytes):
+            decoded_key = self._decode_from_bytes(key)
+            return decoded_key
+        try:
+            decoded_key = b64encode(key)
+        except Exception as e:
+            raise CustomException("Invalid encryption key provided!", 400) from e
+        return decoded_key
+
+
+    def _decode_from_str(self, key: str) -> bytes:
         try:
             decoded_key = b64decode(key)
         except Exception as e:
@@ -81,15 +94,7 @@ class AESOperations:
         return decoded_key
 
 
-    def _decode_key_from_str(self, key: str) -> bytes:
-        try:
-            decoded_key = b64decode(key.encode())
-        except Exception as e:
-            raise CustomException("Invalid encryption key provided!", 400) from e
-        return decoded_key
-
-
-    def _decode_key_from_bytes(self, key: bytes) -> bytes:
+    def _decode_from_bytes(self, key: bytes) -> bytes:
         return b64decode(key)
 
 
@@ -99,7 +104,7 @@ class AESOperations:
         """encrypts data with AES algorithm according to flutterwave requirements"""
         nonce = self.generate_nonce(length=12)
         nonce_bytes = nonce.encode()
-        cipher = AESGCM(self.key.encode())
+        cipher = AESGCM(self.key)
 
         encrypted_dict_data: dict[str, str | Any] = {"nonce": nonce}
 
@@ -123,5 +128,5 @@ class AESOperations:
         generates random string of given length to be used as nonce for encryption
         """
         chars = string.ascii_letters + string.digits
-        nonce = "".join(random.choices(chars, k=length))
+        nonce = "".join(secrets.choice(chars) for _ in range(length))
         return nonce

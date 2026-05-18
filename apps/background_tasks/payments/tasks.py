@@ -71,6 +71,6 @@ def _should_refresh_token(
     token_expiry = db_token_info.expires_in
     time_left_to_refresh = token_expiry - timezone.now()
     # TODO: modify and fix the code below, later -- there's a logic flaw.
-    if time_left_to_refresh <= timezone.timedelta(seconds=1):
+    if time_left_to_refresh <= timezone.timedelta(seconds=60):
         return True
     return False

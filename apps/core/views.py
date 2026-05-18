@@ -108,7 +108,7 @@ class TrainingViewSet(ViewSet):
                 message=serializer.error_messages,
                 status_code=400
             )
-        data = serializer.validated_data
+        data: dict = serializer.validated_data
         data.update(option=data.pop("payment_option", "card"))
         logger.debug(f"payment data:::: {data}")
         response = TrainingUtil.process_training_payment(**data, user=request.user)

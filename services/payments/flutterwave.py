@@ -87,16 +87,16 @@ class FlutterwavePaymentService(PaymentInterface):
         endpoint = "/orchestration/direct-charges"
         trxn_ref = (
             payment_data.get("txn_reference") or
-            TransactionUtil.generate_transaction_ref(prefix="CLTBRGTRNTRX")
+            TransactionUtil.generate_transaction_ref(prefix="CLTBRGTRNTRX", length=15)
         )
         user: User = kwargs.get("user")
         card_data: dict[str, str] = self._encrypt_card_data(payment_data.get("card", {}))
-        logger.debug(f"encrypted card data::::::: {card_data}")
         country_asset = self._get_country_asset(payment_data.get("country") or user.profile.country)
         extra_headers = {
             "Authorization": f"Bearer {decrypted_access_token}",
             "X-Idempotency-Key": trxn_ref,
-            "X-Trace-Id": trxn_ref
+            "X-Trace-Id": trxn_ref,
+            "X-Scenario-Key": "scenario:auth_key&issuer:approved"
         }
         payload = {
             "reference": trxn_ref,
@@ -113,10 +113,11 @@ class FlutterwavePaymentService(PaymentInterface):
                 }
             },
             "customer": self._prep_customer_payload(user, country_asset=country_asset),
-            "redirect_url": settings.CULTUREBRIDGE_REDIRECT_URL
+            "redirect_url": "https://webhook.site/12c8230e-1216-4caa-aec8-ebf2fa9d97c4"
         }
+        logger.debug(f"flutterwave card payment payload::: {payload}, extra_headers::: {extra_headers}")
         card_payment_response = self.client.post(
-            endpoint=endpoint, data=payload, extra_headers=extra_headers
+            endpoint=endpoint, payload=payload, extra_headers=extra_headers
         )
         logger.debug(f"flutterwave card payment response: {card_payment_response}")
         return card_payment_response
@@ -184,24 +185,9 @@ class FlutterwavePaymentService(PaymentInterface):
     def _prep_customer_payload(
         self, user: User, **kwargs
     ) -> dict:
-        country_asset: CountryAsset = kwargs.get("country_asset")
         user_profile: Profile = user.profile
-        country = country_asset.country if country_asset else user_profile.country
         payload = {
             "email": user.email,
-            "name": {
-                "first": user.first_name,
-                "middle": user.middle_name,
-                "last": user.last_name
-            },
-            "address": {
-                "city": user_profile.city,
-                "country": country,
-                "line1": user_profile.address_lines[0],
-                "line2": user_profile.address_lines[1],
-                "postal_code": "",
-                "state": user_profile.state
-            },
             "phone": {
                 "country_code": user_profile.phone_country_code,
                 "number": user_profile.phone_main_number
@@ -239,7 +225,7 @@ class FlutterwavePaymentService(PaymentInterface):
     ) -> CountryAsset:
         """fetches country asset based on country name"""
         country_asset = CountryAsset.get_asset(
-            search_param=(
+            search_filter=(
                 Q(name__icontains=country) |
                 Q(country__icontains=country)
             ),

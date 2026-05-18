@@ -3,6 +3,7 @@ import logging
 from rest_framework.authtoken.models import Token
 from typing import Optional, Type, Union
 from django.db.transaction import atomic, on_commit
+from django.db.models import Q
 from django.conf import settings
 
 from utils.exception_utils import CustomException
@@ -37,8 +38,10 @@ class UserUtils:
         signup_info = kwargs.pop("signup", {})
         training_info = kwargs.get("training_info", {})
         phone_number = signup_info.pop("phone_number")
-        if (User.objects.filter(email__iexact=signup_info.get("email")).exists() or
-                User.objects.filter(username__iexact=signup_info.get("username")).exists()):
+        if User.objects.filter(
+            Q(email__iexact=signup_info.get("email")) |
+            Q(username__iexact=signup_info.get("username"))
+        ).exists():
             raise CustomException("User with email or username already exists")
         user = User.objects.create_user(**signup_info)
         user.set_password(signup_info.get("password"))

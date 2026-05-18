@@ -4,12 +4,14 @@ from .managers import UserManager
 from interfaces.models import BaseModel
 
 from utils.validators import BaseValidator
+from utils.helpers import logger
 
 class User(BaseModel, AbstractUser):
     """custom user model"""
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255, null=True, blank=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)
+    middle_name = models.CharField(max_length=255, null=True, blank=True)
     username = models.CharField(max_length=255, unique=True, null=True, blank=True)
     password = models.CharField(max_length=255)
     USERNAME_FIELD = "email"

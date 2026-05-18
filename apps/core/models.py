@@ -215,7 +215,7 @@ class CountryAsset(BaseModel):
 
     @classmethod
     def get_asset(
-        cls, filter_params: dict, raise_exception: bool = False, *args, **kwargs
+        cls, filter_params: dict, raise_exception: bool = False, **kwargs
     ):
         """fetches country asset based on filter params"""
         from django.db.models import Q

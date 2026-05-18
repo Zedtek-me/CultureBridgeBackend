@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework import status
-from typing import Optional, Type
+from typing import Optional, Type, Any
 
 import requests
 import json
@@ -23,7 +23,7 @@ class ResponseManager:
         }, status=status_code)
 
     @classmethod
-    def handle_error_response(cls, message: Optional[str] = "", status_code: int = 400) -> Response:
+    def handle_error_response(cls, message: Optional[str] | Any | dict = "", status_code: int = 400) -> Response:
         """handles error response"""
         return Response({
             "data": None,
@@ -84,15 +84,15 @@ class HttpClient:
 
     def post(
         self, endpoint: Optional[str] = None, data: Optional[dict] = None,
-        extra_headers: Optional[dict] = None
+        extra_headers: Optional[dict] = None, payload: Optional[dict] = None
     ) -> dict:
         """handles post request"""
         url = self._get_url(endpoint)
         headers = {**self.headers, **(extra_headers or {})}
         timeout = settings.DEFAULT_REQUEST_TIMEOUT or 5000
         response = requests.request(
-            "POST", url, json=data, headers=headers,
-            timeout=int(timeout)
+            "POST", url, json=payload, headers=headers,
+            timeout=int(timeout), data=data
         )
         return self._parse_response(response)
 
