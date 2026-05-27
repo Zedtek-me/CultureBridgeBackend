@@ -165,7 +165,6 @@ class DashboardViewSet(ViewSet):
         """dashboard training info"""
         user = request.user
         user_type = UserUtils.get_user_type(user)
-        logger.debug(f"user type here!!!!!: {user_type}")
         filter_params = {"user__id": user.id}
         if user_type == "INSTRUCTOR":
             filter_params.pop("user__id")

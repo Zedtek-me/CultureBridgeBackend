@@ -59,7 +59,8 @@ class AESOperations:
         encrypts given data with AES algorithm
         """
         if self.source == "FLUTTERWAVE":
-            return self._encrypt_flutterwave_data_with_aes(data)
+            nonce = self.generate_nonce(length=12)
+            return self._encrypt_flutterwave_data_with_aes(data, nonce=nonce)
         return {}
 
 
@@ -99,24 +100,29 @@ class AESOperations:
 
 
     def _encrypt_flutterwave_data_with_aes(
-        self, data: dict | str | Any
+        self, data: dict | str | Any, nonce: str | None = None,
+        cipher: AESGCM | None = None
     ) -> dict[str, str] | str | Any:
         """encrypts data with AES algorithm according to flutterwave requirements"""
-        nonce = self.generate_nonce(length=12)
-        nonce_bytes = nonce.encode()
-        cipher = AESGCM(self.key)
+        if not nonce:
+            nonce = self.generate_nonce(length=12)
 
-        encrypted_dict_data: dict[str, str | Any] = {"nonce": nonce}
+        nonce_bytes: bytes = nonce.encode()
+        cipher = cipher or AESGCM(self.key)
 
+        encrypted_dict_data: dict[str, str | Any] = {}
         if isinstance(data, dict):
             for key, value in data.items():
-                encrypted_dict_data[key] = self._encrypt_flutterwave_data_with_aes(value)
+                encrypted_dict_data[key] = self._encrypt_flutterwave_data_with_aes(
+                    value, nonce=nonce, cipher=cipher
+                )
+            encrypted_dict_data["nonce"] = nonce
             return encrypted_dict_data
 
         if isinstance(data, str):
             data_str = data
         else:
-            raise CustomException("data type not supported for encryption!", 400)
+            data_str = str(data)
         data_bytes = data_str.encode()
         encrypted_data = cipher.encrypt(nonce_bytes, data_bytes, None)
         encrypted_data_b64 = b64encode(encrypted_data).decode()
